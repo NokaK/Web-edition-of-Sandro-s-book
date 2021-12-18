@@ -1,0 +1,129 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #1c1c1c;
+  transition: transform 0.3s ease-in 0.2s;
+  z-index: 9;
+}
+
+.loader {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  fill: #fff;
+  transition: fill 0.3s ease-in 0.4s;
+}
+
+.play-button-loader-wrapper {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+  display: none;
+  z-index: 99;
+  p {
+    padding: 0 0.5rem 0 0;
+    font-size: 1.625rem;
+    .half-title {
+      color: #000;
+    }
+  }
+}
+
+@keyframes color-change {
+  from {
+    color: #000;
+  }
+  to {
+    color: #fff;
+  }
+}
+
+.letters-container {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: all 0.2s ease-in;
+  svg {
+    position: absolute;
+  }
+  .letter-a-bold {
+    @include lettersPosition(13%, 35%);
+  }
+  .letter-a {
+    @include lettersPosition(30%, 40%);
+  }
+  .letter-d {
+    @include lettersPosition(27%, 60%);
+  }
+  .letter-i {
+    @include lettersPosition(18%, 50%);
+  }
+  .letter-n {
+    @include lettersPosition(38%, 80%);
+  }
+  .letter-o-bold {
+    @include lettersPosition(12%, 70%);
+  }
+  .letter-q {
+    @include lettersPosition(12%, 10%);
+  }
+  .letter-s {
+    @include lettersPosition(22%, 28%);
+  }
+  .fill-n {
+    fill: #000 !important;
+  }
+}
+
+.letters-container-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sorted-letters-container {
+  opacity: 0;
+  transition: opacity 0.2s ease-in 0.7s;
+  position: absolute;
+  z-index: 999;
+  @include lettersPosition(10%, 80%);
+  svg {
+    fill: #fff;
+  }
+  .letter-o-bold {
+    margin-bottom: -30px;
+  }
+  .letter-i {
+    margin-bottom: 20px;
+  }
+  .letter-d {
+    margin-bottom: -30px;
+  }
+  .letter-a {
+    margin-bottom: -10px;
+  }
+}
+
+.big-title {
+  position: absolute;
+  bottom: 12%;
+  right: 3%;
+  line-height: 120px;
+  transform: translate(-5%, -12%);
+  font-size: 72px;
+  font-weight: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease-in;
+}
+
+.big-title-active {
+  opacity: 1;
+  pointer-events: all;
+  font-size: 100px;
+}
