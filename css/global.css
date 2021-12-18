@@ -159,6 +159,30 @@ table {
   transition: fill 0.3s ease-in 0.4s;
 }
 
+.navigation {
+  position: absolute;
+  z-index: 1111;
+  margin-left: 40px;
+  margin-top: 41px;
+  display: none;
+}
+
+.navigation .navigation-bar .burger-share-container {
+  display: flex;
+}
+
+.navigation .navigation-bar .burger-share-container a {
+  margin: 1px;
+}
+
+.navigation .navigation-bar .facebook-instagram-container {
+  display: flex;
+}
+
+.navigation .navigation-bar .facebook-instagram-container a {
+  margin: 1px;
+}
+
 .play-button-loader-wrapper {
   position: absolute;
   top: 60%;
