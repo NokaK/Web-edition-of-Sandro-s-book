@@ -1,0 +1,5 @@
+@mixin lettersPosition($x: 50%, $y: 50%) {
+  top: $y;
+  left: $x;
+  transform: translate(-$x, -$y);
+}
