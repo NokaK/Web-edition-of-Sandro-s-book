@@ -6,7 +6,7 @@ const mainMenuButton = document.querySelector('.main-menu-button');
 
 setTimeout(() => {
   navigation.style.display = 'block';
-}, 700);
+}, 1700);
 
 mainMenuButton.addEventListener('click', (e) => {
   menuModal.classList.add('menu-active');
