@@ -8,11 +8,12 @@ setTimeout(() => {
   navigation.style.display = 'block';
 }, 1700);
 
+// menu modal open
 mainMenuButton.addEventListener('click', (e) => {
   menuModal.classList.add('menu-active');
   modalCloseButton.style.pointerEvents = 'all'
 })
-
+// menu modal close
 modalCloseButton.addEventListener('click', () => {
   if (menuModal.classList.contains("menu-active")) {
     menuModal.classList.remove("menu-active");
