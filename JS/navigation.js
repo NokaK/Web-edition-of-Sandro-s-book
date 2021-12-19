@@ -9,7 +9,7 @@ setTimeout(() => {
 }, 1700);
 
 // menu modal open
-mainMenuButton.addEventListener('click', (e) => {
+mainMenuButton.addEventListener('click', () => {
   menuModal.classList.add('menu-active');
   modalCloseButton.style.pointerEvents = 'all'
 })
