@@ -333,10 +333,10 @@ table {
   font-size: 100px;
 }
 
-.menu-active {
-  visibility: visible !important;
-  pointer-events: all !important;
-  transform: translateX(0) !important;
+.menu-modal-wrapper.menu-active {
+  visibility: visible;
+  pointer-events: all;
+  transform: translateX(0);
 }
 
 .menu-modal-wrapper {
