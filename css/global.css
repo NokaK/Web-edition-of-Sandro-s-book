@@ -173,7 +173,12 @@ table {
 }
 
 .navigation .navigation-bar .burger-share-container a {
+  cursor: pointer;
   margin: 1px;
+}
+
+.navigation .navigation-bar .burger-share-container a img {
+  pointer-events: none;
 }
 
 .navigation .navigation-bar .facebook-instagram-container {
@@ -334,5 +339,46 @@ table {
   opacity: 1;
   pointer-events: all;
   font-size: 100px;
+}
+
+.menu-modal-wrapper.menu-active {
+  visibility: visible;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+.menu-modal-wrapper {
+  visibility: hidden;
+  pointer-events: none;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 2020;
+  background-color: #1C1C1C;
+  transform: translateX(-100%);
+  transition: .2s ease-in-out;
+}
+
+.menu-modal-wrapper .close-menu-button {
+  width: 17px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.menu-modal-wrapper .close-menu-button .line-1, .menu-modal-wrapper .close-menu-button .line-2 {
+  height: 3px;
+  width: 18px;
+  background-color: #707070;
+}
+
+.menu-modal-wrapper .close-menu-button .line-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-modal-wrapper .close-menu-button .line-2 {
+  transform: rotate(-45deg) translate(-3px, 3px);
 }
 /*# sourceMappingURL=global.css.map */
