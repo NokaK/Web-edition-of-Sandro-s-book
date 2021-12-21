@@ -142,6 +142,8 @@
   visibility: visible;
   pointer-events: all;
   transform: translateX(0);
+  max-width: 1366px;
+  width: 100%;
 }
 // .main-menu{
 //   cursor: pointer;
@@ -182,8 +184,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 100%;
-  width: 1366px;
+  width: 90%;
   margin: 0 auto;
   padding: 45px 0 94px 0;
   h2 {
@@ -197,6 +198,7 @@
 
 .active-menu-button {
   font-size: 40px !important;
+  line-height: 50px !important;
 }
 
 .table-comps {
@@ -213,8 +215,7 @@
   a {
     text-decoration: none;
   }
-  max-width: 1366px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
