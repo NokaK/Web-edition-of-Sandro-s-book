@@ -3,7 +3,6 @@ const loader = document.getElementById('loader');
 const playButtonLoaderWrapper = document.getElementById(
   'play-button-loader-wrapper'
 );
-const halfTitle = document.querySelector('.half-title');
 const lettersContainer = document.getElementById('letters-container');
 const sorted_letters_container = document.getElementById(
   'sorted-letters-container'
@@ -21,6 +20,5 @@ window.addEventListener('load', () => {
     loaderContainer.style.transform = 'translateX(-50%)';
     loaderContainer.style.transitionDelay = '0.5s';
     sorted_letters_container.style.opacity = '1';
-    halfTitle.style.animation = 'color-change 0.2s ease 0.7s forwards';
   }, 2000);
 });

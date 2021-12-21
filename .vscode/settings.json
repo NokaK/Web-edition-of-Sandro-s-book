@@ -1,24 +1,24 @@
 {
-    "webhint.enableTelemetry": "enabled",
-    "liveSassCompile.settings.autoprefix": [],
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "expanded",
-            "extensionName": ".css",
-            "savePath": "./css"
-        }
-    ],
-    "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "prettier.singleQuote": true,
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "stylelint.vscode-stylelint"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "webhint.enableTelemetry": "enabled",
+  "liveSassCompile.settings.autoprefix": [],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "./css"
     }
+  ],
+  "files.autoSave": "off",
+  "editor.formatOnSave": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "prettier.singleQuote": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

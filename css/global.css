@@ -366,13 +366,16 @@ table {
   padding: 45px 0 94px 0;
 }
 
-.header h1 {
+.header h2 {
   color: #fff;
-  font-size: 40px;
-  line-height: 85px;
-  text-align: left;
+  font-size: 24px;
+  line-height: 29px;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.active-menu-button {
+  font-size: 40px !important;
 }
 
 .table-comps {
@@ -382,6 +385,17 @@ table {
   display: flex;
   flex-direction: row;
   gap: 125px;
+}
+
+.table-comps .about-text {
+  display: none;
+  padding: 8rem 1rem;
+}
+
+.table-comps .about-text p {
+  color: #fff;
+  line-height: 22px;
+  font-size: 18px;
 }
 
 .table-comps a {
@@ -402,7 +416,7 @@ table {
   gap: 73px;
 }
 
-.table-comps .row-1 h4 {
+.table-comps .row-1 h2 {
   color: #fff;
   font-size: 24px;
   line-height: 29px;
