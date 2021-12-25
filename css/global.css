@@ -386,7 +386,7 @@ table {
 
 .table-comps .about-text {
   display: none;
-  padding: 4rem 2rem 0 5rem;
+  padding: 64px 32px 0 80px;
 }
 
 .table-comps .about-text p {
@@ -437,12 +437,12 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.9rem 0;
+  margin: 14.4px 0;
 }
 
 .table-comps .row-1 .flex-comp svg {
   width: 78px;
-  padding-right: 1rem;
+  padding-right: 16px;
 }
 
 .table-comps .row-1 .flex-comp span {
