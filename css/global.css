@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'sandro';
+  src: url("../Sandro_font/Sandro_font/sandro-Bold.eot==");
+  /* IE9 Compat Modes */
+  src: url("../Sandro_font/Sandro_font/sandro-Bold.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-Bold.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-Bold.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-Bold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
 *,
 *::before,
 *::after {
@@ -93,6 +101,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-decoration: none;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -139,6 +148,10 @@ table {
   border-spacing: 0;
 }
 
+body {
+  font-family: 'sandro', sans-serif;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -147,7 +160,7 @@ table {
   height: 100vh;
   background: #1c1c1c;
   transition: transform 0.3s ease-in 0.2s;
-  z-index: 9;
+  z-index: 10;
 }
 
 .loader {
@@ -161,10 +174,13 @@ table {
 
 .navigation {
   position: absolute;
-  z-index: 1111;
-  margin-left: 40px;
-  margin-top: 41px;
-  display: none;
+  top: 5%;
+  left: 5%;
+  transform: translate(-5%, -5%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 20;
 }
 
 .navigation .navigation-bar .burger-share-container {
@@ -194,13 +210,12 @@ table {
   left: 50%;
   transform: translate(-50%, -60%);
   display: none;
-  z-index: 99;
+  z-index: 30;
 }
 
 .letters-container {
   opacity: 0;
   pointer-events: none;
-  z-index: -1;
   transition: all 0.2s ease-in;
 }
 
@@ -269,7 +284,7 @@ table {
   opacity: 0;
   transition: opacity 0.2s ease-in 0.7s;
   position: absolute;
-  z-index: 999;
+  z-index: 40;
   top: 80%;
   left: 10%;
   transform: translate(-10%, -80%);
@@ -318,23 +333,35 @@ table {
   visibility: visible;
   pointer-events: all;
   transform: translateX(0);
-  max-width: 1366px;
-  width: 100%;
 }
 
 .menu-modal-wrapper {
   visibility: hidden;
   pointer-events: none;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
-  z-index: 2020;
+  z-index: 50;
   background-color: #1c1c1c;
   transform: translateX(-100%);
   transition: 0.2s ease-in-out;
 }
 
-.menu-modal-wrapper .close-menu-button {
+.menu-modal-wrapper .header {
+  width: 90%;
+  margin: 0 auto;
+  padding: 45px 0 94px 0;
+}
+
+.menu-modal-wrapper .header h2 {
+  color: #fff;
+  font-size: 24px;
+  line-height: 29px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.menu-modal-wrapper .header .close-menu-button {
   width: 17px;
   height: 18px;
   cursor: pointer;
@@ -343,54 +370,35 @@ table {
   right: 5%;
 }
 
-.menu-modal-wrapper .close-menu-button .line-1,
-.menu-modal-wrapper .close-menu-button .line-2 {
+.menu-modal-wrapper .header .close-menu-button .line-1,
+.menu-modal-wrapper .header .close-menu-button .line-2 {
   height: 3px;
   width: 18px;
   background-color: #707070;
 }
 
-.menu-modal-wrapper .close-menu-button .line-1 {
+.menu-modal-wrapper .header .close-menu-button .line-1 {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.menu-modal-wrapper .close-menu-button .line-2 {
+.menu-modal-wrapper .header .close-menu-button .line-2 {
   transform: rotate(-45deg) translate(-3px, 3px);
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 90%;
-  margin: 0 auto;
-  padding: 45px 0 94px 0;
-}
-
-.header h2 {
-  color: #fff;
-  font-size: 24px;
-  line-height: 29px;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-
 .active-menu-button {
-  font-size: 40px !important;
-  line-height: 50px !important;
+  font-size: 30px !important;
 }
 
 .table-comps {
   width: 90%;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  gap: 125px;
+  justify-content: space-between;
 }
 
 .table-comps .about-text {
   display: none;
-  padding: 8rem 1rem;
+  padding: 4rem 2rem 0 5rem;
 }
 
 .table-comps .about-text p {
@@ -399,22 +407,16 @@ table {
   font-size: 18px;
 }
 
-.table-comps a {
-  text-decoration: none;
-}
-
 .table-comps .content-display {
   display: flex;
-  flex-direction: row;
-  gap: 125px;
+  min-width: 80%;
+  justify-content: space-between;
   transition: all 0.5s;
 }
 
 .table-comps .row-1 {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 73px;
 }
 
 .table-comps .row-1 h2 {
@@ -443,11 +445,12 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 35px;
+  margin: 0.9rem 0;
 }
 
 .table-comps .row-1 .flex-comp svg {
   width: 78px;
+  padding-right: 1rem;
 }
 
 .table-comps .row-1 .flex-comp span {

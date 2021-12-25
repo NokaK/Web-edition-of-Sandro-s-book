@@ -31,8 +31,9 @@ contentHeaderText.addEventListener('click', () => {
 });
 
 setTimeout(() => {
-  navigation.style.display = 'block';
-}, 1700);
+  navigation.style.opacity = '1';
+  navigation.style.pointerEvents = 'all';
+}, 2700);
 
 // menu modal open
 mainMenuButton.addEventListener('click', () => {
