@@ -25,14 +25,15 @@ contentHeaderText.addEventListener('click', () => {
   contentHeaderText.classList.add('active-menu-button');
   aboutUsText.classList.remove('active-menu-button');
   //  content display appear here
-  contentDisplay.style.display = 'flex';
+  contentDisplay.style.display = 'block';
   // about lorem text disappear here
   aboutText.style.display = 'none';
 });
 
 setTimeout(() => {
-  navigation.style.display = 'block';
-}, 1700);
+  navigation.style.opacity = '1';
+  navigation.style.pointerEvents = 'all';
+}, 2700);
 
 // menu modal open
 mainMenuButton.addEventListener('click', () => {
