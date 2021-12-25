@@ -398,7 +398,7 @@ body {
 
 .table-comps .about-text {
   display: none;
-  padding: 4rem 2rem 0 5rem;
+  padding: 64px 32px 0 80px;
 }
 
 .table-comps .about-text p {
@@ -408,15 +408,19 @@ body {
 }
 
 .table-comps .content-display {
-  display: flex;
-  min-width: 80%;
-  justify-content: space-between;
+  width: 100%;
   transition: all 0.5s;
 }
 
 .table-comps .row-1 {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 60px;
+  grid-row-gap: 30px;
+}
+
+.table-comps .row-1 .grid-item {
+  text-align: center;
 }
 
 .table-comps .row-1 h2 {
@@ -445,12 +449,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.9rem 0;
+  margin: 14.4px 0;
 }
 
 .table-comps .row-1 .flex-comp svg {
   width: 78px;
-  padding-right: 1rem;
+  padding-right: 16px;
 }
 
 .table-comps .row-1 .flex-comp span {

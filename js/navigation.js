@@ -25,7 +25,7 @@ contentHeaderText.addEventListener('click', () => {
   contentHeaderText.classList.add('active-menu-button');
   aboutUsText.classList.remove('active-menu-button');
   //  content display appear here
-  contentDisplay.style.display = 'flex';
+  contentDisplay.style.display = 'block';
   // about lorem text disappear here
   aboutText.style.display = 'none';
 });
