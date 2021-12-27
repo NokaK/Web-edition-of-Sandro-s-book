@@ -3,7 +3,7 @@ const loader = document.getElementById('loader');
 const playButtonLoaderWrapper = document.getElementById(
   'play-button-loader-wrapper'
 );
-const halfTitle = document.querySelector('.half-title');
+const startButton = document.getElementById('start-button');
 const lettersContainer = document.getElementById('letters-container');
 const sorted_letters_container = document.getElementById(
   'sorted-letters-container'
@@ -23,7 +23,6 @@ window.addEventListener('load', () => {
     loaderContainer.style.transform = 'translateX(-50%)';
     loaderContainer.style.transitionDelay = '0.5s';
     sorted_letters_container.style.opacity = '1';
-    // halfTitle.style.color = "#fff";
-    halfTitle.style.animation = 'color-change 0.2s ease 0.7s forwards';
-  }, 1000);
+    startButton.style.display = 'block';
+  }, 2000);
 });

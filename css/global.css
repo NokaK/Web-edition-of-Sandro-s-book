@@ -139,6 +139,26 @@ table {
   border-spacing: 0;
 }
 
+body {
+  background-color: #fff;
+}
+
+.start-button {
+  display: none;
+  color: #fff;
+  position: absolute;
+  mix-blend-mode: difference;
+  left: 50%;
+  top: 67%;
+  z-index: 99;
+  font-size: 26px;
+  transform: translate(-50%, -50%);
+}
+
+.start-button:hover {
+  cursor: pointer;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -196,10 +216,8 @@ table {
 .play-button-loader-wrapper p {
   padding: 0 0.5rem 0 0;
   font-size: 1.625rem;
-}
-
-.play-button-loader-wrapper p .half-title {
-  color: #000;
+  color: black;
+  mix-blend-mode: difference;
 }
 
 @keyframes color-change {
