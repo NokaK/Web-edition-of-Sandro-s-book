@@ -43,17 +43,46 @@ body {
   margin-left: 40px;
   margin-top: 41px;
   display: none;
+  .publishing-house-header-icon {
+    margin-bottom: 16px;
+  }
   .navigation-bar {
     .burger-share-container {
-      display: flex;
-      a {
-        margin: 1px;
+      margin-bottom: -2px;
+      margin-left: -4px;
+      .burger-button {
+        margin-bottom: -2px;
+      }
+      .share-button-background {
+        margin-left: -2px;
+        position: relative;
+      }
+      .share-button {
+        position: absolute;
+        z-index: 1;
+        right: 27px;
+        bottom: 85px;
       }
     }
     .facebook-instagram-container {
-      display: flex;
-      a {
-        margin: 1px;
+      .facebook-icon-background {
+        position: relative;
+      }
+      .facebook-icon {
+        position: absolute;
+        z-index: 1;
+        left: 18px;
+        bottom: 22px;
+      }
+      .instagram-icon-background {
+        margin-left: -6px;
+        position: relative;
+      }
+      .instagram-icon {
+        position: absolute;
+        z-index: 1;
+        left: 72px;
+        bottom: 23px;
       }
     }
   }
