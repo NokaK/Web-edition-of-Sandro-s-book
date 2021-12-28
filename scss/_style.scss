@@ -50,23 +50,24 @@ body {
     .burger-share-container {
       margin-bottom: -2px;
       margin-left: -4px;
+      position: relative;
       .burger-button {
         margin-bottom: -2px;
       }
       .share-button-background {
         margin-left: -2px;
-        position: relative;
       }
       .share-button {
         position: absolute;
         z-index: 1;
-        right: 27px;
-        bottom: 85px;
+        right: 26px;
+        bottom: 22px;
       }
     }
     .facebook-instagram-container {
+      position: relative;
+      margin-bottom: 22px;
       .facebook-icon-background {
-        position: relative;
       }
       .facebook-icon {
         position: absolute;
@@ -83,6 +84,50 @@ body {
         z-index: 1;
         left: 72px;
         bottom: 23px;
+      }
+    }
+    .secondary-nav-bar {
+      display: none;
+      .job-title {
+        margin-bottom: 20px;
+        position: relative;
+        .title {
+          position: absolute;
+          top: 10px;
+          left: 5px;
+          p {
+            line-height: 26px;
+          }
+        }
+      }
+      .arrows-container {
+        margin-bottom: 20px;
+        position: relative;
+        .arrow-buttons {
+          position: absolute;
+          top: 7px;
+          .left-arrow-button {
+            margin-left: 5px;
+            margin-top: 5px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .right-arrow-button {
+            position: absolute;
+            top: 45px;
+            left: 55px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .play-button-container {
+        margin-bottom: 20px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
