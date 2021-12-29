@@ -150,6 +150,7 @@ table {
 
 body {
   font-family: 'sandro', sans-serif;
+  background: #fff;
 }
 
 .loader-container {
@@ -211,6 +212,18 @@ body {
   transform: translate(-50%, -60%);
   display: none;
   z-index: 30;
+}
+
+.starting-button-title {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  color: #fff;
+  padding: 0 8px 0 0;
+  mix-blend-mode: difference;
+  opacity: 0;
+  z-index: 15;
 }
 
 .letters-container {
@@ -315,7 +328,7 @@ body {
   bottom: 12%;
   right: 3%;
   line-height: 120px;
-  transform: translate(-5%, -12%);
+  transform: translate(-3%, -12%);
   font-size: 72px;
   font-weight: 100;
   opacity: 0;
