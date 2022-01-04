@@ -1,5 +1,6 @@
 body {
-  font-family: 'sandro-Regular', sans-serif;
+  font-family: 'sandro', sans-serif;
+  background: #fff;
 }
 
 .loader-container {
@@ -24,8 +25,6 @@ body {
 
 .navigation {
   position: absolute;
-  // margin-left: 40px;
-  // margin-top: 41px;
   top: 5%;
   left: 5%;
   transform: translate(-5%, -5%);
@@ -62,6 +61,16 @@ body {
   z-index: 30;
 }
 
+.starting-button-title {
+  position: fixed;
+  @include positions(50%, 70%);
+  color: #fff;
+  padding: 0 8px 0 0;
+  mix-blend-mode: difference;
+  opacity: 0;
+  z-index: 15;
+}
+
 .letters-container {
   opacity: 0;
   pointer-events: none;
@@ -70,28 +79,28 @@ body {
     position: absolute;
   }
   .letter-a-bold {
-    @include lettersPosition(13%, 35%);
+    @include positions(13%, 35%);
   }
   .letter-a {
-    @include lettersPosition(30%, 40%);
+    @include positions(30%, 40%);
   }
   .letter-d {
-    @include lettersPosition(27%, 60%);
+    @include positions(27%, 60%);
   }
   .letter-i {
-    @include lettersPosition(18%, 50%);
+    @include positions(18%, 50%);
   }
   .letter-n {
-    @include lettersPosition(38%, 80%);
+    @include positions(38%, 80%);
   }
   .letter-o-bold {
-    @include lettersPosition(12%, 70%);
+    @include positions(12%, 70%);
   }
   .letter-q {
-    @include lettersPosition(12%, 10%);
+    @include positions(12%, 10%);
   }
   .letter-s {
-    @include lettersPosition(22%, 28%);
+    @include positions(22%, 28%);
   }
   .fill-n {
     fill: #000 !important;
@@ -108,7 +117,7 @@ body {
   transition: opacity 0.2s ease-in 0.7s;
   position: absolute;
   z-index: 40;
-  @include lettersPosition(10%, 80%);
+  @include positions(10%, 80%);
   svg {
     fill: #fff;
   }
@@ -131,7 +140,7 @@ body {
   bottom: 12%;
   right: 3%;
   line-height: 120px;
-  transform: translate(-5%, -12%);
+  transform: translate(-3%, -12%);
   font-size: 72px;
   font-weight: 100;
   opacity: 0;
@@ -207,7 +216,7 @@ body {
   justify-content: space-between;
   .about-text {
     display: none;
-    padding: 4rem 2rem 0 5rem;
+    padding: 64px 32px 0 80px;
     p {
       color: #fff;
       line-height: 22px;
@@ -216,14 +225,17 @@ body {
   }
 
   .content-display {
-    display: flex;
-    min-width: 80%;
-    justify-content: space-between;
+    width: 100%;
     transition: all 0.5s;
   }
   .row-1 {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 60px;
+    grid-row-gap: 30px;
+    .grid-item {
+      text-align: center;
+    }
     h2 {
       color: #fff;
       font-size: 24px;
@@ -247,10 +259,10 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0.9rem 0;
+      margin: 14.4px 0;
       svg {
         width: 78px;
-        padding-right: 1rem;
+        padding-right: 16px;
       }
       span {
         color: #fff;
