@@ -209,7 +209,6 @@ body {
   font-size: 30px !important;
 }
 
-
 .table-comps {
   width: 90%;
   margin: 0 auto;
@@ -228,16 +227,15 @@ body {
   .content-display {
     width: 100%;
     transition: all 0.5s;
-    
   }
   .row-1 {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 60px;
     grid-row-gap: 30px;
-  .grid-item{
-    text-align: center;
-  }
+    .grid-item {
+      text-align: center;
+    }
     h2 {
       color: #fff;
       font-size: 24px;
