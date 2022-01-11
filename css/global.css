@@ -1,8 +1,32 @@
 @font-face {
-  font-family: 'sandro';
+  font-family: 'sandro-Regular';
+  src: url("../Sandro_font/Sandro_font/sandro-Regular.eot==");
+  /* IE9 Compat Modes */
+  src: url("../Sandro_font/Sandro_font/sandro-Regular.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-Regular.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-Regular.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-Regular.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'sandro-Bold';
   src: url("../Sandro_font/Sandro_font/sandro-Bold.eot==");
   /* IE9 Compat Modes */
   src: url("../Sandro_font/Sandro_font/sandro-Bold.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-Bold.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-Bold.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-Bold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'sandro-Italic';
+  src: url("../Sandro_font/Sandro_font/sandro-Italic.eot==");
+  /* IE9 Compat Modes */
+  src: url("../Sandro_font/Sandro_font/sandro-Italic.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-Italic.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-Italic.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-Italic.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'sandro-BoldItalic';
+  src: url("../Sandro_font/Sandro_font/sandro-BoldItalic.eot==");
+  /* IE9 Compat Modes */
+  src: url("../Sandro_font/Sandro_font/sandro-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
 
@@ -476,4 +500,3 @@ body {
   line-height: 19px;
   width: 130px;
 }
-/*# sourceMappingURL=global.css.map */
