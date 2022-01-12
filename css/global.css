@@ -388,6 +388,8 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 45px 0 94px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menu-modal-wrapper .header h2 {
@@ -402,9 +404,6 @@ body {
   width: 17px;
   height: 18px;
   cursor: pointer;
-  position: absolute;
-  top: 5%;
-  right: 5%;
 }
 
 .menu-modal-wrapper .header .close-menu-button .line-1,
@@ -467,6 +466,7 @@ body {
   width: 105px;
   cursor: pointer;
   transition: all 0.5s;
+  height: fit-content;
 }
 
 .table-comps .row-1 .svg-holder {
