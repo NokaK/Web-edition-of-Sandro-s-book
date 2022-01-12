@@ -453,7 +453,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 60px;
-  grid-row-gap: 30px;
+  grid-row-gap: 45px;
 }
 
 .table-comps .row-1 .grid-item {
@@ -486,7 +486,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 14.4px 0;
 }
 
 .table-comps .row-1 .flex-comp svg {
@@ -500,3 +499,4 @@ body {
   line-height: 19px;
   width: 130px;
 }
+/*# sourceMappingURL=global.css.map */
