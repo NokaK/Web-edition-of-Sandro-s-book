@@ -199,34 +199,115 @@ body {
 
 .navigation {
   position: absolute;
-  top: 5%;
-  left: 5%;
-  transform: translate(-5%, -5%);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s ease;
-  z-index: 20;
+  z-index: 1111;
+  margin-left: 40px;
+  margin-top: 41px;
+  display: none;
+}
+
+.navigation .publishing-house-header-icon {
+  margin-bottom: 16px;
 }
 
 .navigation .navigation-bar .burger-share-container {
-  display: flex;
+  margin-bottom: -2px;
+  margin-left: -4px;
+  position: relative;
 }
 
-.navigation .navigation-bar .burger-share-container a {
-  cursor: pointer;
-  margin: 1px;
+.navigation .navigation-bar .burger-share-container .burger-button {
+  margin-bottom: -2px;
 }
 
-.navigation .navigation-bar .burger-share-container a img {
-  pointer-events: none;
+.navigation .navigation-bar .burger-share-container .share-button-background {
+  margin-left: -2px;
+}
+
+.navigation .navigation-bar .burger-share-container .share-button {
+  position: absolute;
+  z-index: 1;
+  right: 26px;
+  bottom: 22px;
 }
 
 .navigation .navigation-bar .facebook-instagram-container {
-  display: flex;
+  position: relative;
+  margin-bottom: 22px;
 }
 
-.navigation .navigation-bar .facebook-instagram-container a {
-  margin: 1px;
+.navigation .navigation-bar .facebook-instagram-container .facebook-icon {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  bottom: 22px;
+}
+
+.navigation .navigation-bar .facebook-instagram-container .instagram-icon-background {
+  margin-left: -6px;
+  position: relative;
+}
+
+.navigation .navigation-bar .facebook-instagram-container .instagram-icon {
+  position: absolute;
+  z-index: 1;
+  left: 72px;
+  bottom: 23px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar {
+  display: block;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .job-title {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .job-title .title {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .job-title .title p {
+  line-height: 26px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .arrows-container {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons {
+  position: absolute;
+  top: 7px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .left-arrow-button {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .left-arrow-button:hover {
+  cursor: pointer;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .right-arrow-button {
+  position: absolute;
+  top: 45px;
+  left: 55px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .right-arrow-button:hover {
+  cursor: pointer;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .play-button-container {
+  margin-bottom: 20px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .play-button-container:hover {
+  cursor: pointer;
 }
 
 .play-button-loader-wrapper {
@@ -500,3 +581,4 @@ body {
   line-height: 19px;
   width: 130px;
 }
+/*# sourceMappingURL=global.css.map */

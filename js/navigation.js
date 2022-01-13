@@ -29,20 +29,26 @@ contentHeaderText.addEventListener('click', () => {
   // about lorem text disappear here
   aboutText.style.display = 'none';
 });
-
+/*
 setTimeout(() => {
   navigation.style.opacity = '1';
   navigation.style.pointerEvents = 'all';
+}, 2700);
+*/
+setTimeout(() => {
+  navigation.style.display = 'block';
 }, 2700);
 
 // menu modal open
 mainMenuButton.addEventListener('click', () => {
   menuModal.classList.add('menu-active');
+  navigation.style.display = 'none';
   modalCloseButton.style.pointerEvents = 'all';
 });
 // menu modal close
 modalCloseButton.addEventListener('click', () => {
   if (menuModal.classList.contains('menu-active')) {
     menuModal.classList.remove('menu-active');
+    navigation.style.display = 'block';
   }
 });
