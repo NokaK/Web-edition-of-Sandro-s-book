@@ -25,28 +25,95 @@ body {
 
 .navigation {
   position: absolute;
-  top: 5%;
-  left: 5%;
-  transform: translate(-5%, -5%);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s ease;
-  z-index: 20;
+  z-index: 1111;
+  margin-left: 40px;
+  margin-top: 41px;
+  display: none;
+  .publishing-house-header-icon {
+    margin-bottom: 16px;
+  }
   .navigation-bar {
     .burger-share-container {
-      display: flex;
-      a {
-        cursor: pointer;
-        margin: 1px;
-        img {
-          pointer-events: none;
-        }
+      margin-bottom: -2px;
+      margin-left: -4px;
+      position: relative;
+      .burger-button {
+        margin-bottom: -2px;
+      }
+      .share-button-background {
+        margin-left: -2px;
+      }
+      .share-button {
+        position: absolute;
+        z-index: 1;
+        right: 26px;
+        bottom: 22px;
       }
     }
     .facebook-instagram-container {
-      display: flex;
-      a {
-        margin: 1px;
+      position: relative;
+      margin-bottom: 22px;
+      .facebook-icon-background {
+      }
+      .facebook-icon {
+        position: absolute;
+        z-index: 1;
+        left: 18px;
+        bottom: 22px;
+      }
+      .instagram-icon-background {
+        margin-left: -6px;
+        position: relative;
+      }
+      .instagram-icon {
+        position: absolute;
+        z-index: 1;
+        left: 72px;
+        bottom: 23px;
+      }
+    }
+    .secondary-nav-bar {
+      display: block;
+      .job-title {
+        margin-bottom: 20px;
+        position: relative;
+        .title {
+          position: absolute;
+          top: 10px;
+          left: 5px;
+          p {
+            line-height: 26px;
+          }
+        }
+      }
+      .arrows-container {
+        margin-bottom: 20px;
+        position: relative;
+        .arrow-buttons {
+          position: absolute;
+          top: 7px;
+          .left-arrow-button {
+            margin-left: 5px;
+            margin-top: 5px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .right-arrow-button {
+            position: absolute;
+            top: 45px;
+            left: 55px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .play-button-container {
+        margin-bottom: 20px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
