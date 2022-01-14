@@ -483,6 +483,10 @@ body {
   transition: all 0.5s;
 }
 
+.menu-modal-wrapper .header h2.active-menu-button {
+  font-size: 30px;
+}
+
 .menu-modal-wrapper .header .close-menu-button {
   width: 17px;
   height: 18px;
@@ -505,10 +509,6 @@ body {
 
 .menu-modal-wrapper .header .close-menu-button .line-2 {
   transform: rotate(-45deg) translate(-3px, 3px);
-}
-
-.active-menu-button {
-  font-size: 30px !important;
 }
 
 .table-comps {
@@ -554,6 +554,11 @@ body {
   width: 105px;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.table-comps .row-1 h2.active-menu-button {
+  font-size: 30px;
+  line-height: 35px;
 }
 
 .table-comps .row-1 .svg-holder {

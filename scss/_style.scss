@@ -53,8 +53,6 @@ body {
     .facebook-instagram-container {
       position: relative;
       margin-bottom: 22px;
-      .facebook-icon-background {
-      }
       .facebook-icon {
         position: absolute;
         z-index: 1;
@@ -252,6 +250,9 @@ body {
       line-height: 29px;
       cursor: pointer;
       transition: all 0.5s;
+      &.active-menu-button {
+        font-size: 30px;
+      }
     }
     .close-menu-button {
       width: 17px;
@@ -274,10 +275,6 @@ body {
       }
     }
   }
-}
-
-.active-menu-button {
-  font-size: 30px !important;
 }
 
 .table-comps {
@@ -316,6 +313,10 @@ body {
       width: 105px;
       cursor: pointer;
       transition: all 0.5s;
+      &.active-menu-button {
+        font-size: 30px;
+        line-height: 35px;
+      }
     }
     .svg-holder {
       width: 72px;
