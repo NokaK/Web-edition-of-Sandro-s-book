@@ -1,5 +1,5 @@
 body {
-  font-family: 'sandro', sans-serif;
+  font-family: 'sandro-Regular', sans-serif;
   background: #fff;
 }
 
@@ -69,6 +69,7 @@ body {
   mix-blend-mode: difference;
   opacity: 0;
   z-index: 15;
+  font-family: 'sandro-Bold', sans-serif;
 }
 
 .letters-container {
@@ -136,6 +137,7 @@ body {
 }
 
 .big-title {
+  font-family: 'sandro-Bold', sans-serif;
   position: absolute;
   bottom: 12%;
   right: 3%;
@@ -152,6 +154,7 @@ body {
   opacity: 1;
   pointer-events: all;
   font-size: 100px;
+  font-family: 'sandro-Bold', sans-serif;
 }
 
 // active menu styles
@@ -176,6 +179,7 @@ body {
     margin: 0 auto;
     padding: 45px 0 94px 0;
     h2 {
+      font-family: 'sandro-Bold', sans-serif;
       color: #fff;
       font-size: 24px;
       line-height: 29px;
@@ -218,6 +222,7 @@ body {
     display: none;
     padding: 64px 32px 0 80px;
     p {
+      font-family: 'sandro-Bold', sans-serif;
       color: #fff;
       line-height: 22px;
       font-size: 18px;
@@ -237,6 +242,7 @@ body {
       text-align: center;
     }
     h2 {
+      font-family: 'sandro-Bold', sans-serif;
       color: #fff;
       font-size: 24px;
       line-height: 29px;
@@ -265,6 +271,7 @@ body {
         padding-right: 16px;
       }
       span {
+        font-family: 'sandro-Bold', sans-serif;
         color: #fff;
         font-size: 16px;
         line-height: 19px;

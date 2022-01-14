@@ -173,7 +173,7 @@ table {
 }
 
 body {
-  font-family: 'sandro', sans-serif;
+  font-family: 'sandro-Regular', sans-serif;
   background: #fff;
 }
 
@@ -248,6 +248,7 @@ body {
   mix-blend-mode: difference;
   opacity: 0;
   z-index: 15;
+  font-family: 'sandro-Bold', sans-serif;
 }
 
 .letters-container {
@@ -348,6 +349,7 @@ body {
 }
 
 .big-title {
+  font-family: 'sandro-Bold', sans-serif;
   position: absolute;
   bottom: 12%;
   right: 3%;
@@ -364,6 +366,7 @@ body {
   opacity: 1;
   pointer-events: all;
   font-size: 100px;
+  font-family: 'sandro-Bold', sans-serif;
 }
 
 .menu-modal-wrapper.menu-active {
@@ -391,6 +394,7 @@ body {
 }
 
 .menu-modal-wrapper .header h2 {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   font-size: 24px;
   line-height: 29px;
@@ -439,6 +443,7 @@ body {
 }
 
 .table-comps .about-text p {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   line-height: 22px;
   font-size: 18px;
@@ -461,6 +466,7 @@ body {
 }
 
 .table-comps .row-1 h2 {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   font-size: 24px;
   line-height: 29px;
@@ -495,8 +501,10 @@ body {
 }
 
 .table-comps .row-1 .flex-comp span {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   font-size: 16px;
   line-height: 19px;
   width: 130px;
 }
+/*# sourceMappingURL=global.css.map */
