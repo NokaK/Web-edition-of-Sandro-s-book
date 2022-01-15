@@ -173,7 +173,7 @@ table {
 }
 
 body {
-  font-family: 'sandro', sans-serif;
+  font-family: 'sandro-Regular', sans-serif;
   background: #fff;
 }
 
@@ -329,6 +329,7 @@ body {
   mix-blend-mode: difference;
   opacity: 0;
   z-index: 15;
+  font-family: 'sandro-Bold', sans-serif;
 }
 
 .letters-container {
@@ -429,6 +430,7 @@ body {
 }
 
 .big-title {
+  font-family: 'sandro-Bold', sans-serif;
   position: absolute;
   bottom: 12%;
   right: 3%;
@@ -445,6 +447,7 @@ body {
   opacity: 1;
   pointer-events: all;
   font-size: 100px;
+  font-family: 'sandro-Bold', sans-serif;
 }
 
 .menu-modal-wrapper.menu-active {
@@ -472,11 +475,16 @@ body {
 }
 
 .menu-modal-wrapper .header h2 {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   font-size: 24px;
   line-height: 29px;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.menu-modal-wrapper .header h2.active-menu-button {
+  font-size: 30px;
 }
 
 .menu-modal-wrapper .header .close-menu-button {
@@ -503,10 +511,6 @@ body {
   transform: rotate(-45deg) translate(-3px, 3px);
 }
 
-.active-menu-button {
-  font-size: 30px !important;
-}
-
 .table-comps {
   width: 90%;
   margin: 0 auto;
@@ -520,6 +524,7 @@ body {
 }
 
 .table-comps .about-text p {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   line-height: 22px;
   font-size: 18px;
@@ -542,12 +547,18 @@ body {
 }
 
 .table-comps .row-1 h2 {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   font-size: 24px;
   line-height: 29px;
   width: 105px;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.table-comps .row-1 h2.active-menu-button {
+  font-size: 30px;
+  line-height: 35px;
 }
 
 .table-comps .row-1 .svg-holder {
@@ -576,6 +587,7 @@ body {
 }
 
 .table-comps .row-1 .flex-comp span {
+  font-family: 'sandro-Bold', sans-serif;
   color: #fff;
   font-size: 16px;
   line-height: 19px;
