@@ -38,7 +38,8 @@ body {
       margin-left: -4px;
       position: relative;
       .burger-button {
-        margin-bottom: -2px;
+        margin-bottom: -4px;
+        cursor: pointer;
       }
       .share-button-background {
         margin-left: -2px;
@@ -59,8 +60,12 @@ body {
         left: 18px;
         bottom: 22px;
       }
+      .facebook-icon-background {
+        margin-bottom: -2px;
+      }
       .instagram-icon-background {
         margin-left: -6px;
+        margin-top: -1px;
         position: relative;
       }
       .instagram-icon {

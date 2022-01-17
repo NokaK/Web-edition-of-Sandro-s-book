@@ -216,7 +216,8 @@ body {
 }
 
 .navigation .navigation-bar .burger-share-container .burger-button {
-  margin-bottom: -2px;
+  margin-bottom: -4px;
+  cursor: pointer;
 }
 
 .navigation .navigation-bar .burger-share-container .share-button-background {
@@ -242,8 +243,13 @@ body {
   bottom: 22px;
 }
 
+.navigation .navigation-bar .facebook-instagram-container .facebook-icon-background {
+  margin-bottom: -2px;
+}
+
 .navigation .navigation-bar .facebook-instagram-container .instagram-icon-background {
   margin-left: -6px;
+  margin-top: -1px;
   position: relative;
 }
 
