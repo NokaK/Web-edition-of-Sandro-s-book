@@ -23,6 +23,16 @@ body {
   transition: fill 0.3s ease-in 0.4s;
 }
 
+.secondary-background-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+}
+
 .navigation {
   position: absolute;
   z-index: 1111;
@@ -76,7 +86,7 @@ body {
       }
     }
     .secondary-nav-bar {
-      display: block;
+      display: none;
       .job-title {
         margin-bottom: 20px;
         position: relative;
