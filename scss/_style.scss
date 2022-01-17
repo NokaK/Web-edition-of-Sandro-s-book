@@ -23,6 +23,16 @@ body {
   transition: fill 0.3s ease-in 0.4s;
 }
 
+.secondary-background-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+}
+
 .navigation {
   position: absolute;
   z-index: 1111;
@@ -38,7 +48,8 @@ body {
       margin-left: -4px;
       position: relative;
       .burger-button {
-        margin-bottom: -2px;
+        margin-bottom: -4px;
+        cursor: pointer;
       }
       .share-button-background {
         margin-left: -2px;
@@ -59,8 +70,12 @@ body {
         left: 18px;
         bottom: 22px;
       }
+      .facebook-icon-background {
+        margin-bottom: -2px;
+      }
       .instagram-icon-background {
         margin-left: -6px;
+        margin-top: -1px;
         position: relative;
       }
       .instagram-icon {
@@ -71,7 +86,7 @@ body {
       }
     }
     .secondary-nav-bar {
-      display: block;
+      display: none;
       .job-title {
         margin-bottom: 20px;
         position: relative;

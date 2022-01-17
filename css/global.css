@@ -197,6 +197,16 @@ body {
   transition: fill 0.3s ease-in 0.4s;
 }
 
+.secondary-background-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+}
+
 .navigation {
   position: absolute;
   z-index: 1111;
@@ -216,7 +226,8 @@ body {
 }
 
 .navigation .navigation-bar .burger-share-container .burger-button {
-  margin-bottom: -2px;
+  margin-bottom: -4px;
+  cursor: pointer;
 }
 
 .navigation .navigation-bar .burger-share-container .share-button-background {
@@ -242,8 +253,13 @@ body {
   bottom: 22px;
 }
 
+.navigation .navigation-bar .facebook-instagram-container .facebook-icon-background {
+  margin-bottom: -2px;
+}
+
 .navigation .navigation-bar .facebook-instagram-container .instagram-icon-background {
   margin-left: -6px;
+  margin-top: -1px;
   position: relative;
 }
 
@@ -255,7 +271,7 @@ body {
 }
 
 .navigation .navigation-bar .secondary-nav-bar {
-  display: block;
+  display: none;
 }
 
 .navigation .navigation-bar .secondary-nav-bar .job-title {
