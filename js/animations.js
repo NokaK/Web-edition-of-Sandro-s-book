@@ -13,6 +13,10 @@ const secondaryBackground = document.getElementById(
   'secondary-background-image'
 );
 const secondaryNavBar = document.getElementById('secondary-nav-bar');
+const sexiestProf = document.getElementById('sexiestProf');
+const fromChaostoCosmos = document.getElementById('fromChaostoCosmos');
+const menuModalWrapper = document.querySelector('.menu-modal-wrapper');
+const navigationWrapper = document.getElementById('navigation');
 
 secondaryBackground.style.display = 'none';
 
@@ -31,12 +35,30 @@ window.addEventListener('load', () => {
   }, 2000);
 });
 
-playButtonLoaderWrapper.addEventListener('click', () => {
+const hideElements = () => {
   sorted_letters_container.style.display = 'none';
   bigTitle.style.display = 'none';
   playButtonLoaderWrapper.style.display = 'none';
   startingButtonTitle.style.display = 'none';
   lettersContainer.style.display = 'none';
+};
+
+const routeStylesFromContentTable = () => {
+  hideElements();
+  menuModalWrapper.style.display = 'none';
+  secondaryBackground.style.display = 'block';
+  navigationWrapper.style.display = 'block';
+  secondaryNavBar.style.display = 'block';
+  loaderContainer.style.transform = 'translateX(-0%)';
+  loaderContainer.style.transition = 'unset';
+  setTimeout(() => {
+    loaderContainer.style.transform = 'translateX(-85%)';
+    loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+  }, 2000);
+};
+
+playButtonLoaderWrapper.addEventListener('click', () => {
+  hideElements();
   secondaryBackground.style.display = 'block';
   secondaryNavBar.style.display = 'block';
   loaderContainer.style.transform = 'translateX(-0%)';
@@ -46,3 +68,7 @@ playButtonLoaderWrapper.addEventListener('click', () => {
     loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
   }, 2000);
 });
+
+sexiestProf.addEventListener('click', routeStylesFromContentTable);
+
+fromChaostoCosmos.addEventListener('click', routeStylesFromContentTable);
