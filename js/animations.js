@@ -43,6 +43,19 @@ const hideElements = () => {
   lettersContainer.style.display = 'none';
 };
 
+playButtonLoaderWrapper.addEventListener('click', () => {
+  hideElements();
+  secondaryBackground.style.display = 'block';
+  secondaryNavBar.style.display = 'block';
+  loaderContainer.style.transform = 'translateX(-0%)';
+  loaderContainer.style.transition = 'unset';
+  setTimeout(() => {
+    loaderContainer.style.transform = 'translateX(-85%)';
+    loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+  }, 2000);
+});
+
+/*
 const routeStylesFromContentTable = () => {
   hideElements();
   menuModalWrapper.style.display = 'none';
@@ -56,19 +69,10 @@ const routeStylesFromContentTable = () => {
     loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
   }, 2000);
 };
+*/
 
-playButtonLoaderWrapper.addEventListener('click', () => {
-  hideElements();
-  secondaryBackground.style.display = 'block';
-  secondaryNavBar.style.display = 'block';
-  loaderContainer.style.transform = 'translateX(-0%)';
-  loaderContainer.style.transition = 'unset';
-  setTimeout(() => {
-    loaderContainer.style.transform = 'translateX(-85%)';
-    loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-  }, 2000);
-});
-
+/*
 sexiestProf.addEventListener('click', routeStylesFromContentTable);
 
 fromChaostoCosmos.addEventListener('click', routeStylesFromContentTable);
+*/

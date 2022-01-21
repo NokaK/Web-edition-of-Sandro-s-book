@@ -31,6 +31,7 @@ body {
   z-index: 11;
   fill: white;
   mix-blend-mode: difference;
+  display: none;
 }
 
 .navigation {
@@ -317,9 +318,9 @@ body {
     grid-template-columns: auto auto auto;
     grid-column-gap: 60px;
     grid-row-gap: 30px;
-    .grid-item {
+    /*.grid-item {
       text-align: center;
-    }
+    }*/
     h2 {
       font-family: 'sandro-Bold', sans-serif;
       color: #fff;
@@ -334,24 +335,14 @@ body {
       }
     }
     .svg-holder {
-      width: 72px;
+      /* width: 72px;
       height: 72px;
-      position: relative;
-      svg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-    .flex-comp {
+      position: relative;*/
+      cursor: pointer;
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin: 14.4px 0;
       svg {
-        width: 78px;
-        padding-right: 16px;
+        width: 72px;
       }
       span {
         font-family: 'sandro-Bold', sans-serif;
@@ -359,7 +350,28 @@ body {
         font-size: 16px;
         line-height: 19px;
         width: 130px;
+        margin-left: 35px;
+        cursor: pointer;
       }
+    }
+    .flex-comp {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 14.4px 0;
+      /* svg {
+        width: 78px;
+        padding-right: 16px;
+      } 
+      span {
+        font-family: 'sandro-Bold', sans-serif;
+        color: #fff;
+        font-size: 16px;
+        line-height: 19px;
+        width: 130px;
+        margin-left: 35px;
+        cursor: pointer;
+      }*/
     }
   }
 }

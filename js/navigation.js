@@ -47,8 +47,8 @@ mainMenuButton.addEventListener('click', () => {
 });
 // menu modal close
 modalCloseButton.addEventListener('click', () => {
-  if (menuModal.classList.contains('menu-active')) {
-    menuModal.classList.remove('menu-active');
-    navigation.style.display = 'block';
-  }
+  //if (menuModal.classList.contains('menu-active')) {
+  menuModal.classList.remove('menu-active');
+  navigation.style.display = 'block';
+  //}
 });
