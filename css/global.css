@@ -488,6 +488,9 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 45px 0 94px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-modal-wrapper .header h2 {
@@ -507,9 +510,6 @@ body {
   width: 17px;
   height: 18px;
   cursor: pointer;
-  position: absolute;
-  top: 5%;
-  right: 5%;
 }
 
 .menu-modal-wrapper .header .close-menu-button .line-1,
@@ -555,7 +555,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 60px;
-  grid-row-gap: 30px;
+  grid-row-gap: 45px;
 }
 
 .table-comps .row-1 .grid-item {
@@ -568,6 +568,7 @@ body {
   font-size: 24px;
   line-height: 29px;
   width: 105px;
+  height: fit-content;
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -594,7 +595,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 14.4px 0;
 }
 
 .table-comps .row-1 .flex-comp svg {
