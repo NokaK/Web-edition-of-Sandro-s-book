@@ -557,9 +557,6 @@ body {
   grid-template-columns: auto auto auto;
   grid-column-gap: 60px;
   grid-row-gap: 30px;
-  /*.grid-item {
-      text-align: center;
-    }*/
 }
 
 .table-comps .row-1 h2 {
@@ -578,9 +575,6 @@ body {
 }
 
 .table-comps .row-1 .svg-holder {
-  /* width: 72px;
-      height: 72px;
-      position: relative;*/
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -605,18 +599,5 @@ body {
   justify-content: center;
   align-items: center;
   margin: 14.4px 0;
-  /* svg {
-        width: 78px;
-        padding-right: 16px;
-      } 
-      span {
-        font-family: 'sandro-Bold', sans-serif;
-        color: #fff;
-        font-size: 16px;
-        line-height: 19px;
-        width: 130px;
-        margin-left: 35px;
-        cursor: pointer;
-      }*/
 }
 /*# sourceMappingURL=global.css.map */

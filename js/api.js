@@ -371,7 +371,6 @@ for (let i = 0; i < items.length; i++) {
             ${items[i].svg}
             <span>${items[i].title}</span>
           </div>
-          
         </div>
     </div>
       `;
