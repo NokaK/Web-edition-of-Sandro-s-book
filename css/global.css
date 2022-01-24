@@ -467,20 +467,17 @@ body {
 }
 
 .menu-modal-wrapper.menu-active {
-  visibility: visible;
   pointer-events: all;
-  transform: translateX(0);
+  width: 100%;
 }
 
 .menu-modal-wrapper {
-  visibility: hidden;
   pointer-events: none;
   min-height: 100vh;
-  width: 100%;
+  width: 0%;
   position: relative;
   z-index: 50;
   background-color: #1c1c1c;
-  transform: translateX(-100%);
   transition: 0.2s ease-in-out;
 }
 
@@ -488,7 +485,7 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 45px 0 94px 0;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
 }
@@ -530,7 +527,7 @@ body {
 .table-comps {
   width: 90%;
   margin: 0 auto;
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
