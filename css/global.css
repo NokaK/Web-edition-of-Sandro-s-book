@@ -205,6 +205,7 @@ body {
   z-index: 11;
   fill: white;
   mix-blend-mode: difference;
+  display: none;
 }
 
 .navigation {
@@ -555,10 +556,6 @@ body {
   grid-row-gap: 45px;
 }
 
-.table-comps .row-1 .grid-item {
-  text-align: center;
-}
-
 .table-comps .row-1 h2 {
   font-family: 'sandro-Bold', sans-serif;
   color: #fff;
@@ -576,34 +573,29 @@ body {
 }
 
 .table-comps .row-1 .svg-holder {
-  width: 72px;
-  height: 72px;
-  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .table-comps .row-1 .svg-holder svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 72px;
+}
+
+.table-comps .row-1 .svg-holder span {
+  font-family: 'sandro-Bold', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  line-height: 19px;
+  width: 130px;
+  margin-left: 35px;
+  cursor: pointer;
 }
 
 .table-comps .row-1 .flex-comp {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.table-comps .row-1 .flex-comp svg {
-  width: 78px;
-  padding-right: 16px;
-}
-
-.table-comps .row-1 .flex-comp span {
-  font-family: 'sandro-Bold', sans-serif;
-  color: #fff;
-  font-size: 16px;
-  line-height: 19px;
-  width: 130px;
+  margin: 14.4px 0;
 }
 /*# sourceMappingURL=global.css.map */
