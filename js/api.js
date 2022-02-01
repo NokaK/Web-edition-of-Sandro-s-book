@@ -391,6 +391,10 @@ for (let i = 0; i < items.length; i++) {
       loaderContainer.style.transition = 'unset';
       menuModal.classList.remove('menu-active');
       navigation.style.display = 'block';
+      menuModal.classList.remove('menu-active');
+      navigation.style.display = 'block';
+      modalHeader.style.display = 'none';
+      tableComps.style.display = 'none';
       setTimeout(() => {
         loaderContainer.style.transform = 'translateX(-85%)';
         loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
@@ -399,42 +403,3 @@ for (let i = 0; i < items.length; i++) {
   });
   rowContainer.appendChild(cont);
 }
-//rowContainer.innerHTML += template;
-
-// console.log(items[i].id);
-//   if (items[i].id == 3) {
-//     items[i].id.addEventListener('click', (event) => {
-//       console.log(event);
-//     });
-//   }
-
-// const onClick = function () {
-//   console.log(this.id, this.innerHTML);
-// };
-// document.getElementById('1').onclick = onClick;
-
-// child = getElementsByClassName('grit-item')[0];
-// console.log(child);
-
-// let buttons = document.querySelectorAll('.grid-item');
-// console.log(buttons);
-// var asd = buttons.getElementByClassName()
-
-// buttons.forEach((item) => {
-//   console.log(item);
-// });
-
-// button = childDiv.getElementByTagName('flex-comp')[1];
-
-// for (let i = 0; i < items.length; i++) {
-//   items[1].addEventListener('click', console.log('asdasd'));
-// }
-
-// items.forEach((item) => {
-//   console.log(item[1].id);
-// });
-
-// item.addEventListener('click', (s) => {
-//   let asd = s.target.id;
-//   console.log(asd);
-// });
