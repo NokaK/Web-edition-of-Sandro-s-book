@@ -383,22 +383,67 @@ for (let i = 0; i < items.length; i++) {
   </div>
 </div>`;
   cont.addEventListener('click', function () {
-    if (items[i].id === 4) {
-      hideElements();
-      secondaryBackground.style.display = 'block';
-      secondaryNavBar.style.display = 'block';
-      loaderContainer.style.transform = 'translateX(-0%)';
-      loaderContainer.style.transition = 'unset';
-      menuModal.classList.remove('menu-active');
-      navigation.style.display = 'block';
-      menuModal.classList.remove('menu-active');
-      navigation.style.display = 'block';
-      modalHeader.style.display = 'none';
-      tableComps.style.display = 'none';
-      setTimeout(() => {
-        loaderContainer.style.transform = 'translateX(-85%)';
-        loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-      }, 2000);
+    switch (items[i].id) {
+      case 1:
+        if (secondaryBackground.style.display === 'block') {
+          secondaryBackground.style.display = 'none';
+          menuModal.classList.remove('menu-active');
+          navigation.style.display = 'block';
+          secondaryNavBar.style.display = 'none';
+          playButtonLoaderWrapper.style.display = 'block';
+          startingButtonTitle.style.display = 'block';
+          lettersContainer.classList.add('letters-container-active');
+          bigTitle.classList.add('big-title-active');
+          loaderContainer.style.transform = 'translateX(-50%)';
+          loaderContainer.style.transition = 'unset';
+          lettersContainer.style.display = 'block';
+          sorted_letters_container.style.display = 'block';
+          bigTitle.style.display = 'block';
+        } else {
+          menuModal.classList.remove('menu-active');
+          navigation.style.display = 'block';
+          secondaryNavBar.style.display = 'none';
+          playButtonLoaderWrapper.style.display = 'block';
+          startingButtonTitle.style.display = 'block';
+          lettersContainer.classList.add('letters-container-active');
+          bigTitle.classList.add('big-title-active');
+          loaderContainer.style.transform = 'translateX(-50%)';
+          loaderContainer.style.transition = 'unset';
+          lettersContainer.style.display = 'block';
+          sorted_letters_container.style.display = 'block';
+          bigTitle.style.display = 'block';
+        }
+        break;
+      case 4:
+        hideElements();
+        secondaryBackground.style.display = 'block';
+        secondaryNavBar.style.display = 'block';
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.style.display = 'block';
+        menuModal.classList.remove('menu-active');
+        navigation.style.display = 'block';
+        break;
+      case 7:
+        hideElements();
+        secondaryBackground.style.display = 'block';
+        secondaryNavBar.style.display = 'block';
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.style.display = 'block';
+        menuModal.classList.remove('menu-active');
+        navigation.style.display = 'block';
+        break;
     }
   });
   rowContainer.appendChild(cont);
