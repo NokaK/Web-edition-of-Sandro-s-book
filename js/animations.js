@@ -35,7 +35,7 @@ const hideElements = () => {
   bigTitle.classList.remove('big-title-active');
   playButtonLoaderWrapper.classList.remove('play-button-loader-wrapper-active');
   startingButtonTitle.classList.remove('starting-button-title-active');
-  lettersContainer.style.display = 'none';
+  lettersContainer.classList.remove('letters-container-active');
 };
 
 playButtonLoaderWrapper.addEventListener('click', () => {

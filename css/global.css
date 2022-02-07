@@ -431,7 +431,7 @@ body {
   fill: #000 !important;
 }
 
-.letters-container-active {
+.letters-container.letters-container-active {
   opacity: 1;
   pointer-events: all;
 }

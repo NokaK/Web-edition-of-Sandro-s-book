@@ -202,11 +202,10 @@ body {
   .fill-n {
     fill: #000 !important;
   }
-}
-
-.letters-container-active {
-  opacity: 1;
-  pointer-events: all;
+  &.letters-container-active {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 .sorted-letters-container {
