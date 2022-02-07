@@ -39,7 +39,6 @@ body {
   z-index: 1111;
   margin-left: 40px;
   margin-top: 41px;
-  display: none;
   .publishing-house-header-icon {
     margin-bottom: 16px;
   }
@@ -256,7 +255,7 @@ body {
     width: 90%;
     margin: 0 auto;
     padding: 45px 0 94px 0;
-    display: none;
+    // display: none;
     justify-content: space-between;
     align-items: center;
     h2 {
@@ -293,10 +292,8 @@ body {
 .table-comps {
   width: 90%;
   margin: 0 auto;
-  display: none;
   justify-content: space-between;
   .about-text {
-    display: none;
     padding: 64px 32px 0 80px;
     p {
       font-family: 'sandro-Bold', sans-serif;
@@ -354,4 +351,16 @@ body {
       margin: 14.4px 0;
     }
   }
+}
+
+.dn {
+  display: none;
+}
+
+.db {
+  display: block;
+}
+
+.df {
+  display: flex;
 }
