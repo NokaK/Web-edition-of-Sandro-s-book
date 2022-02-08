@@ -221,7 +221,6 @@ body {
   z-index: 1111;
   margin-left: 40px;
   margin-top: 41px;
-  display: none;
 }
 
 .navigation .publishing-house-header-icon {
@@ -511,7 +510,6 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 45px 0 94px 0;
-  display: none;
   justify-content: space-between;
   align-items: center;
 }
@@ -553,12 +551,10 @@ body {
 .table-comps {
   width: 90%;
   margin: 0 auto;
-  display: none;
   justify-content: space-between;
 }
 
 .table-comps .about-text {
-  display: none;
   padding: 64px 32px 0 80px;
 }
 
@@ -622,5 +618,17 @@ body {
   justify-content: center;
   align-items: center;
   margin: 14.4px 0;
+}
+
+.dn {
+  display: none;
+}
+
+.db {
+  display: block;
+}
+
+.df {
+  display: flex;
 }
 /*# sourceMappingURL=global.css.map */
