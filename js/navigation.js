@@ -3,8 +3,8 @@ const navigation = document.getElementById('navigation');
 const menuModal = document.querySelector('.menu-modal-wrapper');
 const modalCloseButton = document.querySelector('.close-menu-button');
 const mainMenuButton = document.querySelector('.main-menu-button');
-const modalHeader = document.querySelector('.header')
-const tableComps = document.querySelector('.table-comps')
+const modalHeader = document.querySelector('.header');
+const tableComps = document.querySelector('.table-comps');
 // navigation titles
 const contentHeaderText = document.getElementById('contentHeaderText');
 const aboutUsText = document.getElementById('aboutUsText');
@@ -16,10 +16,14 @@ aboutUsText.addEventListener('click', () => {
   // this callback function adds about us active class
   contentHeaderText.classList.remove('active-menu-button');
   aboutUsText.classList.add('active-menu-button');
+
   // content display disappear here
-  contentDisplay.style.display = 'none';
+  contentDisplay.classList.remove('db');
+  contentDisplay.classList.add('dn');
+
   // about lorem text appear here
-  aboutText.style.display = 'block';
+  aboutText.classList.remove('dn');
+  aboutText.classList.add('db');
 });
 
 contentHeaderText.addEventListener('click', () => {
@@ -27,9 +31,11 @@ contentHeaderText.addEventListener('click', () => {
   contentHeaderText.classList.add('active-menu-button');
   aboutUsText.classList.remove('active-menu-button');
   //  content display appear here
-  contentDisplay.style.display = 'block';
+  contentDisplay.classList.remove('dn');
+  contentDisplay.classList.add('db');
   // about lorem text disappear here
-  aboutText.style.display = 'none';
+  aboutText.classList.remove('db');
+  aboutText.classList.add('dn');
 });
 /*
 setTimeout(() => {
@@ -38,27 +44,32 @@ setTimeout(() => {
 }, 2700);
 */
 setTimeout(() => {
-  navigation.style.display = 'block';
+  navigation.classList.remove('dn');
+  navigation.classList.add('db');
 }, 2700);
 
 // menu modal open
 mainMenuButton.addEventListener('click', () => {
   menuModal.classList.add('menu-active');
-  navigation.style.display = 'none';
+  navigation.classList.remove('db');
+  navigation.classList.add('dn');
   modalCloseButton.style.pointerEvents = 'all';
   setTimeout(() => {
-    modalHeader.style.display = 'flex'
-    tableComps.style.display = 'flex'
+    modalHeader.classList.remove('dn');
+    modalHeader.classList.add('df');
+    tableComps.classList.remove('dn');
+    tableComps.classList.add('df');
   }, 200);
 });
 // menu modal close
 modalCloseButton.addEventListener('click', () => {
-
   if (menuModal.classList.contains('menu-active')) {
     menuModal.classList.remove('menu-active');
-    navigation.style.display = 'block';
-    modalHeader.style.display = 'none'
-    tableComps.style.display = 'none'
+    navigation.classList.remove('dn');
+    navigation.classList.add('db');
+    modalHeader.classList.remove('df');
+    modalHeader.classList.add('dn');
+    tableComps.classList.remove('df');
+    tableComps.classList.add('dn');
   }
-
 });
