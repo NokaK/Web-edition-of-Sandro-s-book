@@ -1,7 +1,6 @@
 let rowContainer = document.getElementById('row-1');
 const items = [
   {
-    clickable: false,
     id: 1,
     title: 'წინასიტყვაობა',
     svg: `<svg
@@ -20,10 +19,9 @@ const items = [
       <circle cx="36" cy="36" r="35.5" fill="none" />
     </g>
   </svg>`,
-    content: 'hello',
+    content: '',
   },
   {
-    clickable: false,
     id: 2,
     title: 'შეხვედრა ლევიათანთან',
     svg: `<svg
@@ -40,7 +38,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 3,
     title: 'შუშის ქილა',
     svg: `<svg
@@ -76,7 +73,6 @@ const items = [
     content: '',
   },
   {
-    clickable: true,
     id: 4,
     title: 'ქაოსიდან კოსმოსამდე',
     svg: `<svg
@@ -111,7 +107,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 5,
     title: 'ოფისების',
     svg: `<svg
@@ -141,7 +136,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 6,
     title: 'ციფრული სამოთხე',
     svg: `<svg
@@ -161,7 +155,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 7,
     title: 'ყველაზე სექსუალური პროფესია',
     svg: `<svg
@@ -196,7 +189,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 8,
     title: 'ხელოვნური ინტელექტი',
     svg: `<svg
@@ -231,7 +223,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 9,
     title: 'ნახატებით საუბარი',
     svg: `<svg
@@ -266,7 +257,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 10,
     title: 'ჯადოქარი',
     svg: `<svg
@@ -301,7 +291,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 11,
     title: 'ჭეშმარიტი მასწავლებელი',
     svg: `<svg
@@ -336,7 +325,6 @@ const items = [
     content: '',
   },
   {
-    clickable: false,
     id: 12,
     title: 'უკვდავება',
     svg: `<svg
@@ -385,39 +373,62 @@ for (let i = 0; i < items.length; i++) {
   cont.addEventListener('click', function () {
     switch (items[i].id) {
       case 1:
-        if (secondaryBackground.style.display === 'block') {
-          secondaryBackground.style.display = 'none';
+        if (
+          secondaryBackground.classList.contains(
+            'secondary-background-image-active'
+          )
+        ) {
+          secondaryBackground.classList.remove(
+            'secondary-background-image-active'
+          );
           menuModal.classList.remove('menu-active');
-          navigation.style.display = 'block';
-          secondaryNavBar.style.display = 'none';
-          playButtonLoaderWrapper.style.display = 'block';
-          startingButtonTitle.style.display = 'block';
+          modalHeader.classList.remove('df');
+          modalHeader.classList.add('dn');
+          tableComps.classList.remove('df');
+          tableComps.classList.add('dn');
+          navigation.classList.add('db');
+          secondaryNavBar.classList.remove('secondary-nav-bar-active');
+          playButtonLoaderWrapper.classList.add(
+            'play-button-loader-wrapper-active'
+          );
+          startingButtonTitle.classList.add('starting-button-title-active');
           lettersContainer.classList.add('letters-container-active');
           bigTitle.classList.add('big-title-active');
           loaderContainer.style.transform = 'translateX(-50%)';
           loaderContainer.style.transition = 'unset';
-          lettersContainer.style.display = 'block';
-          sorted_letters_container.style.display = 'block';
-          bigTitle.style.display = 'block';
+          lettersContainer.classList.add('letters-container-active');
+          sorted_letters_container.classList.add(
+            'sorted-letters-container-active'
+          );
+          bigTitle.classList.add('big-title-active');
         } else {
           menuModal.classList.remove('menu-active');
-          navigation.style.display = 'block';
-          secondaryNavBar.style.display = 'none';
-          playButtonLoaderWrapper.style.display = 'block';
-          startingButtonTitle.style.display = 'block';
+          modalHeader.classList.remove('df');
+          modalHeader.classList.add('dn');
+          tableComps.classList.remove('df');
+          tableComps.classList.add('dn');
+          navigation.classList.add('db');
+          navigation.classList.add('db');
+          secondaryNavBar.classList.remove('secondary-nav-bar-active');
+          playButtonLoaderWrapper.classList.add(
+            'play-button-loader-wrapper-active'
+          );
+          startingButtonTitle.classList.add('starting-button-title-active');
           lettersContainer.classList.add('letters-container-active');
           bigTitle.classList.add('big-title-active');
           loaderContainer.style.transform = 'translateX(-50%)';
           loaderContainer.style.transition = 'unset';
-          lettersContainer.style.display = 'block';
-          sorted_letters_container.style.display = 'block';
-          bigTitle.style.display = 'block';
+          lettersContainer.classList.add('letters-container-active');
+          sorted_letters_container.classList.add(
+            'sorted-letters-container-active'
+          );
+          bigTitle.classList.add('big-title-active');
         }
         break;
       case 4:
         hideElements();
-        secondaryBackground.style.display = 'block';
-        secondaryNavBar.style.display = 'block';
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
         loaderContainer.style.transform = 'translateX(-0%)';
         loaderContainer.style.transition = 'unset';
         setTimeout(() => {
@@ -425,14 +436,16 @@ for (let i = 0; i < items.length; i++) {
           loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
         }, 2000);
         menuModal.classList.remove('menu-active');
-        navigation.style.display = 'block';
-        menuModal.classList.remove('menu-active');
-        navigation.style.display = 'block';
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
         break;
       case 7:
         hideElements();
-        secondaryBackground.style.display = 'block';
-        secondaryNavBar.style.display = 'block';
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
         loaderContainer.style.transform = 'translateX(-0%)';
         loaderContainer.style.transition = 'unset';
         setTimeout(() => {
@@ -440,9 +453,11 @@ for (let i = 0; i < items.length; i++) {
           loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
         }, 2000);
         menuModal.classList.remove('menu-active');
-        navigation.style.display = 'block';
-        menuModal.classList.remove('menu-active');
-        navigation.style.display = 'block';
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
         break;
     }
   });
