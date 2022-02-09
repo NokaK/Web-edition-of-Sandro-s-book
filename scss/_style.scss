@@ -3,6 +3,10 @@ body {
   background: #fff;
 }
 
+.svg-background-active {
+  display: block;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -38,6 +42,130 @@ body {
   &.secondary-background-image-active {
     display: block;
   }
+}
+
+.shexvedra-leviatantan {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.shushis-qila {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.opisis-amaoeba {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.cifruli-samotxe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.khelovnuri-inteleqti {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.naxatebit-saubari {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.jadoqari {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.cheshmariti-maswavlebeli {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.qaosidan-kosmosamde {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.yvelaze-seqsualuri-profesia {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  fill: white;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 .navigation {
