@@ -387,14 +387,9 @@ for (let i = 0; i < items.length; i++) {
   cont.addEventListener('click', function () {
     switch (items[i].id) {
       case 1: //winasityvaoba
-        if (
-          secondaryBackground.classList.contains(
-            'secondary-background-image-active'
-          )
-        ) {
-          secondaryBackground.classList.remove(
-            'secondary-background-image-active'
-          );
+        if (secondaryBackground.classList.contains('active')) {
+          removeActive();
+          secondaryBackground.classList.remove('active');
           menuModal.classList.remove('menu-active');
           modalHeader.classList.remove('df');
           modalHeader.classList.add('dn');
@@ -416,6 +411,7 @@ for (let i = 0; i < items.length; i++) {
           );
           bigTitle.classList.add('big-title-active');
         } else {
+          removeActive();
           menuModal.classList.remove('menu-active');
           modalHeader.classList.remove('df');
           modalHeader.classList.add('dn');
@@ -512,7 +508,7 @@ for (let i = 0; i < items.length; i++) {
       case 12: //ukvdaveba
         hideElements();
         removeActive();
-        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryBackground.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         break;
@@ -523,9 +519,7 @@ for (let i = 0; i < items.length; i++) {
 
 function removeActive() {
   if (
-    secondaryBackground.classList.contains(
-      'secondary-background-image-active'
-    ) ||
+    secondaryBackground.classList.contains('active') ||
     shexvedraLeviatantan.classList.contains('active') ||
     shushisQila.classList.contains('active') ||
     qaosidanKosmosamde.classList.contains('active') ||
@@ -537,7 +531,7 @@ function removeActive() {
     jadoqari.classList.contains('active') ||
     cheshmaritiMaswavlebeli.classList.contains('active')
   ) {
-    secondaryBackground.classList.remove('secondary-background-image-active') ||
+    secondaryBackground.classList.remove('active') ||
       shexvedraLeviatantan.classList.remove('active') ||
       shushisQila.classList.remove('active') ||
       qaosidanKosmosamde.classList.remove('active') ||
