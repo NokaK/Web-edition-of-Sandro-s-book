@@ -9,11 +9,7 @@ const sorted_letters_container = document.getElementById(
 );
 const bigTitle = document.getElementById('big-title');
 const startingButtonTitle = document.getElementById('starting-button-title');
-const secondaryBackground = document.getElementById(
-  'secondary-background-image'
-);
 const secondaryNavBar = document.getElementById('secondary-nav-bar');
-secondaryBackground.classList.remove('secondary-background-image-active');
 
 window.addEventListener('load', () => {
   loaderContainer.style.transform = 'translateX(-100%)';
@@ -40,7 +36,7 @@ const hideElements = () => {
 
 playButtonLoaderWrapper.addEventListener('click', () => {
   hideElements();
-  secondaryBackground.classList.add('secondary-background-image-active');
+  secondaryBackground.classList.add('active');
   secondaryNavBar.classList.add('secondary-nav-bar-active');
   loaderContainer.style.transform = 'translateX(-0%)';
   loaderContainer.style.transition = 'unset';

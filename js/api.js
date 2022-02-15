@@ -1,4 +1,32 @@
 let rowContainer = document.getElementById('row-1');
+let secondaryBackground = document.getElementById('secondary-background-image');
+let shexvedraLeviatantan = document.getElementById('shexvedra-leviatantan');
+let shushisQila = document.getElementById('shushis-qila');
+let opisisAmaoeba = document.getElementById('opisis-amaoeba');
+let cifruliSamotxe = document.getElementById('cifruli-samotxe');
+let khelovnuriInteleqti = document.getElementById('khelovnuri-inteleqti');
+let naxatebitSaubari = document.getElementById('naxatebit-saubari');
+let jadoqari = document.getElementById('jadoqari');
+let cheshmaritiMaswavlebeli = document.getElementById(
+  'cheshmariti-maswavlebeli'
+);
+let qaosidanKosmosamde = document.getElementById('qaosidan-kosmosamde');
+let seqsualuriProfesia = document.getElementById('yvelaze-seqsualuri-profesia');
+
+let itemsBackgroundImages = [
+  secondaryBackground,
+  shexvedraLeviatantan,
+  shushisQila,
+  opisisAmaoeba,
+  cifruliSamotxe,
+  khelovnuriInteleqti,
+  naxatebitSaubari,
+  jadoqari,
+  cheshmaritiMaswavlebeli,
+  qaosidanKosmosamde,
+  seqsualuriProfesia,
+];
+
 const items = [
   {
     id: 0,
@@ -372,6 +400,13 @@ for (let i = 0; i < items.length; i++) {
   </div>
 </div>`;
 
+
+  cont.addEventListener('click', function () {
+    switch (items[i].id) {
+      case 1: //winasityvaoba
+        if (secondaryBackground.classList.contains('active')) {
+          removeActive();
+
   let sound = new Audio();
   let playbutton = document.querySelector('.play-button-container');
   let background = document.getElementById('loader-container');
@@ -438,6 +473,7 @@ for (let i = 0; i < items.length; i++) {
           secondaryBackground.classList.remove(
             'secondary-background-image-active'
           );
+
           menuModal.classList.remove('menu-active');
           modalHeader.classList.remove('df');
           modalHeader.classList.add('dn');
@@ -459,6 +495,7 @@ for (let i = 0; i < items.length; i++) {
           );
           bigTitle.classList.add('big-title-active');
         } else {
+          removeActive();
           menuModal.classList.remove('menu-active');
           modalHeader.classList.remove('df');
           modalHeader.classList.add('dn');
@@ -482,6 +519,65 @@ for (let i = 0; i < items.length; i++) {
           bigTitle.classList.add('big-title-active');
         }
         break;
+
+      case 2: //shexvedra leviatantan
+        hideElements();
+        removeActive();
+        shexvedraLeviatantan.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 3: //shushis qila
+        hideElements();
+        removeActive();
+        shushisQila.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 4: //qaosidan kosmosamde
+        hideElements();
+        removeActive();
+        qaosidanKosmosamde.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 5: //ofisebis
+        hideElements();
+        removeActive();
+        opisisAmaoeba.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 6: //cifruli samotxe
+        hideElements();
+        removeActive();
+        cifruliSamotxe.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 7: //yvelaze seqsualuri profesia
+        hideElements();
+        removeActive();
+        seqsualuriProfesia.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 8: //xelovnuri inteleqti
+        hideElements();
+        removeActive();
+        khelovnuriInteleqti.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 9: //naxatebit saubari
+        hideElements();
+        removeActive();
+        naxatebitSaubari.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 10: //jadoqari
+
       case 1:
         document.querySelector('.title').innerText = items[i].title;
         hideElements();
@@ -544,8 +640,14 @@ for (let i = 0; i < items.length; i++) {
       case 4:
         document.querySelector('.title').innerText = items[i].title;
         hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
+        removeActive();
+        jadoqari.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
+
+        gridItemOpenSlider();
+        break;
+      case 11: //cheshmariti maswavlebeli
+
         loaderContainer.style.transform = 'translateX(-0%)';
         loaderContainer.style.transition = 'unset';
         setTimeout(() => {
@@ -676,9 +778,21 @@ for (let i = 0; i < items.length; i++) {
         break;
       case 11:
         document.querySelector('.title').innerText = items[i].title;
+
         hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
+        removeActive();
+        cheshmaritiMaswavlebeli.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
+
+        gridItemOpenSlider();
+        break;
+      case 12: //ukvdaveba
+        hideElements();
+        removeActive();
+        secondaryBackground.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+
         loaderContainer.style.transform = 'translateX(-0%)';
         loaderContainer.style.transition = 'unset';
         setTimeout(() => {
@@ -692,8 +806,33 @@ for (let i = 0; i < items.length; i++) {
         tableComps.classList.remove('df');
         tableComps.classList.add('dn');
         arrowSwitch();
+
         break;
     }
   });
   rowContainer.appendChild(cont);
+}
+
+function removeActive() {
+  itemsBackgroundImages.forEach((element) => {
+    if (element.classList.contains('active')) {
+      element.classList.remove('active');
+    }
+  });
+}
+
+function gridItemOpenSlider() {
+  secondaryNavBar.classList.add('secondary-nav-bar-active');
+  loaderContainer.style.transform = 'translateX(-0%)';
+  loaderContainer.style.transition = 'unset';
+  setTimeout(() => {
+    loaderContainer.style.transform = 'translateX(-85%)';
+    loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+  }, 2000);
+  menuModal.classList.remove('menu-active');
+  navigation.classList.add('db');
+  modalHeader.classList.remove('df');
+  modalHeader.classList.add('dn');
+  tableComps.classList.remove('df');
+  tableComps.classList.add('dn');
 }
