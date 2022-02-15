@@ -1,7 +1,35 @@
 let rowContainer = document.getElementById('row-1');
+let secondaryBackground = document.getElementById('secondary-background-image');
+let shexvedraLeviatantan = document.getElementById('shexvedra-leviatantan');
+let shushisQila = document.getElementById('shushis-qila');
+let opisisAmaoeba = document.getElementById('opisis-amaoeba');
+let cifruliSamotxe = document.getElementById('cifruli-samotxe');
+let khelovnuriInteleqti = document.getElementById('khelovnuri-inteleqti');
+let naxatebitSaubari = document.getElementById('naxatebit-saubari');
+let jadoqari = document.getElementById('jadoqari');
+let cheshmaritiMaswavlebeli = document.getElementById(
+  'cheshmariti-maswavlebeli'
+);
+let qaosidanKosmosamde = document.getElementById('qaosidan-kosmosamde');
+let seqsualuriProfesia = document.getElementById('yvelaze-seqsualuri-profesia');
+
+let itemsBackgroundImages = [
+  secondaryBackground,
+  shexvedraLeviatantan,
+  shushisQila,
+  opisisAmaoeba,
+  cifruliSamotxe,
+  khelovnuriInteleqti,
+  naxatebitSaubari,
+  jadoqari,
+  cheshmaritiMaswavlebeli,
+  qaosidanKosmosamde,
+  seqsualuriProfesia,
+];
+
 const items = [
   {
-    id: 1,
+    id: 0,
     title: 'წინასიტყვაობა',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +50,7 @@ const items = [
     content: '',
   },
   {
-    id: 2,
+    id: 1,
     title: 'შეხვედრა ლევიათანთან',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +64,10 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
-    id: 3,
+    id: 2,
     title: 'შუშის ქილა',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -71,9 +100,10 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/universe.mp3',
   },
   {
-    id: 4,
+    id: 3,
     title: 'ქაოსიდან კოსმოსამდე',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +137,7 @@ const items = [
     content: '',
   },
   {
-    id: 5,
+    id: 4,
     title: 'ოფისების',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +166,7 @@ const items = [
     content: '',
   },
   {
-    id: 6,
+    id: 5,
     title: 'ციფრული სამოთხე',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +185,7 @@ const items = [
     content: '',
   },
   {
-    id: 7,
+    id: 6,
     title: 'ყველაზე სექსუალური პროფესია',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +219,7 @@ const items = [
     content: '',
   },
   {
-    id: 8,
+    id: 7,
     title: 'ხელოვნური ინტელექტი',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -223,7 +253,7 @@ const items = [
     content: '',
   },
   {
-    id: 9,
+    id: 8,
     title: 'ნახატებით საუბარი',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +287,7 @@ const items = [
     content: '',
   },
   {
-    id: 10,
+    id: 9,
     title: 'ჯადოქარი',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -291,7 +321,7 @@ const items = [
     content: '',
   },
   {
-    id: 11,
+    id: 10,
     title: 'ჭეშმარიტი მასწავლებელი',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -325,7 +355,7 @@ const items = [
     content: '',
   },
   {
-    id: 12,
+    id: 11,
     title: 'უკვდავება',
     svg: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -359,7 +389,6 @@ const items = [
     content: '',
   },
 ];
-
 for (let i = 0; i < items.length; i++) {
   const cont = document.createElement('a');
   cont.innerHTML = `<div class="grid-item">
@@ -370,9 +399,72 @@ for (let i = 0; i < items.length; i++) {
     </div>
   </div>
 </div>`;
+
+
   cont.addEventListener('click', function () {
     switch (items[i].id) {
-      case 1:
+      case 1: //winasityvaoba
+        if (secondaryBackground.classList.contains('active')) {
+          removeActive();
+
+  let sound = new Audio();
+  let playbutton = document.querySelector('.play-button-container');
+  let background = document.getElementById('loader-container');
+
+  function soundPlayer() {
+    sound.src = items[i].audio;
+    setTimeout(() => {
+      playbutton.onclick = function () {
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+          sound.play();
+          background.style.transform = 'translateX(0%)';
+          background.style.transition = `transform ${sound.duration}s ease-in 0.2s`;
+        } else {
+          sound.pause();
+        }
+      };
+    }, 2000);
+  }
+
+  function arrowSwitch() {
+    document
+      .querySelector('.left-arrow-button')
+      .addEventListener('click', function () {
+        sound.pause();
+        sound.currentTime = 0;
+        playbutton.classList.remove('active');
+        background.style.transition = `transform 0s ease-in 0s`;
+        background.style.transform = 'translateX(-85%)';
+        i--;
+        if (i >= 0) {
+          document.querySelector('.title').innerText = items[i].title;
+          soundPlayer();
+        } else {
+          i = 0;
+        }
+      });
+    document
+      .querySelector('.right-arrow-button')
+      .addEventListener('click', function () {
+        sound.pause();
+        sound.currentTime = 0;
+        playbutton.classList.remove('active');
+        background.style.transition = `transform 0s ease-in 0s`;
+        background.style.transform = 'translateX(-85%)';
+        i++;
+        if (i <= 11) {
+          document.querySelector('.title').innerText = items[i].title;
+          soundPlayer();
+        } else {
+          i = 11;
+        }
+      });
+  }
+
+  cont.addEventListener('click', function () {
+    switch (items[i].id) {
+      case 0:
         if (
           secondaryBackground.classList.contains(
             'secondary-background-image-active'
@@ -381,6 +473,7 @@ for (let i = 0; i < items.length; i++) {
           secondaryBackground.classList.remove(
             'secondary-background-image-active'
           );
+
           menuModal.classList.remove('menu-active');
           modalHeader.classList.remove('df');
           modalHeader.classList.add('dn');
@@ -402,6 +495,7 @@ for (let i = 0; i < items.length; i++) {
           );
           bigTitle.classList.add('big-title-active');
         } else {
+          removeActive();
           menuModal.classList.remove('menu-active');
           modalHeader.classList.remove('df');
           modalHeader.classList.add('dn');
@@ -425,7 +519,67 @@ for (let i = 0; i < items.length; i++) {
           bigTitle.classList.add('big-title-active');
         }
         break;
-      case 4:
+
+      case 2: //shexvedra leviatantan
+        hideElements();
+        removeActive();
+        shexvedraLeviatantan.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 3: //shushis qila
+        hideElements();
+        removeActive();
+        shushisQila.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 4: //qaosidan kosmosamde
+        hideElements();
+        removeActive();
+        qaosidanKosmosamde.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 5: //ofisebis
+        hideElements();
+        removeActive();
+        opisisAmaoeba.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 6: //cifruli samotxe
+        hideElements();
+        removeActive();
+        cifruliSamotxe.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 7: //yvelaze seqsualuri profesia
+        hideElements();
+        removeActive();
+        seqsualuriProfesia.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 8: //xelovnuri inteleqti
+        hideElements();
+        removeActive();
+        khelovnuriInteleqti.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 9: //naxatebit saubari
+        hideElements();
+        removeActive();
+        naxatebitSaubari.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        break;
+      case 10: //jadoqari
+
+      case 1:
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         secondaryBackground.classList.add('secondary-background-image-active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
@@ -441,8 +595,113 @@ for (let i = 0; i < items.length; i++) {
         modalHeader.classList.add('dn');
         tableComps.classList.remove('df');
         tableComps.classList.add('dn');
+        arrowSwitch();
+        soundPlayer();
+        break;
+      case 2:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+        soundPlayer();
+        break;
+      case 3:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+        break;
+      case 4:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        removeActive();
+        jadoqari.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+
+        gridItemOpenSlider();
+        break;
+      case 11: //cheshmariti maswavlebeli
+
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+        break;
+      case 5:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+        break;
+      case 6:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
         break;
       case 7:
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         secondaryBackground.classList.add('secondary-background-image-active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
@@ -458,8 +717,122 @@ for (let i = 0; i < items.length; i++) {
         modalHeader.classList.add('dn');
         tableComps.classList.remove('df');
         tableComps.classList.add('dn');
+        arrowSwitch();
+        break;
+      case 8:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+        break;
+      case 9:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+        break;
+      case 10:
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        secondaryBackground.classList.add('secondary-background-image-active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+        break;
+      case 11:
+        document.querySelector('.title').innerText = items[i].title;
+
+        hideElements();
+        removeActive();
+        cheshmaritiMaswavlebeli.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+
+        gridItemOpenSlider();
+        break;
+      case 12: //ukvdaveba
+        hideElements();
+        removeActive();
+        secondaryBackground.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+
+        loaderContainer.style.transform = 'translateX(-0%)';
+        loaderContainer.style.transition = 'unset';
+        setTimeout(() => {
+          loaderContainer.style.transform = 'translateX(-85%)';
+          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+        }, 2000);
+        menuModal.classList.remove('menu-active');
+        navigation.classList.add('db');
+        modalHeader.classList.remove('df');
+        modalHeader.classList.add('dn');
+        tableComps.classList.remove('df');
+        tableComps.classList.add('dn');
+        arrowSwitch();
+
         break;
     }
   });
   rowContainer.appendChild(cont);
+}
+
+function removeActive() {
+  itemsBackgroundImages.forEach((element) => {
+    if (element.classList.contains('active')) {
+      element.classList.remove('active');
+    }
+  });
+}
+
+function gridItemOpenSlider() {
+  secondaryNavBar.classList.add('secondary-nav-bar-active');
+  loaderContainer.style.transform = 'translateX(-0%)';
+  loaderContainer.style.transition = 'unset';
+  setTimeout(() => {
+    loaderContainer.style.transform = 'translateX(-85%)';
+    loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+  }, 2000);
+  menuModal.classList.remove('menu-active');
+  navigation.classList.add('db');
+  modalHeader.classList.remove('df');
+  modalHeader.classList.add('dn');
+  tableComps.classList.remove('df');
+  tableComps.classList.add('dn');
 }
