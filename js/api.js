@@ -135,6 +135,7 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 4,
@@ -164,6 +165,7 @@ const items = [
     <rect id="eye" width="63" height="49" fill="url(#eye)" />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 5,
@@ -183,6 +185,7 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 6,
@@ -217,6 +220,7 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 7,
@@ -251,6 +255,7 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 8,
@@ -285,6 +290,7 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 9,
@@ -319,6 +325,7 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 10,
@@ -353,6 +360,7 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
   {
     id: 11,
@@ -387,46 +395,43 @@ const items = [
     />
   </svg>`,
     content: '',
+    audio: '../media/mp3/englishtest.mp3',
   },
 ];
 for (let i = 0; i < items.length; i++) {
   const cont = document.createElement('a');
   cont.innerHTML = `<div class="grid-item">
-  <div class="flex-comp">
-    <div class="svg-holder">
-      ${items[i].svg}
-      <span>${items[i].title}</span>
+    <div class="flex-comp">
+      <div class="svg-holder">
+        ${items[i].svg}
+        <span>${items[i].title}</span>
+      </div>
     </div>
-  </div>
-</div>`;
-
-
-  cont.addEventListener('click', function () {
-    switch (items[i].id) {
-      case 1: //winasityvaoba
-        if (secondaryBackground.classList.contains('active')) {
-          removeActive();
+  </div>`;
 
   let sound = new Audio();
   let playbutton = document.querySelector('.play-button-container');
   let background = document.getElementById('loader-container');
-
   function soundPlayer() {
     sound.src = items[i].audio;
     setTimeout(() => {
       playbutton.onclick = function () {
+        sound.addEventListener('timeupdate', function () {
+          background.style.transition = '.5s';
+          sound.playbackRate = 1;
+          background.style.transform = `translateX(${
+            -85 + (sound.currentTime / sound.duration) * 85
+          }%)`;
+        });
         this.classList.toggle('active');
         if (this.classList.contains('active')) {
           sound.play();
-          background.style.transform = 'translateX(0%)';
-          background.style.transition = `transform ${sound.duration}s ease-in 0.2s`;
         } else {
           sound.pause();
         }
       };
     }, 2000);
   }
-
   function arrowSwitch() {
     document
       .querySelector('.left-arrow-button')
@@ -464,349 +469,119 @@ for (let i = 0; i < items.length; i++) {
 
   cont.addEventListener('click', function () {
     switch (items[i].id) {
-      case 0:
-        if (
-          secondaryBackground.classList.contains(
-            'secondary-background-image-active'
-          )
-        ) {
-          secondaryBackground.classList.remove(
-            'secondary-background-image-active'
-          );
-
-          menuModal.classList.remove('menu-active');
-          modalHeader.classList.remove('df');
-          modalHeader.classList.add('dn');
-          tableComps.classList.remove('df');
-          tableComps.classList.add('dn');
-          navigation.classList.add('db');
-          secondaryNavBar.classList.remove('secondary-nav-bar-active');
-          playButtonLoaderWrapper.classList.add(
-            'play-button-loader-wrapper-active'
-          );
-          startingButtonTitle.classList.add('starting-button-title-active');
-          lettersContainer.classList.add('letters-container-active');
-          bigTitle.classList.add('big-title-active');
-          loaderContainer.style.transform = 'translateX(-50%)';
-          loaderContainer.style.transition = 'unset';
-          lettersContainer.classList.add('letters-container-active');
-          sorted_letters_container.classList.add(
-            'sorted-letters-container-active'
-          );
-          bigTitle.classList.add('big-title-active');
-        } else {
+      case 0: //winasityvaoba
+        if (secondaryBackground.classList.contains('active')) {
           removeActive();
-          menuModal.classList.remove('menu-active');
-          modalHeader.classList.remove('df');
-          modalHeader.classList.add('dn');
-          tableComps.classList.remove('df');
-          tableComps.classList.add('dn');
-          navigation.classList.add('db');
-          navigation.classList.add('db');
-          secondaryNavBar.classList.remove('secondary-nav-bar-active');
-          playButtonLoaderWrapper.classList.add(
-            'play-button-loader-wrapper-active'
-          );
-          startingButtonTitle.classList.add('starting-button-title-active');
-          lettersContainer.classList.add('letters-container-active');
-          bigTitle.classList.add('big-title-active');
-          loaderContainer.style.transform = 'translateX(-50%)';
-          loaderContainer.style.transition = 'unset';
-          lettersContainer.classList.add('letters-container-active');
-          sorted_letters_container.classList.add(
-            'sorted-letters-container-active'
-          );
-          bigTitle.classList.add('big-title-active');
         }
-        break;
-
-      case 2: //shexvedra leviatantan
+      case 1: //shexvedra leviatantan
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         shexvedraLeviatantan.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 3: //shushis qila
+      case 2: //shushis qila
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 4: //qaosidan kosmosamde
+      case 3: //qaosidan kosmosamde
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 5: //ofisebis
+      case 4: //ofisebis
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 6: //cifruli samotxe
+      case 5: //cifruli samotxe
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 7: //yvelaze seqsualuri profesia
+      case 6: //yvelaze seqsualuri profesia
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 8: //xelovnuri inteleqti
+      case 7: //xelovnuri inteleqti
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 9: //naxatebit saubari
+      case 8: //naxatebit saubari
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-        break;
-      case 10: //jadoqari
-
-      case 1:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
         arrowSwitch();
         soundPlayer();
         break;
-      case 2:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        soundPlayer();
-        break;
-      case 3:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        break;
-      case 4:
+      case 9: //jadoqari
         document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
-
         gridItemOpenSlider();
-        break;
-      case 11: //cheshmariti maswavlebeli
-
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
         arrowSwitch();
+        soundPlayer();
         break;
-      case 5:
+      case 10: //cheshmariti maswavlebeli
         document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        break;
-      case 6:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        break;
-      case 7:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        break;
-      case 8:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        break;
-      case 9:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        break;
-      case 10:
-        document.querySelector('.title').innerText = items[i].title;
-        hideElements();
-        secondaryBackground.classList.add('secondary-background-image-active');
-        secondaryNavBar.classList.add('secondary-nav-bar-active');
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
-        arrowSwitch();
-        break;
-      case 11:
-        document.querySelector('.title').innerText = items[i].title;
-
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
-
         gridItemOpenSlider();
+        arrowSwitch();
+        soundPlayer();
         break;
-      case 12: //ukvdaveba
+      case 11: //ukvdaveba
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-
-        loaderContainer.style.transform = 'translateX(-0%)';
-        loaderContainer.style.transition = 'unset';
-        setTimeout(() => {
-          loaderContainer.style.transform = 'translateX(-85%)';
-          loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
-        }, 2000);
-        menuModal.classList.remove('menu-active');
-        navigation.classList.add('db');
-        modalHeader.classList.remove('df');
-        modalHeader.classList.add('dn');
-        tableComps.classList.remove('df');
-        tableComps.classList.add('dn');
         arrowSwitch();
-
+        soundPlayer();
         break;
     }
   });
