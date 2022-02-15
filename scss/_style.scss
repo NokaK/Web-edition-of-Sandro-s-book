@@ -3,6 +3,10 @@ body {
   background: #fff;
 }
 
+.svg-background-active {
+  display: block;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -26,18 +30,20 @@ body {
   }
 }
 
-.secondary-background-image {
+.grid-items-onclick-animation {
   position: absolute;
   left: 50%;
   top: 50%;
+  height: 70%;
   transform: translate(-50%, -50%);
   z-index: 11;
   fill: white;
   mix-blend-mode: difference;
   display: none;
-  &.secondary-background-image-active {
-    display: block;
-  }
+}
+
+.active {
+  display: block;
 }
 
 .navigation {

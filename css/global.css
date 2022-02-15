@@ -177,6 +177,10 @@ body {
   background: #fff;
 }
 
+.svg-background-active {
+  display: block;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -201,10 +205,11 @@ body {
   fill: #000;
 }
 
-.secondary-background-image {
+.grid-items-onclick-animation {
   position: absolute;
   left: 50%;
   top: 50%;
+  height: 70%;
   transform: translate(-50%, -50%);
   z-index: 11;
   fill: white;
@@ -212,7 +217,7 @@ body {
   display: none;
 }
 
-.secondary-background-image.secondary-background-image-active {
+.active {
   display: block;
 }
 
