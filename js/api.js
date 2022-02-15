@@ -1,4 +1,5 @@
 let rowContainer = document.getElementById('row-1');
+let secondaryBackground = document.getElementById('secondary-background-image');
 let shexvedraLeviatantan = document.getElementById('shexvedra-leviatantan');
 let shushisQila = document.getElementById('shushis-qila');
 let opisisAmaoeba = document.getElementById('opisis-amaoeba');
@@ -11,6 +12,20 @@ let cheshmaritiMaswavlebeli = document.getElementById(
 );
 let qaosidanKosmosamde = document.getElementById('qaosidan-kosmosamde');
 let seqsualuriProfesia = document.getElementById('yvelaze-seqsualuri-profesia');
+
+let itemsBackgroundImages = [
+  secondaryBackground,
+  shexvedraLeviatantan,
+  shushisQila,
+  opisisAmaoeba,
+  cifruliSamotxe,
+  khelovnuriInteleqti,
+  naxatebitSaubari,
+  jadoqari,
+  cheshmaritiMaswavlebeli,
+  qaosidanKosmosamde,
+  seqsualuriProfesia,
+];
 
 const items = [
   {
@@ -389,7 +404,6 @@ for (let i = 0; i < items.length; i++) {
       case 1: //winasityvaoba
         if (secondaryBackground.classList.contains('active')) {
           removeActive();
-          secondaryBackground.classList.remove('active');
           menuModal.classList.remove('menu-active');
           modalHeader.classList.remove('df');
           modalHeader.classList.add('dn');
@@ -518,31 +532,11 @@ for (let i = 0; i < items.length; i++) {
 }
 
 function removeActive() {
-  if (
-    secondaryBackground.classList.contains('active') ||
-    shexvedraLeviatantan.classList.contains('active') ||
-    shushisQila.classList.contains('active') ||
-    qaosidanKosmosamde.classList.contains('active') ||
-    opisisAmaoeba.classList.contains('active') ||
-    cifruliSamotxe.classList.contains('active') ||
-    seqsualuriProfesia.classList.contains('active') ||
-    khelovnuriInteleqti.classList.contains('active') ||
-    naxatebitSaubari.classList.contains('active') ||
-    jadoqari.classList.contains('active') ||
-    cheshmaritiMaswavlebeli.classList.contains('active')
-  ) {
-    secondaryBackground.classList.remove('active') ||
-      shexvedraLeviatantan.classList.remove('active') ||
-      shushisQila.classList.remove('active') ||
-      qaosidanKosmosamde.classList.remove('active') ||
-      opisisAmaoeba.classList.remove('active') ||
-      cifruliSamotxe.classList.remove('active') ||
-      seqsualuriProfesia.classList.remove('active') ||
-      khelovnuriInteleqti.classList.remove('active') ||
-      naxatebitSaubari.classList.remove('active') ||
-      jadoqari.classList.remove('active') ||
-      cheshmaritiMaswavlebeli.classList.remove('active');
-  }
+  itemsBackgroundImages.forEach((element) => {
+    if (element.classList.contains('active')) {
+      element.classList.remove('active');
+    }
+  });
 }
 
 function gridItemOpenSlider() {
