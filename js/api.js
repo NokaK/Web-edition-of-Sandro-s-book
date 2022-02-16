@@ -100,7 +100,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/universe.mp3',
+    audio: './media/mp3/universe.mp3',
   },
   {
     id: 3,
