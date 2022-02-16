@@ -64,7 +64,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 2,
@@ -135,7 +135,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 4,
@@ -165,7 +165,7 @@ const items = [
     <rect id="eye" width="63" height="49" fill="url(#eye)" />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 5,
@@ -185,7 +185,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 6,
@@ -220,7 +220,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 7,
@@ -255,7 +255,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 8,
@@ -290,7 +290,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 9,
@@ -325,7 +325,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 10,
@@ -360,7 +360,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 11,
@@ -395,7 +395,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
 ];
 for (let i = 0; i < items.length; i++) {
