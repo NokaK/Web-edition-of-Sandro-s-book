@@ -339,6 +339,10 @@ body {
   margin-bottom: 20px;
 }
 
+.navigation .navigation-bar .secondary-nav-bar .play-button-container .pause-button {
+  display: none;
+}
+
 .navigation .navigation-bar .secondary-nav-bar .play-button-container:hover {
   cursor: pointer;
 }

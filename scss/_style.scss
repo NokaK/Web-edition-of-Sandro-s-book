@@ -139,6 +139,9 @@ body {
       }
       .play-button-container {
         margin-bottom: 20px;
+        .pause-button {
+          display: none;
+        }
         &:hover {
           cursor: pointer;
         }
