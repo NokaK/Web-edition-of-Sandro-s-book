@@ -426,8 +426,12 @@ for (let i = 0; i < items.length; i++) {
         this.classList.toggle('active');
         if (this.classList.contains('active')) {
           sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block';
         } else {
           sound.pause();
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
         }
       };
     }, 2000);
@@ -444,6 +448,8 @@ for (let i = 0; i < items.length; i++) {
         i--;
         if (i >= 0) {
           document.querySelector('.title').innerText = items[i].title;
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
           soundPlayer();
         } else {
           i = 0;
@@ -460,6 +466,8 @@ for (let i = 0; i < items.length; i++) {
         i++;
         if (i <= 11) {
           document.querySelector('.title').innerText = items[i].title;
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
           soundPlayer();
         } else {
           i = 11;
