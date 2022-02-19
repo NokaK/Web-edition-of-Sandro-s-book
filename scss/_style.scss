@@ -104,7 +104,7 @@ body {
         position: relative;
         .title {
           position: absolute;
-          top: 10px;
+          top: 15px;
           left: 5px;
           p {
             line-height: 26px;
@@ -139,6 +139,12 @@ body {
       }
       .play-button-container {
         margin-bottom: 20px;
+
+        .pause-button {
+          margin-left: 40px;
+          margin-top: -90px;
+          display: none;
+        }
         &:hover {
           cursor: pointer;
         }
