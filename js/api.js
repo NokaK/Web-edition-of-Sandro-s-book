@@ -449,6 +449,7 @@ for (let i = 0; i < items.length; i++) {
           i = 0;
         }
       });
+
     document
       .querySelector('.right-arrow-button')
       .addEventListener('click', function () {
