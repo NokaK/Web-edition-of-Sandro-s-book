@@ -64,7 +64,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 2,
@@ -100,7 +100,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/universe.mp3',
+    audio: './media/mp3/universe.mp3',
   },
   {
     id: 3,
@@ -135,7 +135,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 4,
@@ -165,7 +165,7 @@ const items = [
     <rect id="eye" width="63" height="49" fill="url(#eye)" />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 5,
@@ -185,7 +185,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 6,
@@ -220,7 +220,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 7,
@@ -255,7 +255,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 8,
@@ -290,7 +290,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 9,
@@ -325,7 +325,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 10,
@@ -360,7 +360,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 11,
@@ -395,7 +395,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
 ];
 for (let i = 0; i < items.length; i++) {
@@ -426,8 +426,12 @@ for (let i = 0; i < items.length; i++) {
         this.classList.toggle('active');
         if (this.classList.contains('active')) {
           sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block';
         } else {
           sound.pause();
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
         }
       };
     }, 2000);
@@ -444,11 +448,14 @@ for (let i = 0; i < items.length; i++) {
         i--;
         if (i >= 0) {
           document.querySelector('.title').innerText = items[i].title;
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
           soundPlayer();
         } else {
           i = 0;
         }
       });
+
     document
       .querySelector('.right-arrow-button')
       .addEventListener('click', function () {
@@ -460,6 +467,8 @@ for (let i = 0; i < items.length; i++) {
         i++;
         if (i <= 11) {
           document.querySelector('.title').innerText = items[i].title;
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
           soundPlayer();
         } else {
           i = 11;

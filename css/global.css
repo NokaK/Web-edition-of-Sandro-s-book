@@ -294,7 +294,7 @@ body {
 
 .navigation .navigation-bar .secondary-nav-bar .job-title .title {
   position: absolute;
-  top: 10px;
+  top: 15px;
   left: 5px;
 }
 
@@ -337,6 +337,10 @@ body {
 
 .navigation .navigation-bar .secondary-nav-bar .play-button-container {
   margin-bottom: 20px;
+}
+
+.navigation .navigation-bar .secondary-nav-bar .play-button-container .pause-button {
+  display: none;
 }
 
 .navigation .navigation-bar .secondary-nav-bar .play-button-container:hover {
