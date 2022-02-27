@@ -12,6 +12,8 @@ let cheshmaritiMaswavlebeli = document.getElementById(
 );
 let qaosidanKosmosamde = document.getElementById('qaosidan-kosmosamde');
 let seqsualuriProfesia = document.getElementById('yvelaze-seqsualuri-profesia');
+let leftArrow = document.querySelector('.left-arrow-button');
+let rightArrow = document.querySelector('.right-arrow-button');
 
 let itemsBackgroundImages = [
   secondaryBackground,
@@ -409,184 +411,236 @@ for (let i = 0; i < items.length; i++) {
     </div>
   </div>`;
 
-  let sound = new Audio();
-  let playbutton = document.querySelector('.play-button-container');
-  let background = document.getElementById('loader-container');
-  function soundPlayer() {
-    sound.src = items[i].audio;
-    setTimeout(() => {
-      playbutton.onclick = function () {
-        sound.addEventListener('timeupdate', function () {
-          background.style.transition = '.5s';
-          sound.playbackRate = 1;
-          background.style.transform = `translateX(${
-            -85 + (sound.currentTime / sound.duration) * 85
-          }%)`;
-        });
-        this.classList.toggle('active');
-        if (this.classList.contains('active')) {
-          sound.play();
-        } else {
-          sound.pause();
-        }
-      };
-    }, 2000);
-  }
+  // let sound = new Audio();
+  // let playbutton = document.querySelector('.play-button-container');
+  // let background = document.getElementById('loader-container');
+  // function soundPlayer() {
+  //   sound.src = items[i].audio;
+  //   setTimeout(() => {
+  //     playbutton.onclick = function () {
+  //       sound.addEventListener('timeupdate', function () {
+  //         background.style.transition = '.5s';
+  //         sound.playbackRate = 1;
+  //         background.style.transform = `translateX(${
+  //           -85 + (sound.currentTime / sound.duration) * 85
+  //         }%)`;
+  //       });
+  //       this.classList.toggle('active');
+  //       if (this.classList.contains('active')) {
+  //         sound.play();
+  //       } else {
+  //         sound.pause();
+  //       }
+  //     };
+  //   }, 2000);
+  // }
   function arrowSwitch() {
-    document
-      .querySelector('.left-arrow-button')
-      .addEventListener('click', function () {
-        sound.pause();
-        sound.currentTime = 0;
-        playbutton.classList.remove('active');
-        background.style.transition = `transform 0s ease-in 0s`;
-        background.style.transform = 'translateX(-85%)';
-        i--;
-        if (i >= 0) {
-          document.querySelector('.title').innerText = items[i].title;
-          soundPlayer();
-        } else {
-          i = 0;
-        }
-      });
+    leftArrow.addEventListener('click', function () {
+      //  sound.pause();
+      // sound.currentTime = 0;
+      i--;
+      if (i >= 0) {
+        //   //    soundPlayer();
+        triggerListChange();
+      } else {
+        i = 0;
+      }
+    });
 
-    document
-      .querySelector('.right-arrow-button')
-      .addEventListener('click', function () {
-        sound.pause();
-        sound.currentTime = 0;
-        playbutton.classList.remove('active');
-        background.style.transition = `transform 0s ease-in 0s`;
-        background.style.transform = 'translateX(-85%)';
-        i++;
-        if (i <= 11) {
-          document.querySelector('.title').innerText = items[i].title;
-          soundPlayer();
-        } else {
-          i = 11;
-        }
-      });
+    rightArrow.addEventListener('click', function () {
+      //  sound.pause();
+      //  sound.currentTime = 0;
+
+      i++;
+      if (i <= 11) {
+        // soundPlayer();
+        triggerListChange();
+      }
+      //triggerListChange();
+    });
   }
 
-  cont.addEventListener('click', function () {
+  function triggerListChange() {
     switch (items[i].id) {
       case 0: //winasityvaoba
         if (secondaryBackground.classList.contains('active')) {
           removeActive();
+          menuModal.classList.remove('menu-active');
+          modalHeader.classList.remove('df');
+          modalHeader.classList.add('dn');
+          tableComps.classList.remove('df');
+          tableComps.classList.add('dn');
+          navigation.classList.add('db');
+          secondaryNavBar.classList.remove('secondary-nav-bar-active');
+          playButtonLoaderWrapper.classList.add(
+            'play-button-loader-wrapper-active'
+          );
+          startingButtonTitle.classList.add('starting-button-title-active');
+          lettersContainer.classList.add('letters-container-active');
+          bigTitle.classList.add('big-title-active');
+          loaderContainer.style.transform = 'translateX(-50%)';
+          loaderContainer.style.transition = 'unset';
+          lettersContainer.classList.add('letters-container-active');
+          sorted_letters_container.classList.add(
+            'sorted-letters-container-active'
+          );
+          bigTitle.classList.add('big-title-active');
+        } else {
+          removeActive();
+          menuModal.classList.remove('menu-active');
+          modalHeader.classList.remove('df');
+          modalHeader.classList.add('dn');
+          tableComps.classList.remove('df');
+          tableComps.classList.add('dn');
+          navigation.classList.add('db');
+          navigation.classList.add('db');
+          secondaryNavBar.classList.remove('secondary-nav-bar-active');
+          playButtonLoaderWrapper.classList.add(
+            'play-button-loader-wrapper-active'
+          );
+          startingButtonTitle.classList.add('starting-button-title-active');
+          lettersContainer.classList.add('letters-container-active');
+          bigTitle.classList.add('big-title-active');
+          loaderContainer.style.transform = 'translateX(-50%)';
+          loaderContainer.style.transition = 'unset';
+          lettersContainer.classList.add('letters-container-active');
+          sorted_letters_container.classList.add(
+            'sorted-letters-container-active'
+          );
+          bigTitle.classList.add('big-title-active');
         }
+        break;
       case 1: //shexvedra leviatantan
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[1].title;
         hideElements();
         removeActive();
+        arrowSwitch();
         shexvedraLeviatantan.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-        arrowSwitch();
-        soundPlayer();
+
+        //   soundPlayer();
         break;
       case 2: //shushis qila
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[2].title;
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        // soundPlayer();
         break;
       case 3: //qaosidan kosmosamde
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[3].title;
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        // soundPlayer();
         break;
       case 4: //ofisebis
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[4].title;
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        //soundPlayer();
         break;
       case 5: //cifruli samotxe
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[5].title;
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-        arrowSwitch();
-        soundPlayer();
+        //arrowSwitch();
+        //soundPlayer();
         break;
       case 6: //yvelaze seqsualuri profesia
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[6].title;
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        //soundPlayer();
         break;
       case 7: //xelovnuri inteleqti
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[7].title;
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        // soundPlayer();
         break;
       case 8: //naxatebit saubari
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[8].title;
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        //  soundPlayer();
         break;
       case 9: //jadoqari
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[9].title;
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        //  soundPlayer();
         break;
       case 10: //cheshmariti maswavlebeli
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[10].title;
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        //  soundPlayer();
         break;
       case 11: //ukvdaveba
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[11].title;
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        soundPlayer();
+        // soundPlayer();
         break;
     }
-  });
+  }
+  cont.addEventListener('click', triggerListChange);
   rowContainer.appendChild(cont);
+
+  playButtonLoaderWrapper.addEventListener('click', () => {
+    triggerListChange();
+    arrowSwitch();
+    hideElements();
+    document.querySelector('.title').innerText = '';
+    secondaryBackground.classList.add('active');
+    secondaryNavBar.classList.add('secondary-nav-bar-active');
+    loaderContainer.style.transform = 'translateX(-0%)';
+    loaderContainer.style.transition = 'unset';
+
+    setTimeout(() => {
+      loaderContainer.style.transform = 'translateX(-85%)';
+      loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
+    }, 2000);
+  });
 }
 
 function removeActive() {
