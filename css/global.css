@@ -340,8 +340,6 @@ body {
 }
 
 .navigation .navigation-bar .secondary-nav-bar .play-button-container .pause-button {
-  margin-left: 40px;
-  margin-top: -90px;
   display: none;
 }
 

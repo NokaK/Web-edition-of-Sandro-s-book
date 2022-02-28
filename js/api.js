@@ -50,6 +50,7 @@ const items = [
     </g>
   </svg>`,
     content: '',
+    audio: './media/mp3/universe.mp3',
   },
   {
     id: 1,
@@ -66,7 +67,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 2,
@@ -102,7 +103,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/universe.mp3',
+    audio: './media/mp3/universe.mp3',
   },
   {
     id: 3,
@@ -137,7 +138,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 4,
@@ -167,7 +168,7 @@ const items = [
     <rect id="eye" width="63" height="49" fill="url(#eye)" />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 5,
@@ -187,7 +188,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 6,
@@ -222,7 +223,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 7,
@@ -257,7 +258,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 8,
@@ -292,7 +293,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 9,
@@ -327,7 +328,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 10,
@@ -362,7 +363,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
   {
     id: 11,
@@ -397,7 +398,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: '../media/mp3/englishtest.mp3',
+    audio: './media/mp3/englishtest.mp3',
   },
 ];
 for (let i = 0; i < items.length; i++) {
@@ -411,53 +412,71 @@ for (let i = 0; i < items.length; i++) {
     </div>
   </div>`;
 
-  // let sound = new Audio();
-  // let playbutton = document.querySelector('.play-button-container');
-  // let background = document.getElementById('loader-container');
-  // function soundPlayer() {
-  //   sound.src = items[i].audio;
-  //   setTimeout(() => {
-  //     playbutton.onclick = function () {
-  //       sound.addEventListener('timeupdate', function () {
-  //         background.style.transition = '.5s';
-  //         sound.playbackRate = 1;
-  //         background.style.transform = `translateX(${
-  //           -85 + (sound.currentTime / sound.duration) * 85
-  //         }%)`;
-  //       });
-  //       this.classList.toggle('active');
-  //       if (this.classList.contains('active')) {
-  //         sound.play();
-  //       } else {
-  //         sound.pause();
-  //       }
-  //     };
-  //   }, 2000);
-  // }
+  let sound = new Audio();
+  let playbutton = document.querySelector('.play-button-container');
+  let background = document.getElementById('loader-container');
+  function soundPlayer() {
+    sound.src = items[i].audio;
+    setTimeout(() => {
+      playbutton.onclick = function () {
+        sound.addEventListener('timeupdate', function () {
+          background.style.transition = '.5s';
+          sound.playbackRate = 1;
+          background.style.transform = `translateX(${
+            -85 + (sound.currentTime / sound.duration) * 85
+          }%)`;
+        });
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block';
+        } else {
+          sound.pause();
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
+        }
+      };
+    }, 2000);
+  }
   function arrowSwitch() {
-    leftArrow.addEventListener('click', function () {
-      //  sound.pause();
-      // sound.currentTime = 0;
-      i--;
-      if (i >= 0) {
-        //   //    soundPlayer();
-        triggerListChange();
-      } else {
-        i = 0;
-      }
-    });
+    document
+      .querySelector('.left-arrow-button')
+      .addEventListener('click', function () {
+        sound.pause();
+        sound.currentTime = 0;
+        playbutton.classList.remove('active');
+        background.style.transition = `transform 0s ease-in 0s`;
+        background.style.transform = 'translateX(-85%)';
+        i--;
+        if (i >= 0) {
+          document.querySelector('.title').innerText = items[i].title;
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
+          soundPlayer();
+        } else {
+          i = 0;
+        }
+      });
 
-    rightArrow.addEventListener('click', function () {
-      //  sound.pause();
-      //  sound.currentTime = 0;
-
-      i++;
-      if (i <= 11) {
-        // soundPlayer();
-        triggerListChange();
-      }
-      //triggerListChange();
-    });
+    document
+      .querySelector('.right-arrow-button')
+      .addEventListener('click', function () {
+        sound.pause();
+        sound.currentTime = 0;
+        playbutton.classList.remove('active');
+        background.style.transition = `transform 0s ease-in 0s`;
+        background.style.transform = 'translateX(-85%)';
+        i++;
+        if (i <= 11) {
+          document.querySelector('.title').innerText = items[i].title;
+          document.querySelector('.pause-button').style.display = 'none';
+          document.querySelector('.play-button').style.display = 'block';
+          soundPlayer();
+        } else {
+          i = 11;
+        }
+      });
   }
 
   function triggerListChange() {
@@ -519,7 +538,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
 
-        //   soundPlayer();
+        soundPlayer();
         break;
       case 2: //shushis qila
         document.querySelector('.title').innerText = items[2].title;
@@ -529,7 +548,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        // soundPlayer();
+        soundPlayer();
         break;
       case 3: //qaosidan kosmosamde
         document.querySelector('.title').innerText = items[3].title;
@@ -539,7 +558,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        // soundPlayer();
+        soundPlayer();
         break;
       case 4: //ofisebis
         document.querySelector('.title').innerText = items[4].title;
@@ -549,7 +568,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        //soundPlayer();
+        soundPlayer();
         break;
       case 5: //cifruli samotxe
         document.querySelector('.title').innerText = items[5].title;
@@ -558,8 +577,8 @@ for (let i = 0; i < items.length; i++) {
         cifruliSamotxe.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-        //arrowSwitch();
-        //soundPlayer();
+        arrowSwitch();
+        soundPlayer();
         break;
       case 6: //yvelaze seqsualuri profesia
         document.querySelector('.title').innerText = items[6].title;
@@ -569,7 +588,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        //soundPlayer();
+        soundPlayer();
         break;
       case 7: //xelovnuri inteleqti
         document.querySelector('.title').innerText = items[7].title;
@@ -579,7 +598,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        // soundPlayer();
+        soundPlayer();
         break;
       case 8: //naxatebit saubari
         document.querySelector('.title').innerText = items[8].title;
@@ -589,7 +608,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        //  soundPlayer();
+        soundPlayer();
         break;
       case 9: //jadoqari
         document.querySelector('.title').innerText = items[9].title;
@@ -599,7 +618,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        //  soundPlayer();
+        soundPlayer();
         break;
       case 10: //cheshmariti maswavlebeli
         document.querySelector('.title').innerText = items[10].title;
@@ -609,7 +628,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        //  soundPlayer();
+        soundPlayer();
         break;
       case 11: //ukvdaveba
         document.querySelector('.title').innerText = items[11].title;
@@ -619,7 +638,7 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         arrowSwitch();
-        // soundPlayer();
+        soundPlayer();
         break;
     }
   }
