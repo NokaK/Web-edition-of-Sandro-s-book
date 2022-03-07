@@ -16,6 +16,7 @@ let ukvdaveba = document.getElementById('qaosidan-kosmosamde');
 let leftArrow = document.querySelector('.left-arrow-button');
 let rightArrow = document.querySelector('.right-arrow-button');
 
+// აქ 12-ის მაგივრად 11 ელემენტია, svg-ები აკლია ამიტომ სწორად არ იმუშავებს
 let itemsBackgroundImages = [
   secondaryBackground,
   shexvedraLeviatantan,
