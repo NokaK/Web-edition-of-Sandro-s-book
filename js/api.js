@@ -12,6 +12,7 @@ let cheshmaritiMaswavlebeli = document.getElementById(
 );
 let qaosidanKosmosamde = document.getElementById('qaosidan-kosmosamde');
 let seqsualuriProfesia = document.getElementById('yvelaze-seqsualuri-profesia');
+let ukvdaveba = document.getElementById('qaosidan-kosmosamde');
 let leftArrow = document.querySelector('.left-arrow-button');
 let rightArrow = document.querySelector('.right-arrow-button');
 
@@ -27,6 +28,7 @@ let itemsBackgroundImages = [
   cheshmaritiMaswavlebeli,
   qaosidanKosmosamde,
   seqsualuriProfesia,
+  ukvdaveba,
 ];
 
 const items = [
@@ -168,7 +170,7 @@ const items = [
     <rect id="eye" width="63" height="49" fill="url(#eye)" />
   </svg>`,
     content: '',
-    audio: './media/mp3/englishtest.mp3',
+    audio: './media/mp3/universe.mp3',
   },
   {
     id: 5,
@@ -451,6 +453,10 @@ for (let i = 0; i < items.length; i++) {
         i--;
         if (i >= 0) {
           document.querySelector('.title').innerText = items[i].title;
+          for (let e = 0; e < itemsBackgroundImages.length; e++) {
+            itemsBackgroundImages[e].classList.remove('active');
+          }
+          itemsBackgroundImages[i].classList.add('active');
           document.querySelector('.pause-button').style.display = 'none';
           document.querySelector('.play-button').style.display = 'block';
           soundPlayer();
@@ -470,6 +476,10 @@ for (let i = 0; i < items.length; i++) {
         i++;
         if (i <= 11) {
           document.querySelector('.title').innerText = items[i].title;
+          for (let e = 0; e < itemsBackgroundImages.length; e++) {
+            itemsBackgroundImages[e].classList.remove('active');
+          }
+          itemsBackgroundImages[i].classList.add('active');
           document.querySelector('.pause-button').style.display = 'none';
           document.querySelector('.play-button').style.display = 'block';
           soundPlayer();
@@ -528,9 +538,17 @@ for (let i = 0; i < items.length; i++) {
           );
           bigTitle.classList.add('big-title-active');
         }
+        document.querySelector('.title').innerText = items[i].title;
+        hideElements();
+        removeActive();
+        arrowSwitch();
+        shexvedraLeviatantan.classList.add('active');
+        secondaryNavBar.classList.add('secondary-nav-bar-active');
+        gridItemOpenSlider();
+        soundPlayer();
         break;
       case 1: //shexvedra leviatantan
-        document.querySelector('.title').innerText = items[1].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         arrowSwitch();
@@ -541,7 +559,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 2: //shushis qila
-        document.querySelector('.title').innerText = items[2].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -551,7 +569,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 3: //qaosidan kosmosamde
-        document.querySelector('.title').innerText = items[3].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -561,7 +579,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 4: //ofisebis
-        document.querySelector('.title').innerText = items[4].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -571,7 +589,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 5: //cifruli samotxe
-        document.querySelector('.title').innerText = items[5].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -581,7 +599,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 6: //yvelaze seqsualuri profesia
-        document.querySelector('.title').innerText = items[6].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -591,7 +609,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 7: //xelovnuri inteleqti
-        document.querySelector('.title').innerText = items[7].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -601,7 +619,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 8: //naxatebit saubari
-        document.querySelector('.title').innerText = items[8].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -611,7 +629,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 9: //jadoqari
-        document.querySelector('.title').innerText = items[9].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -621,7 +639,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 10: //cheshmariti maswavlebeli
-        document.querySelector('.title').innerText = items[10].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -631,7 +649,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 11: //ukvdaveba
-        document.querySelector('.title').innerText = items[11].title;
+        document.querySelector('.title').innerText = items[i].title;
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
