@@ -477,6 +477,7 @@ for (let i = 0; i < items.length; i++) {
         i++;
         if (i <= 11) {
           document.querySelector('.title').innerText = items[i].title;
+
           for (let e = 0; e < itemsBackgroundImages.length; e++) {
             itemsBackgroundImages[e].classList.remove('active');
           }
@@ -556,7 +557,6 @@ for (let i = 0; i < items.length; i++) {
         shexvedraLeviatantan.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-
         soundPlayer();
         break;
       case 2: //shushis qila
@@ -665,15 +665,16 @@ for (let i = 0; i < items.length; i++) {
   rowContainer.appendChild(cont);
 
   playButtonLoaderWrapper.addEventListener('click', () => {
-    triggerListChange();
+    // triggerListChange();
+    // arrowSwitch();
+    // hideElements();
+    // document.querySelector('.title').innerText = '';
+    // secondaryBackground.classList.add('active');
+    // secondaryNavBar.classList.add('secondary-nav-bar-active');
+    // loaderContainer.style.transform = 'translateX(-0%)';
+    // loaderContainer.style.transition = 'unset';
+    items[i].id == 6;
     arrowSwitch();
-    hideElements();
-    document.querySelector('.title').innerText = '';
-    secondaryBackground.classList.add('active');
-    secondaryNavBar.classList.add('secondary-nav-bar-active');
-    loaderContainer.style.transform = 'translateX(-0%)';
-    loaderContainer.style.transition = 'unset';
-
     setTimeout(() => {
       loaderContainer.style.transform = 'translateX(-85%)';
       loaderContainer.style.transition = 'transform 0.3s ease-in 0.2s';
