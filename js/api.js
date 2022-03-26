@@ -16,6 +16,80 @@ let ukvdaveba = document.getElementById('qaosidan-kosmosamde');
 let leftArrow = document.querySelector('.left-arrow-button');
 let rightArrow = document.querySelector('.right-arrow-button');
 
+let counter = 6;
+
+let sound = new Audio();
+let playbutton = document.querySelector('.play-button-container');
+let background = document.getElementById('loader-container');
+function soundPlayer() {
+  sound.src = items[counter].audio;
+
+  setTimeout(() => {
+    playbutton.onclick = function () {
+      sound.addEventListener('timeupdate', function () {
+        background.style.transition = '.5s';
+        sound.playbackRate = 1;
+        background.style.transform = `translateX(${
+          -85 + (sound.currentTime / sound.duration) * 85
+        }%)`;
+      });
+      this.classList.toggle('active');
+      if (this.classList.contains('active')) {
+        sound.play();
+        document.querySelector('.play-button').style.display = 'none';
+        document.querySelector('.pause-button').style.display = 'block';
+      } else {
+        sound.pause();
+        document.querySelector('.pause-button').style.display = 'none';
+        document.querySelector('.play-button').style.display = 'block';
+      }
+    };
+  }, 2000);
+}
+
+function handleLeftArrowClick() {
+  sound.pause();
+  sound.currentTime = 0;
+  playbutton.classList.remove('active');
+  background.style.transition = `transform 0s ease-in 0s`;
+  background.style.transform = 'translateX(-85%)';
+  counter--;
+  if (counter > 0) {
+    document.querySelector('.title').innerText = items[counter].title;
+    for (let e = 0; e < itemsBackgroundImages.length; e++) {
+      itemsBackgroundImages[e].classList.remove('active');
+    }
+    itemsBackgroundImages[counter].classList.add('active');
+    document.querySelector('.pause-button').style.display = 'none';
+    document.querySelector('.play-button').style.display = 'block';
+    soundPlayer();
+  } else {
+    counter = 0;
+  }
+}
+
+function handleRightArrowClick() {
+  sound.pause();
+  sound.currentTime = 0;
+  playbutton.classList.remove('active');
+  background.style.transition = `transform 0s ease-in 0s`;
+  background.style.transform = 'translateX(-85%)';
+  counter++;
+  if (counter < items.length) {
+    document.querySelector('.title').innerText = items[counter].title;
+
+    for (let e = 0; e < itemsBackgroundImages.length; e++) {
+      itemsBackgroundImages[e].classList.remove('active');
+    }
+    itemsBackgroundImages[counter].classList.add('active');
+    document.querySelector('.pause-button').style.display = 'none';
+    document.querySelector('.play-button').style.display = 'block';
+    soundPlayer();
+  } else {
+    counter = items.length - 1;
+  }
+}
+
 // აქ 12-ის მაგივრად 11 ელემენტია, svg-ები აკლია ამიტომ სწორად არ იმუშავებს
 let itemsBackgroundImages = [
   secondaryBackground,
@@ -404,6 +478,7 @@ const items = [
     audio: './media/mp3/englishtest.mp3',
   },
 ];
+
 for (let i = 0; i < items.length; i++) {
   const cont = document.createElement('a');
   cont.innerHTML = `<div class="grid-item">
@@ -415,84 +490,22 @@ for (let i = 0; i < items.length; i++) {
     </div>
   </div>`;
 
-  let sound = new Audio();
-  let playbutton = document.querySelector('.play-button-container');
-  let background = document.getElementById('loader-container');
-  function soundPlayer() {
-    sound.src = items[i].audio;
-    setTimeout(() => {
-      playbutton.onclick = function () {
-        sound.addEventListener('timeupdate', function () {
-          background.style.transition = '.5s';
-          sound.playbackRate = 1;
-          background.style.transform = `translateX(${
-            -85 + (sound.currentTime / sound.duration) * 85
-          }%)`;
-        });
-        this.classList.toggle('active');
-        if (this.classList.contains('active')) {
-          sound.play();
-          document.querySelector('.play-button').style.display = 'none';
-          document.querySelector('.pause-button').style.display = 'block';
-        } else {
-          sound.pause();
-          document.querySelector('.pause-button').style.display = 'none';
-          document.querySelector('.play-button').style.display = 'block';
-        }
-      };
-    }, 2000);
-  }
   function arrowSwitch() {
-    document
-      .querySelector('.left-arrow-button')
-      .addEventListener('click', function () {
-        sound.pause();
-        sound.currentTime = 0;
-        playbutton.classList.remove('active');
-        background.style.transition = `transform 0s ease-in 0s`;
-        background.style.transform = 'translateX(-85%)';
-        i--;
-        if (i >= 0) {
-          document.querySelector('.title').innerText = items[i].title;
-          for (let e = 0; e < itemsBackgroundImages.length; e++) {
-            itemsBackgroundImages[e].classList.remove('active');
-          }
-          itemsBackgroundImages[i].classList.add('active');
-          document.querySelector('.pause-button').style.display = 'none';
-          document.querySelector('.play-button').style.display = 'block';
-          soundPlayer();
-        } else {
-          i = 0;
-        }
-      });
+    const leftArrow = document.querySelector('.left-arrow-button');
 
-    document
-      .querySelector('.right-arrow-button')
-      .addEventListener('click', function () {
-        sound.pause();
-        sound.currentTime = 0;
-        playbutton.classList.remove('active');
-        background.style.transition = `transform 0s ease-in 0s`;
-        background.style.transform = 'translateX(-85%)';
-        i++;
-        if (i <= 11) {
-          document.querySelector('.title').innerText = items[i].title;
+    leftArrow.removeEventListener('click', handleLeftArrowClick);
+    leftArrow.addEventListener('click', handleLeftArrowClick);
 
-          for (let e = 0; e < itemsBackgroundImages.length; e++) {
-            itemsBackgroundImages[e].classList.remove('active');
-          }
-          itemsBackgroundImages[i].classList.add('active');
-          document.querySelector('.pause-button').style.display = 'none';
-          document.querySelector('.play-button').style.display = 'block';
-          soundPlayer();
-        } else {
-          i = 11;
-        }
-      });
+    const rightArrow = document.querySelector('.right-arrow-button');
+
+    rightArrow.removeEventListener('click', handleRightArrowClick);
+    rightArrow.addEventListener('click', handleRightArrowClick);
   }
 
   function triggerListChange() {
-    switch (items[i].id) {
+    counter = i;
+
+    switch (counter) {
       case 0: //winasityvaoba
         if (secondaryBackground.classList.contains('active')) {
           removeActive();
@@ -540,7 +553,7 @@ for (let i = 0; i < items.length; i++) {
           );
           bigTitle.classList.add('big-title-active');
         }
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         arrowSwitch();
@@ -550,7 +563,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 1: //shexvedra leviatantan
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         arrowSwitch();
@@ -560,7 +573,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 2: //shushis qila
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -570,7 +583,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 3: //qaosidan kosmosamde
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -580,7 +593,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 4: //ofisebis
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -590,7 +603,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 5: //cifruli samotxe
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -600,7 +613,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 6: //yvelaze seqsualuri profesia
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -610,7 +623,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 7: //xelovnuri inteleqti
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -620,7 +633,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 8: //naxatebit saubari
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -630,7 +643,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 9: //jadoqari
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -640,7 +653,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 10: //cheshmariti maswavlebeli
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -650,7 +663,7 @@ for (let i = 0; i < items.length; i++) {
         soundPlayer();
         break;
       case 11: //ukvdaveba
-        document.querySelector('.title').innerText = items[i].title;
+        document.querySelector('.title').innerText = items[counter].title;
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
@@ -661,6 +674,7 @@ for (let i = 0; i < items.length; i++) {
         break;
     }
   }
+
   cont.addEventListener('click', triggerListChange);
   rowContainer.appendChild(cont);
 
@@ -673,7 +687,7 @@ for (let i = 0; i < items.length; i++) {
     // secondaryNavBar.classList.add('secondary-nav-bar-active');
     // loaderContainer.style.transform = 'translateX(-0%)';
     // loaderContainer.style.transition = 'unset';
-    items[i].id == 6;
+    //items[i].id == 6;
     arrowSwitch();
     setTimeout(() => {
       loaderContainer.style.transform = 'translateX(-85%)';
