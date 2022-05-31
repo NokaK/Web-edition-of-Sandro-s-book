@@ -1,0 +1,10 @@
+/* hover */
+.hover-svg {
+   display: inline-block;
+}
+.path-fill {
+    transition: fill .3s;
+}
+.hover-svg:hover .path-fill {
+    fill: #999999;
+}
