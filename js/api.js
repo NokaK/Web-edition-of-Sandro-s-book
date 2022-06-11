@@ -21,6 +21,44 @@ let counter = 6;
 let sound = new Audio();
 let playbutton = document.querySelector('.play-button-container');
 let background = document.getElementById('loader-container');
+// gigas code
+const playBtnMain = document.querySelector('#play-button-light')
+const pauseyBtn = document.querySelector('.pause-button')
+const playBtn = document.querySelector('.play-button')
+playBtnMain.onclick = () => {
+    sound.src = items[counter].audio;
+    sound.play();
+    document.querySelector('.play-button').style.display = 'none';
+    document.querySelector('.pause-button').style.display = 'block';
+  }
+  pauseyBtn.onclick = () => {
+    if(!sound.paused) {
+      console.log('if',sound.paused)
+      sound.pause();
+      document.querySelector('.play-button').style.display = 'block';
+      document.querySelector('.pause-button').style.display = 'none';
+    }else {
+    console.log('else',sound.paused)
+      sound.play();
+      document.querySelector('.play-button').style.display = 'none';
+      document.querySelector('.pause-button').style.display = 'block'
+    }
+  }
+  playBtn.onclick = () => {
+    if(!sound.paused) {
+      console.log('if',sound.paused)
+      sound.pause();
+      document.querySelector('.play-button').style.display = 'block';
+      document.querySelector('.pause-button').style.display = 'none';
+    }else {
+    console.log('else',sound.paused)
+      sound.play();
+      document.querySelector('.play-button').style.display = 'none';
+      document.querySelector('.pause-button').style.display = 'block'
+    }
+  }
+
+// gigas code
 function soundPlayer() {
   sound.src = items[counter].audio;
 

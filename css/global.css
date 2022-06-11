@@ -1,4 +1,9 @@
 @font-face {
+  font-family: 'Sandro-Universal-Bold';
+  src: url("../Sandro_font/Sandro_font/SandroUniversal-Bold.otf");
+}
+
+@font-face {
   font-family: 'sandro-Regular';
   src: url("../Sandro_font/Sandro_font/sandro-Regular.eot==");
   /* IE9 Compat Modes */
@@ -497,7 +502,7 @@ body {
   opacity: 1;
   pointer-events: all;
   font-size: 100px;
-  font-family: 'sandro-Bold', sans-serif;
+  font-family: 'Sandro-Universal-Bold';
 }
 
 .menu-modal-wrapper.menu-active {
