@@ -1,143 +1,3 @@
-let rowContainer = document.getElementById('row-1');
-let secondaryBackground = document.getElementById('secondary-background-image');
-let shexvedraLeviatantan = document.getElementById('shexvedra-leviatantan');
-let shushisQila = document.getElementById('shushis-qila');
-let opisisAmaoeba = document.getElementById('opisis-amaoeba');
-let cifruliSamotxe = document.getElementById('cifruli-samotxe');
-let khelovnuriInteleqti = document.getElementById('khelovnuri-inteleqti');
-let naxatebitSaubari = document.getElementById('naxatebit-saubari');
-let jadoqari = document.getElementById('jadoqari');
-let cheshmaritiMaswavlebeli = document.getElementById(
-  'cheshmariti-maswavlebeli'
-);
-let qaosidanKosmosamde = document.getElementById('qaosidan-kosmosamde');
-let seqsualuriProfesia = document.getElementById('yvelaze-seqsualuri-profesia');
-let ukvdaveba = document.getElementById('qaosidan-kosmosamde');
-let leftArrow = document.querySelector('.left-arrow-button');
-let rightArrow = document.querySelector('.right-arrow-button');
-let counter = 6;
-let sound = new Audio();
-let playbutton = document.querySelector('.play-button-container');
-let background = document.getElementById('loader-container');
-const playBtnMain = document.querySelector('#play-button-light')
-const pauseyBtn = document.querySelector('.pause-button')
-const playBtn = document.querySelector('.play-button')
-playBtnMain.onclick = () => {
-    sound.src = items[counter].audio;
-    sound.play();
-    document.querySelector('.play-button').style.display = 'none';
-    document.querySelector('.pause-button').style.display = 'block';
-  }
-  pauseyBtn.onclick = () => {
-    if(!sound.paused) {
-      console.log('if',sound.paused)
-      sound.pause();
-      document.querySelector('.play-button').style.display = 'block';
-      document.querySelector('.pause-button').style.display = 'none';
-    }else {
-    console.log('else',sound.paused)
-      sound.play();
-      document.querySelector('.play-button').style.display = 'none';
-      document.querySelector('.pause-button').style.display = 'block'
-    }
-  }
-  playBtn.onclick = () => {
-    if(!sound.paused) {
-      console.log('if',sound.paused)
-      sound.pause();
-      document.querySelector('.play-button').style.display = 'block';
-      document.querySelector('.pause-button').style.display = 'none';
-    }else {
-    console.log('else',sound.paused)
-      sound.play();
-      document.querySelector('.play-button').style.display = 'none';
-      document.querySelector('.pause-button').style.display = 'block'
-    }
-  }
-function soundPlayer() {
-  sound.src = items[counter].audio;
-
-  setTimeout(() => {
-    playbutton.onclick = function () {
-      sound.addEventListener('timeupdate', function () {
-        background.style.transition = '.5s';
-        sound.playbackRate = 1;
-        background.style.transform = `translateX(${
-          -85 + (sound.currentTime / sound.duration) * 85
-        }%)`;
-      });
-      this.classList.toggle('active');
-      if (this.classList.contains('active')) {
-        sound.play();
-        document.querySelector('.play-button').style.display = 'none';
-        document.querySelector('.pause-button').style.display = 'block';
-      } else {
-        sound.pause();
-        document.querySelector('.pause-button').style.display = 'none';
-        document.querySelector('.play-button').style.display = 'block';
-      }
-    };
-  }, 2000);
-}
-
-function handleLeftArrowClick() {
-  sound.pause();
-  sound.currentTime = 0;
-  playbutton.classList.remove('active');
-  background.style.transition = `transform 0s ease-in 0s`;
-  background.style.transform = 'translateX(-85%)';
-  counter--;
-  if (counter > 0) {
-    document.querySelector('.title').innerText = items[counter].title;
-    for (let e = 0; e < itemsBackgroundImages.length; e++) {
-      itemsBackgroundImages[e].classList.remove('active');
-    }
-    itemsBackgroundImages[counter].classList.add('active');
-    document.querySelector('.pause-button').style.display = 'none';
-    document.querySelector('.play-button').style.display = 'block';
-    soundPlayer();
-  } else {
-    counter = 0;
-  }
-}
-
-function handleRightArrowClick() {
-  sound.pause();
-  sound.currentTime = 0;
-  playbutton.classList.remove('active');
-  background.style.transition = `transform 0s ease-in 0s`;
-  background.style.transform = 'translateX(-85%)';
-  counter++;
-  if (counter < items.length) {
-    document.querySelector('.title').innerText = items[counter].title;
-
-    for (let e = 0; e < itemsBackgroundImages.length; e++) {
-      itemsBackgroundImages[e].classList.remove('active');
-    }
-    itemsBackgroundImages[counter].classList.add('active');
-    document.querySelector('.pause-button').style.display = 'none';
-    document.querySelector('.play-button').style.display = 'block';
-    soundPlayer();
-  } else {
-    counter = items.length - 1;
-  }
-}
-
-let itemsBackgroundImages = [
-  secondaryBackground,
-  shexvedraLeviatantan,
-  shushisQila,
-  opisisAmaoeba,
-  cifruliSamotxe,
-  khelovnuriInteleqti,
-  naxatebitSaubari,
-  jadoqari,
-  cheshmaritiMaswavlebeli,
-  qaosidanKosmosamde,
-  seqsualuriProfesia,
-  ukvdaveba,
-];
-
 const items = [
   {
     id: 0,
@@ -151,7 +11,7 @@ const items = [
     title: 'შეხვედრა ლევიათანთან',
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.65 177.54" fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M70.28 69.78l-4.71-.89c-7.41-1.02-11.45-5.65-13.07-12.56-.76-3.23-1.17-6.62-1.17-9.94-.01-9.14 5.83-14.94 12.7-19.43 8.05-5.26 17-7.23 26.54-4 3.32 1.13 6.97 1.66 9.94 3.38 7.45 4.29 10 11.19 8.58 20.14-1.95 12.24-8.28 20.99-19.74 25.95-3.01 1.3-5.78 3.21-5.63 6.86.33 7.62 1.04 15.23 1.62 23.31l13.36-1.75c1.63 4.9 2.11 9.57 1.18 14.69l-13.78 2c1.13 5.93 1.13 5.93 6.96 5.93 6.52 0 10.5 4.55 9.25 10.56-.59 2.8-1.88 4.72-5.15 4.58-1.77-.08-3.57.03-5.32.29-1.87.27-3.71.81-5.84 1.3.23 2.25.32 3.98.61 5.69 1.34 7.78-2.05 11.58-9.7 10.84-.75-.07-2.62-.58-3.32-1.47-2.75-5.06-2.45-8.9-2.83-14.23-.26-3.6-.3-7.22-.55-10.79a268.95 268.95 0 0 1-.68-17.03c-.04-5.13.29-10.26.45-15.39l.66-22.49c.04-1.76-.22-3.51-.36-5.55zm6.12-4.05c-2.6 18.77-2.37 37.15-1.15 55.94l1.44 18.6.45 5.08c.58 8.54 5.57 6.8 6.3 5.2.81-1.8-1.14-14.38-.72-16.45 4.03 0 7.39.2 10.71-.06 3.23-.25 4.81-1.86 4.11-3.75-.89-2.38-2.72-2.23-4.89-1.78-2.8.57-5.69.67-9.08 1.03l-1.48-7.32a123.68 123.68 0 0 1-.78-4.32c-.68-4.2.22-5.06 4.67-5.42 3.24-.26 6.46-.77 9.99-1.21l-.79-5.9-13.81 1.96c-.23-.85-.95-2-.77-2.98 1.71-9.12-.95-18.07-.91-27.12.02-3.84.58-5.45 3.87-7.01 1.42-.67 2.91-1.22 4.38-1.77 9.45-3.57 15.15-10.34 17.2-20.19.27-1.31.75-2.93.25-3.99C102 37.1 98.32 30.02 89.83 27.7c-6.82-1.86-13.57-1.88-20.12 1.4-7.9 3.95-12.29 10.3-13.1 19.02-.46 4.92 4.19 12.25 8.5 13.79l11.29 3.82zM64.53 48.45c-.79-7.49 2.24-13.54 7.2-15.54 7.57-3.06 13.85-1.75 18.61 3.84 1.27 1.49 2.73 2.83 3.95 4.37 5.38 6.78 3.46 15.66-4.3 19.28-4.84 2.25-9.96 3.98-15.29 1.86-6.57-2.62-11-6.94-10.17-13.81zm16.32 10c2.11-.66 5.24-1.27 8.03-2.58 3.92-1.85 4.98-4.59 4.13-8.78-.88-4.38-6.96-10.8-11.32-11.04-4.27-.24-9.04-.31-11.75 3.94-2.51 3.92-2.33 8.45-.37 12.48 1.96 4.02 5.88 5.53 11.28 5.98z"/><path d="M43.63 108.92c-.45-.78-1.19-3.5-2.97-4.95-10.65-8.7-10.82-17.93-.17-26.99.46-.39.87-.83 2.09-2.02l-9.35-6.73c-7.34-5.37-8.12-13.97-1.51-20.21 2.62-2.47 5.98-4.17 9.58-6.6-1.72-4.9-.28-7.36 5.44-10.11 9.78-4.7 19.39-6.64 30-6 7.88.48 15.8.07 23.7.35 4.36.15 7.77 3.91 13.02 2.55 2.74-.71 5.81-4.59 9.95-.8 2.96 2.7 7.79 3.27 11.65 5.06 3.85 1.79 5.74 5.1 6.9 9.19 3.7 13.05 5.14 26.39 5.42 39.86.22 10.38.02 20.78-.44 31.15-.55 12.52 1.16 17.11-10.78 23.38-2.91 1.53-28.71 8.99-52.31 11.65-24.74 1.56-27.49.67-33.87-2.36-12.74-5.88-20.43-15.32-16.52-24.85 1.66-4.04 6-6.97 10.17-11.57zm2.62-68.05c4.56 1.4 8.08 2.38 11.52 3.58 3.32 1.15 4.68 3.77 4.66 7.15-.03 3.57-1.75 5.59-5.22 6.02-6.28-9.8-6.36-9.88-10.98-10.44l2.16 27.27c4.72.52 8.37.73 11.95 1.36 3.58.64 4.98 3.71 5.14 6.74.09 1.72-1.36 4.56-2.79 5.11-3.26 1.25-4.65-1.54-5.96-4.17-1.87-3.75-4.97-4.95-9.19-3.72-2.08 10.5-1.93 19.62.35 31.16 3.9 0 10.13 0 14.52-5.89 2.73-2.22 5.85 5.89 2.98 6.61-2.11.84-4.16 1.95-6.35 2.48-3.43.83-5.87 1.09-10.22 1.84.92 5.81 1.59 10.26 3.63 14.56 4.93.21 11.28-.96 16.32-1.45 11.84-1.14 23.64-2.72 35.41-4.48 5.27-.79 10.42-2.41 16.31-3.82l-10.67-79.32c-.95-6.87-4.8-11.21-12.1-11.74-13.4-.97-26.97-1.49-40.09 2.12-4.35 1.23-9.24 3.07-11.38 9.03zm8.63 101.18l.59 2.85c17.35 6.32 78.13-7.78 83.85-12.96 2.76-2.5 4.78-10.96 5.08-14.86.71-9.39.44-18.31 1-27.71.85-14.18-1.81-29.69-4.56-43.41-.63-3.14-1.88-5.72-3.23-8.72-.6.24-4.41-1.43-5.01-1.19 5.02 9.39 4.55 24.97 4.1 35.39-.2 4.57.58 20.13.46 24.71-.26 10.09.95 16 .32 22.02-.29 2.78-.58 6.6-1.99 9.85-1.15 2.66-35.27 14.99-80.61 14.03zm-2.3-9.28c-.06-.36.78 3.28.78 3.28 3.13-.23 19.26-.79 38.17-3.61 19.18-2.86 37.76-8.14 37.73-8.57-1.3-15.82-4.79-46.35-6.53-60.97-.54-4.5-1.27-28.94-2.95-33.3-2.71 2.3-8.44 2.23-8.44 2.23 1.14 10.31 3.38 26.39 5.68 42.8l6.23 48.08c.02.22-15.28 3.94-31.61 6.16-18.85 2.57-39.09 3.67-39.06 3.9zM122.81 31.5c.94 9.68 2.07 24.2 3.2 39.19l2.25 29.47 2.31 24.77s-18.94 6.03-40.2 9.17c-12.63 1.87-26.1 2.7-36.62 3.14l.6 3.34c1.74 0 21.87-.05 40.77-3.21 19.74-3.3 38.26-9.72 38.25-10.04 3.12-8.12 1.98-29.65 1.54-44.63l-.96-25.42c-.24-4.28-.81-16.06-3.89-22.1.01-.01-5.28-1.4-7.25-3.68zM41.3 47.38c-4.78 1.91-8.56 4.18-8.89 9.4-.27 4.44 2.56 6.9 10.01 9.26 2.45-6.26 1.02-12.13-1.12-18.66zm1.55 69.54c-4.35 1.77-6.7 5-5.86 9.71 1.16 6.54 6.36 9.33 12.73 12.52l-6.87-22.23zm-.83-34.63c-6.39 7.02-6.35 8.65 0 14.37V82.29z"/></svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_04.mp3',
+    audio: './media/mp3/shexvedra-leviatantan.mp3',
   },
   {
     id: 2,
@@ -187,7 +47,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_08.mp3',
+    audio: './media/mp3/shushis-qila.mp3',
   },
   {
     id: 3,
@@ -222,7 +82,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_01.mp3',
+    audio: './media/mp3/qaosidan-kosmosamde.mp3',
   },
   {
     id: 4,
@@ -252,7 +112,7 @@ const items = [
     <rect id="eye" width="63" height="49" fill="url(#eye)" />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_05.mp3',
+    audio: './media/mp3/ofisebis-amaoeba.mp3',
   },
   {
     id: 5,
@@ -272,7 +132,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_09.mp3',
+    audio: './media/mp3/cifruli-samotxe.mp3',
   },
   {
     id: 6,
@@ -342,7 +202,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_06.mp3',
+    audio: './media/mp3/xelovnuri-inteleqti.mp3',
   },
   {
     id: 8,
@@ -377,7 +237,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_10.mp3',
+    audio: './media/mp3/naxatebit-saubari.mp3',
   },
   {
     id: 9,
@@ -412,7 +272,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_03.mp3',
+    audio: './media/mp3/jadoqari.mp3',
   },
   {
     id: 10,
@@ -447,7 +307,7 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_07.mp3',
+    audio: './media/mp3/cheshmariti-maswavlebeli.mp3',
   },
   {
     id: 11,
@@ -482,9 +342,148 @@ const items = [
     />
   </svg>`,
     content: '',
-    audio: './media/mp3/sandros_books_11.mp3',
+    audio: './media/mp3/ukvdaveba.mp3',
   },
 ];
+let rowContainer = document.getElementById('row-1');
+let secondaryBackground = document.getElementById('secondary-background-image');
+let shexvedraLeviatantan = document.getElementById('shexvedra-leviatantan');
+let shushisQila = document.getElementById('shushis-qila');
+let opisisAmaoeba = document.getElementById('opisis-amaoeba');
+let cifruliSamotxe = document.getElementById('cifruli-samotxe');
+let khelovnuriInteleqti = document.getElementById('khelovnuri-inteleqti');
+let naxatebitSaubari = document.getElementById('naxatebit-saubari');
+let jadoqari = document.getElementById('jadoqari');
+let cheshmaritiMaswavlebeli = document.getElementById(
+  'cheshmariti-maswavlebeli'
+);
+let qaosidanKosmosamde = document.getElementById('qaosidan-kosmosamde');
+let seqsualuriProfesia = document.getElementById('yvelaze-seqsualuri-profesia');
+let ukvdaveba = document.getElementById('qaosidan-kosmosamde');
+let leftArrow = document.querySelector('.left-arrow-button');
+let rightArrow = document.querySelector('.right-arrow-button');
+let counter = 1;
+let sound = new Audio();
+let playbutton = document.querySelector('.play-button-container');
+let background = document.getElementById('loader-container');
+const playBtnMain = document.querySelector('#play-button-light')
+const pauseyBtn = document.querySelector('.pause-button')
+const playBtn = document.querySelector('.play-button')
+playBtnMain.onclick = () => {
+    sound.src = items[counter].audio;
+    document.querySelector('.title').innerText = items[counter].title;
+    sound.play();
+    document.querySelector('.play-button').style.display = 'none';
+    document.querySelector('.pause-button').style.display = 'block';
+  }
+  pauseyBtn.onclick = () => {
+    if(!sound.paused) {
+      sound.pause();
+      document.querySelector('.play-button').style.display = 'block';
+      document.querySelector('.pause-button').style.display = 'none';
+    }else {
+      sound.play();
+      document.querySelector('.play-button').style.display = 'none';
+      document.querySelector('.pause-button').style.display = 'block'
+    }
+  }
+  playBtn.onclick = () => {
+    if(!sound.paused) {
+      sound.pause();
+      document.querySelector('.play-button').style.display = 'block';
+      document.querySelector('.pause-button').style.display = 'none';
+    }else {
+      sound.play();
+      document.querySelector('.play-button').style.display = 'none';
+      document.querySelector('.pause-button').style.display = 'block'
+    }
+  }
+function soundPlayer() {
+  sound.src = items[counter].audio;
+
+
+  setTimeout(() => {
+    playbutton.onclick = function () {
+      sound.addEventListener('timeupdate', function () {
+        background.style.transition = '.5s';
+        sound.playbackRate = 1;
+        background.style.transform = `translateX(${
+          -85 + (sound.currentTime / sound.duration) * 85
+        }%)`;
+      });
+      this.classList.toggle('active');
+      if (this.classList.contains('active')) {
+        sound.play();
+        console.log(sound.duration/60,sound.duration%60)
+        document.querySelector('.play-button').style.display = 'none';
+        document.querySelector('.pause-button').style.display = 'block';
+      } else {
+        sound.pause();
+        document.querySelector('.pause-button').style.display = 'none';
+        document.querySelector('.play-button').style.display = 'block';
+      }
+    };
+  }, 2000);
+}
+
+function handleLeftArrowClick() {
+  sound.pause();
+  sound.currentTime = 0;
+  playbutton.classList.remove('active');
+  background.style.transition = `transform 0s ease-in 0s`;
+  background.style.transform = 'translateX(-85%)';
+  counter--;
+  if (counter > 0) {
+    document.querySelector('.title').innerText = items[counter].title;
+    for (let e = 0; e < itemsBackgroundImages.length; e++) {
+      itemsBackgroundImages[e].classList.remove('active');
+    }
+    itemsBackgroundImages[counter].classList.add('active');
+    document.querySelector('.pause-button').style.display = 'none';
+    document.querySelector('.play-button').style.display = 'block';
+    soundPlayer();
+  } else {
+    counter = 0;
+  }
+}
+
+function handleRightArrowClick() {
+  sound.pause();
+  sound.currentTime = 0;
+  playbutton.classList.remove('active');
+  background.style.transition = `transform 0s ease-in 0s`;
+  background.style.transform = 'translateX(-85%)';
+  counter++;
+  if (counter < items.length) {
+    document.querySelector('.title').innerText = items[counter].title;
+    for (let e = 0; e < itemsBackgroundImages.length; e++) {
+      itemsBackgroundImages[e].classList.remove('active');
+    }
+    itemsBackgroundImages[counter].classList.add('active');
+    document.querySelector('.pause-button').style.display = 'none';
+    document.querySelector('.play-button').style.display = 'block';
+    soundPlayer();
+  } else {
+    counter = items.length - 1;
+  }
+}
+
+let itemsBackgroundImages = [
+  secondaryBackground,
+  shexvedraLeviatantan,
+  shushisQila,
+  opisisAmaoeba,
+  cifruliSamotxe,
+  khelovnuriInteleqti,
+  naxatebitSaubari,
+  jadoqari,
+  cheshmaritiMaswavlebeli,
+  qaosidanKosmosamde,
+  seqsualuriProfesia,
+  ukvdaveba,
+];
+
+
 
 for (let i = 0; i < items.length; i++) {
   const cont = document.createElement('a');
