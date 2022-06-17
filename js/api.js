@@ -399,9 +399,8 @@ playBtnMain.onclick = () => {
     }
   }
 function soundPlayer() {
-  sound.src = items[counter].audio;
-
-
+  if(items[counter].audio) {
+    sound.src = items[counter].audio;
   setTimeout(() => {
     playbutton.onclick = function () {
       sound.addEventListener('timeupdate', function () {
@@ -414,6 +413,7 @@ function soundPlayer() {
       this.classList.toggle('active');
       if (this.classList.contains('active')) {
         sound.play();
+        console.log(sound.duration)
         console.log(sound.duration/60,sound.duration%60)
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'block';
@@ -424,6 +424,7 @@ function soundPlayer() {
       }
     };
   }, 2000);
+  }
 }
 
 function handleLeftArrowClick() {
@@ -510,7 +511,6 @@ for (let i = 0; i < items.length; i++) {
 
   function triggerListChange() {
     counter = i;
-
     switch (counter) {
       case 0: //winasityvaoba
         if (secondaryBackground.classList.contains('active')) {
@@ -566,7 +566,7 @@ for (let i = 0; i < items.length; i++) {
         shexvedraLeviatantan.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-        soundPlayer();
+        // soundPlayer();
         break;
       case 1: //shexvedra leviatantan
         document.querySelector('.title').innerText = items[counter].title;
@@ -577,6 +577,15 @@ for (let i = 0; i < items.length; i++) {
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 2: //shushis qila
         document.querySelector('.title').innerText = items[counter].title;
@@ -587,6 +596,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 3: //qaosidan kosmosamde
         document.querySelector('.title').innerText = items[counter].title;
@@ -597,6 +615,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 4: //ofisebis
         document.querySelector('.title').innerText = items[counter].title;
@@ -607,6 +634,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 5: //cifruli samotxe
         document.querySelector('.title').innerText = items[counter].title;
@@ -617,6 +653,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 6: //yvelaze seqsualuri profesia
         document.querySelector('.title').innerText = items[counter].title;
@@ -627,6 +672,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 7: //xelovnuri inteleqti
         document.querySelector('.title').innerText = items[counter].title;
@@ -637,6 +691,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 8: //naxatebit saubari
         document.querySelector('.title').innerText = items[counter].title;
@@ -647,6 +710,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 9: //jadoqari
         document.querySelector('.title').innerText = items[counter].title;
@@ -657,6 +729,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 10: //cheshmariti maswavlebeli
         document.querySelector('.title').innerText = items[counter].title;
@@ -667,6 +748,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
       case 11: //ukvdaveba
         document.querySelector('.title').innerText = items[counter].title;
@@ -677,6 +767,15 @@ for (let i = 0; i < items.length; i++) {
         gridItemOpenSlider();
         arrowSwitch();
         soundPlayer();
+        if(!sound.paused) {
+          sound.pause();
+          document.querySelector('.play-button').style.display = 'block';
+          document.querySelector('.pause-button').style.display = 'none';
+        }else {
+          sound.play();
+          document.querySelector('.play-button').style.display = 'none';
+          document.querySelector('.pause-button').style.display = 'block'
+        }
         break;
     }
   }
