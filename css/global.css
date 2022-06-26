@@ -297,14 +297,14 @@ body {
   position: relative;
 }
 
-.navigation .navigation-bar .secondary-nav-bar .job-title .title {
+.navigation .navigation-bar .secondary-nav-bar .job-title .download-book {
   position: absolute;
-  top: 15px;
-  left: 5px;
-}
-
-.navigation .navigation-bar .secondary-nav-bar .job-title .title p {
-  line-height: 26px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 68889;
+  width: 80px;
+  cursor: pointer;
 }
 
 .navigation .navigation-bar .secondary-nav-bar.secondary-nav-bar-active {
@@ -350,6 +350,15 @@ body {
 
 .navigation .navigation-bar .secondary-nav-bar .play-button-container:hover {
   cursor: pointer;
+}
+
+.title {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  font-size: 36px;
+  white-space: nowrap;
+  font-family: 'Sandro-Universal-Bold';
 }
 
 .play-button-loader-wrapper {
