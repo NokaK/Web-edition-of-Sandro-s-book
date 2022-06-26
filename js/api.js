@@ -4,7 +4,6 @@ const items = [
     title: 'წინასიტყვაობა',
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.65 177.54" fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M70.28 69.78l-4.71-.89c-7.41-1.02-11.45-5.65-13.07-12.56-.76-3.23-1.17-6.62-1.17-9.94-.01-9.14 5.83-14.94 12.7-19.43 8.05-5.26 17-7.23 26.54-4 3.32 1.13 6.97 1.66 9.94 3.38 7.45 4.29 10 11.19 8.58 20.14-1.95 12.24-8.28 20.99-19.74 25.95-3.01 1.3-5.78 3.21-5.63 6.86.33 7.62 1.04 15.23 1.62 23.31l13.36-1.75c1.63 4.9 2.11 9.57 1.18 14.69l-13.78 2c1.13 5.93 1.13 5.93 6.96 5.93 6.52 0 10.5 4.55 9.25 10.56-.59 2.8-1.88 4.72-5.15 4.58-1.77-.08-3.57.03-5.32.29-1.87.27-3.71.81-5.84 1.3.23 2.25.32 3.98.61 5.69 1.34 7.78-2.05 11.58-9.7 10.84-.75-.07-2.62-.58-3.32-1.47-2.75-5.06-2.45-8.9-2.83-14.23-.26-3.6-.3-7.22-.55-10.79a268.95 268.95 0 0 1-.68-17.03c-.04-5.13.29-10.26.45-15.39l.66-22.49c.04-1.76-.22-3.51-.36-5.55zm6.12-4.05c-2.6 18.77-2.37 37.15-1.15 55.94l1.44 18.6.45 5.08c.58 8.54 5.57 6.8 6.3 5.2.81-1.8-1.14-14.38-.72-16.45 4.03 0 7.39.2 10.71-.06 3.23-.25 4.81-1.86 4.11-3.75-.89-2.38-2.72-2.23-4.89-1.78-2.8.57-5.69.67-9.08 1.03l-1.48-7.32a123.68 123.68 0 0 1-.78-4.32c-.68-4.2.22-5.06 4.67-5.42 3.24-.26 6.46-.77 9.99-1.21l-.79-5.9-13.81 1.96c-.23-.85-.95-2-.77-2.98 1.71-9.12-.95-18.07-.91-27.12.02-3.84.58-5.45 3.87-7.01 1.42-.67 2.91-1.22 4.38-1.77 9.45-3.57 15.15-10.34 17.2-20.19.27-1.31.75-2.93.25-3.99C102 37.1 98.32 30.02 89.83 27.7c-6.82-1.86-13.57-1.88-20.12 1.4-7.9 3.95-12.29 10.3-13.1 19.02-.46 4.92 4.19 12.25 8.5 13.79l11.29 3.82zM64.53 48.45c-.79-7.49 2.24-13.54 7.2-15.54 7.57-3.06 13.85-1.75 18.61 3.84 1.27 1.49 2.73 2.83 3.95 4.37 5.38 6.78 3.46 15.66-4.3 19.28-4.84 2.25-9.96 3.98-15.29 1.86-6.57-2.62-11-6.94-10.17-13.81zm16.32 10c2.11-.66 5.24-1.27 8.03-2.58 3.92-1.85 4.98-4.59 4.13-8.78-.88-4.38-6.96-10.8-11.32-11.04-4.27-.24-9.04-.31-11.75 3.94-2.51 3.92-2.33 8.45-.37 12.48 1.96 4.02 5.88 5.53 11.28 5.98z"/></svg>`,
     content: '',
-    audio: './media/mp3/universe.mp3',
   },
   {
     id: 1,
@@ -443,6 +442,12 @@ function handleLeftArrowClick() {
     document.querySelector('.pause-button').style.display = 'none';
     document.querySelector('.play-button').style.display = 'block';
     soundPlayer();
+    setTimeout(() => {
+      sound.play();
+      document.querySelector('.play-button').style.display = 'none';
+      document.querySelector('.pause-button').style.display = 'block'
+    }, 200)
+
   } else {
     counter = 0;
   }
@@ -464,6 +469,11 @@ function handleRightArrowClick() {
     document.querySelector('.pause-button').style.display = 'none';
     document.querySelector('.play-button').style.display = 'block';
     soundPlayer();
+    setTimeout(() => {
+      sound.play();
+      document.querySelector('.play-button').style.display = 'none';
+      document.querySelector('.pause-button').style.display = 'block'
+    }, 200)
   } else {
     counter = items.length - 1;
   }
@@ -496,23 +506,18 @@ for (let i = 0; i < items.length; i++) {
       </div>
     </div>
   </div>`;
-
   function arrowSwitch() {
     const leftArrow = document.querySelector('.left-arrow-button');
-
-    leftArrow.removeEventListener('click', handleLeftArrowClick);
     leftArrow.addEventListener('click', handleLeftArrowClick);
-
     const rightArrow = document.querySelector('.right-arrow-button');
-
-    rightArrow.removeEventListener('click', handleRightArrowClick);
     rightArrow.addEventListener('click', handleRightArrowClick);
   }
-
   function triggerListChange() {
     counter = i;
     switch (counter) {
       case 0: //winasityvaoba
+        document.querySelector('.play-button').style.display = 'none';
+        document.querySelector('.pause-button').style.display = 'none'
         if (secondaryBackground.classList.contains('active')) {
           removeActive();
           menuModal.classList.remove('menu-active');
