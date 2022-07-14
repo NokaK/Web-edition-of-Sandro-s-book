@@ -575,17 +575,49 @@ body {
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;
+  padding-bottom: 80px;
 }
 
-.table-comps .about-text {
-  padding: 64px 32px 0 80px;
+.table-comps .about-content {
+  background-color: #181818;
+  padding: 10px;
 }
 
-.table-comps .about-text p {
-  font-family: 'sandro-Bold', sans-serif;
+.table-comps .about-content h3 {
+  font-size: 24px;
+  font-family: "sandro-Bold", sans-serif;
+  color: #fff;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.table-comps .about-content .about-text {
+  font-size: 15px;
+  font-family: "sandro-Bold", sans-serif;
   color: #fff;
   line-height: 22px;
-  font-size: 18px;
+  margin: 15px 0;
+}
+
+.table-comps .about-content .employees-list h4 {
+  font-size: 16px;
+  font-family: "sandro-Bold", sans-serif;
+  color: #fff;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.table-comps .about-content .employees-list p,
+.table-comps .about-content .employees-list h5,
+.table-comps .about-content .employees-list .editor-name {
+  font-size: 15px;
+  font-family: "sandro-Bold", sans-serif;
+  color: #fff;
+  line-height: 22px;
+}
+
+.table-comps .about-content .employees-list .editor-name {
+  margin: 15px 0;
 }
 
 .table-comps .content-display {
