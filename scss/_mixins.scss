@@ -3,3 +3,10 @@
   left: $x;
   transform: translate(-$x, -$y);
 }
+
+@mixin text-property($f-size, $f-family, $color, $l-height) {
+  font-size: $f-size;
+  font-family: $f-family;
+  color: $color;
+  line-height: $l-height;
+}
