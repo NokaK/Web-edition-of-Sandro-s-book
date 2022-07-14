@@ -517,7 +517,8 @@ for (let i = 0; i < items.length; i++) {
     switch (counter) {
       case 0: //winasityvaoba
         document.querySelector('.play-button').style.display = 'none';
-        document.querySelector('.pause-button').style.display = 'none'
+        document.querySelector('.pause-button').style.display = 'none';
+        document.querySelector('.preface-content').style.display = 'block';
         if (secondaryBackground.classList.contains('active')) {
           removeActive();
           menuModal.classList.remove('menu-active');
@@ -568,13 +569,13 @@ for (let i = 0; i < items.length; i++) {
         hideElements();
         removeActive();
         arrowSwitch();
-        shexvedraLeviatantan.classList.add('active');
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
         // soundPlayer();
         break;
       case 1: //shexvedra leviatantan
         document.querySelector('.title').innerText = items[counter].title;
+        document.querySelector('.preface-content').style.display = 'none';
         hideElements();
         removeActive();
         arrowSwitch();

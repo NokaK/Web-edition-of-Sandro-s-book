@@ -361,6 +361,36 @@ body {
   font-family: 'Sandro-Universal-Bold';
 }
 
+.preface-content {
+  position: absolute;
+  top: 17%;
+  left: 20%;
+  right: 2%;
+  padding-bottom: 40px;
+  display: none;
+}
+
+.preface-content .preface-texts p {
+  font-size: 15px;
+  font-family: "sandro-Bold", sans-serif;
+  color: #181818;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.preface-content .preface-texts p span {
+  font-family: system-ui, sans-serif;
+}
+
+.preface-content h5 {
+  font-size: 15px;
+  font-family: "sandro-Bold", sans-serif;
+  color: #181818;
+  line-height: 22px;
+  display: flex;
+  justify-content: right;
+}
+
 .play-button-loader-wrapper {
   display: none;
 }
