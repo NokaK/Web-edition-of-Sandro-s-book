@@ -53,6 +53,7 @@ mainMenuButton.addEventListener('click', () => {
   menuModal.classList.add('menu-active');
   navigation.classList.remove('db');
   navigation.classList.add('dn');
+  prefaceContent.style.display = 'none';
   modalCloseButton.style.pointerEvents = 'all';
   setTimeout(() => {
     modalHeader.classList.remove('dn');
@@ -71,5 +72,8 @@ modalCloseButton.addEventListener('click', () => {
     modalHeader.classList.add('dn');
     tableComps.classList.remove('df');
     tableComps.classList.add('dn');
+    if(headTitle.textContent == 'წინასიტყვაობა') {
+      prefaceContent.style.display = 'block';
+    }
   }
 });

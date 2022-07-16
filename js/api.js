@@ -426,6 +426,20 @@ function soundPlayer() {
   }
 }
 
+const headTitle = document.querySelector('.title');
+const prefaceContent = document.querySelector('.preface-content');
+/**
+ * This function checks the content of the title and
+ * determines whether the preface content should be visible.
+ */
+function checkTitleContent() {
+  if(headTitle.textContent == 'წინასიტყვაობა') {
+    prefaceContent.style.display = 'block';
+  } else {
+    prefaceContent.style.display = 'none';
+  }
+}
+
 function handleLeftArrowClick() {
   sound.pause();
   sound.currentTime = 0;
@@ -434,7 +448,8 @@ function handleLeftArrowClick() {
   background.style.transform = 'translateX(-85%)';
   counter--;
   if (counter > 0) {
-    document.querySelector('.title').innerText = items[counter].title;
+    headTitle.innerText = items[counter].title;
+    checkTitleContent();
     for (let e = 0; e < itemsBackgroundImages.length; e++) {
       itemsBackgroundImages[e].classList.remove('active');
     }
@@ -461,7 +476,8 @@ function handleRightArrowClick() {
   background.style.transform = 'translateX(-85%)';
   counter++;
   if (counter < items.length) {
-    document.querySelector('.title').innerText = items[counter].title;
+    headTitle.innerText = items[counter].title;
+    checkTitleContent();
     for (let e = 0; e < itemsBackgroundImages.length; e++) {
       itemsBackgroundImages[e].classList.remove('active');
     }
@@ -518,7 +534,6 @@ for (let i = 0; i < items.length; i++) {
       case 0: //winasityvaoba
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'none';
-        document.querySelector('.preface-content').style.display = 'block';
         if (secondaryBackground.classList.contains('active')) {
           removeActive();
           menuModal.classList.remove('menu-active');
@@ -565,7 +580,8 @@ for (let i = 0; i < items.length; i++) {
           );
           bigTitle.classList.add('big-title-active');
         }
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -574,8 +590,8 @@ for (let i = 0; i < items.length; i++) {
         // soundPlayer();
         break;
       case 1: //shexvedra leviatantan
-        document.querySelector('.title').innerText = items[counter].title;
-        document.querySelector('.preface-content').style.display = 'none';
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -594,7 +610,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 2: //shushis qila
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -613,7 +630,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 3: //qaosidan kosmosamde
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -632,7 +650,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 4: //ofisebis
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -651,7 +670,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 5: //cifruli samotxe
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -670,7 +690,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 6: //yvelaze seqsualuri profesia
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -689,7 +710,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 7: //xelovnuri inteleqti
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -708,7 +730,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 8: //naxatebit saubari
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -727,7 +750,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 9: //jadoqari
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -746,7 +770,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 10: //cheshmariti maswavlebeli
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -765,7 +790,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 11: //ukvdaveba
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
