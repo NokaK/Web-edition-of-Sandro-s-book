@@ -357,8 +357,17 @@ body {
   top: 5%;
   left: 20%;
   font-size: 36px;
+  font-family: "Sandro-Universal-Bold";
+  color: #fff;
+  line-height: none;
   white-space: nowrap;
-  font-family: 'Sandro-Universal-Bold';
+  mix-blend-mode: difference;
+  opacity: 0;
+  z-index: 20;
+}
+
+.title.title-active {
+  opacity: 1;
 }
 
 .preface-content {
