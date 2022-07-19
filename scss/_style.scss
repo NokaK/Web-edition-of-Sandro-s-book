@@ -180,9 +180,15 @@ body {
   position: absolute;
   top: 5%;
   left: 20%;
-  font-size: 36px;
+  @include text-property(36px, $font-universal-bold, $white, none);
   white-space: nowrap;
-  font-family: 'Sandro-Universal-Bold';
+  mix-blend-mode: difference;
+  opacity: 0;
+  z-index: 20;
+
+  &.title-active {
+    opacity: 1;
+  }
 }
 
 .preface-content {
