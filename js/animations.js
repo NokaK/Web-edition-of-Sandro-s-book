@@ -8,7 +8,6 @@ const sorted_letters_container = document.getElementById(
   'sorted-letters-container'
 );
 const bigTitle = document.getElementById('big-title');
-const headTitle = document.querySelector('.title');
 const startingButtonTitle = document.getElementById('starting-button-title');
 const secondaryNavBar = document.getElementById('secondary-nav-bar');
 
