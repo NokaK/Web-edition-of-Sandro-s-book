@@ -8,34 +8,58 @@ const tableComps = document.querySelector('.table-comps');
 // navigation titles
 const contentHeaderText = document.getElementById('contentHeaderText');
 const aboutUsText = document.getElementById('aboutUsText');
+const pdfTitle = document.getElementById('pdfTitle');
 // selected navigation contents
 const contentDisplay = document.getElementById('contentDisplay');
 const aboutText = document.getElementById('about-text');
+const pdfContent = document.querySelector('.pdf-content');
 
 aboutUsText.addEventListener('click', () => {
   // this callback function adds about us active class
   contentHeaderText.classList.remove('active-menu-button');
+  pdfTitle.classList.remove('active-menu-button');
   aboutUsText.classList.add('active-menu-button');
 
   // content display disappear here
-  contentDisplay.classList.remove('db');
-  contentDisplay.classList.add('dn');
+  contentDisplay.style.display = 'none';
+  
+  // about text appear here
+  aboutText.style.display = 'block';  
 
-  // about lorem text appear here
-  aboutText.classList.remove('dn');
-  aboutText.classList.add('db');
+  // pdf content disappear here
+  pdfContent.style.display = 'none';
 });
 
 contentHeaderText.addEventListener('click', () => {
   // this callback function removes about us active class
   contentHeaderText.classList.add('active-menu-button');
   aboutUsText.classList.remove('active-menu-button');
-  //  content display appear here
-  contentDisplay.classList.remove('dn');
-  contentDisplay.classList.add('db');
-  // about lorem text disappear here
-  aboutText.classList.remove('db');
-  aboutText.classList.add('dn');
+  pdfTitle.classList.remove('active-menu-button');
+
+  // content display appear here
+  contentDisplay.style.display = 'block';
+  
+  // about text disappear here
+  aboutText.style.display = 'none';  
+
+  // pdf content disappear here
+  pdfContent.style.display = 'none';
+});
+
+pdfTitle.addEventListener('click', () => {
+  // this callback function removes about us active class 
+  pdfTitle.classList.add('active-menu-button');
+  aboutUsText.classList.remove('active-menu-button');
+  contentHeaderText.classList.remove('active-menu-button');
+
+  // content display disappear here
+  contentDisplay.style.display = 'none';
+  
+  // about text disappear here
+  aboutText.style.display = 'none';  
+
+  // pdf content appear here
+  pdfContent.style.display = 'block';
 });
 /*
 setTimeout(() => {
