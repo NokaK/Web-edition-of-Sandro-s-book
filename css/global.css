@@ -511,12 +511,26 @@ body {
   fill: #fff;
 }
 
+.sorted-letters-container .letter-q {
+  animation: top-to-bottom-q 7s linear forwards;
+}
+
+.sorted-letters-container .letter-a-bold {
+  animation: top-to-bottom-a 7s linear forwards;
+}
+
 .sorted-letters-container .letter-o-bold {
   margin-bottom: -30px;
+  animation: top-to-bottom-o 7s linear forwards;
+}
+
+.sorted-letters-container .letter-s {
+  animation: top-to-bottom-s 7s linear forwards;
 }
 
 .sorted-letters-container .letter-i {
   margin-bottom: 20px;
+  animation: top-to-bottom-i 7s linear forwards;
 }
 
 .sorted-letters-container .letter-d {
@@ -766,5 +780,95 @@ body {
 
 .df {
   display: flex;
+}
+
+@keyframes top-to-bottom-q {
+  0% {
+    transform: translate(60px, -500px);
+  }
+  25% {
+    transform: translate(150px, -450px);
+  }
+  50% {
+    transform: translate(100px, -350px);
+  }
+  75% {
+    transform: translate(60px, -150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes top-to-bottom-a {
+  0% {
+    transform: translate(60px, -600px);
+  }
+  25% {
+    transform: translate(130px, -500px);
+  }
+  50% {
+    transform: translate(100px, -200px);
+  }
+  75% {
+    transform: translate(70px, -100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes top-to-bottom-o {
+  0% {
+    transform: translate(70px, -550px);
+  }
+  25% {
+    transform: translate(90px, -450px);
+  }
+  50% {
+    transform: translate(80px, -500px);
+  }
+  75% {
+    transform: translate(60px, -200px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes top-to-bottom-s {
+  0% {
+    transform: translate(180px, -500px);
+  }
+  25% {
+    transform: translate(150px, -400px);
+  }
+  50% {
+    transform: translate(100px, -450px);
+  }
+  75% {
+    transform: translate(60px, -250px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes top-to-bottom-i {
+  0% {
+    transform: translate(150px, -550px);
+  }
+  25% {
+    transform: translate(100px, -400px);
+  }
+  50% {
+    transform: translate(120px, -300px);
+  }
+  75% {
+    transform: translate(90px, -150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 /*# sourceMappingURL=global.css.map */
