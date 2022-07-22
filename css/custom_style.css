@@ -1,0 +1,23 @@
+/* hover */
+.hover-svg {
+   display: inline-block;
+}
+.path-fill,
+.table-comps .row-1 .svg-holder span,
+.menu-modal-wrapper .header .close-menu-button div,
+.active-menu-button,
+#aboutUsText {
+    transition: fill .3s, color .3s, background-color .3s;
+}
+.hover-svg:hover .path-fill {
+    fill: #999999;
+}
+.table-comps .row-1 .svg-holder:hover span,
+.menu-modal-wrapper .header h2.active-menu-button:hover,
+#aboutUsText:hover {
+    color: #666666;
+}
+.menu-modal-wrapper .header .close-menu-button:hover .line-1,
+.menu-modal-wrapper .header .close-menu-button:hover .line-2 {
+    background-color: #fff;
+}
