@@ -125,7 +125,6 @@ body {
           width: 80px;
           cursor: pointer;
         }
-
       }
 
       &.secondary-nav-bar-active {
@@ -306,13 +305,22 @@ body {
   svg {
     fill: #fff;
   }
-
+  .letter-q {
+    animation: top-to-bottom-q 7s linear forwards;
+  }
+  .letter-a-bold {
+    animation: top-to-bottom-a 7s linear forwards;
+  }
   .letter-o-bold {
     margin-bottom: -30px;
+    animation: top-to-bottom-o 7s linear forwards;
   }
-
+  .letter-s {
+    animation: top-to-bottom-s 7s linear forwards;
+  }
   .letter-i {
     margin-bottom: 20px;
+    animation: top-to-bottom-i 7s linear forwards;
   }
 
   .letter-d {
@@ -347,7 +355,6 @@ body {
     pointer-events: all;
     font-size: 100px;
     font-family: 'Sandro-Universal-Bold';
-
   }
 }
 
