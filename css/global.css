@@ -377,12 +377,14 @@ body {
   right: 2%;
   padding-bottom: 40px;
   display: none;
+  mix-blend-mode: difference;
+  z-index: 100;
 }
 
 .preface-content .preface-texts p {
   font-size: 15px;
-  font-family: "sandro-Bold", sans-serif;
-  color: #181818;
+  font-family: "sandro-Regular", sans-serif;
+  color: #fff;
   line-height: 22px;
   margin-bottom: 20px;
 }
@@ -393,8 +395,8 @@ body {
 
 .preface-content h5 {
   font-size: 15px;
-  font-family: "sandro-Bold", sans-serif;
-  color: #181818;
+  font-family: "sandro-Regular", sans-serif;
+  color: #fff;
   line-height: 22px;
   display: flex;
   justify-content: right;
