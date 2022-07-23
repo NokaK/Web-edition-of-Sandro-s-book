@@ -587,7 +587,7 @@ for (let i = 0; i < items.length; i++) {
         arrowSwitch();
         secondaryNavBar.classList.add('secondary-nav-bar-active');
         gridItemOpenSlider();
-        // soundPlayer();
+        sound.pause();
         break;
       case 1: //shexvedra leviatantan
         headTitle.innerText = items[counter].title;
