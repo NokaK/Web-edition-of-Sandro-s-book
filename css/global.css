@@ -464,21 +464,21 @@ body {
   fill: #fff;
 }
 .sorted-letters-container .letter-q {
-  animation: top-to-bottom-q 7s linear forwards;
+  animation: top-to-bottom-q 4s linear forwards;
 }
 .sorted-letters-container .letter-a-bold {
-  animation: top-to-bottom-a 7s linear forwards;
+  animation: top-to-bottom-a 4s linear forwards;
 }
 .sorted-letters-container .letter-o-bold {
   margin-bottom: -30px;
-  animation: top-to-bottom-o 7s linear forwards;
+  animation: top-to-bottom-o 4s linear forwards;
 }
 .sorted-letters-container .letter-s {
-  animation: top-to-bottom-s 7s linear forwards;
+  animation: top-to-bottom-s 4s linear forwards;
 }
 .sorted-letters-container .letter-i {
   margin-bottom: 20px;
-  animation: top-to-bottom-i 7s linear forwards;
+  animation: top-to-bottom-i 4s linear forwards;
 }
 .sorted-letters-container .letter-d {
   margin-bottom: -30px;
@@ -667,14 +667,20 @@ body {
   0% {
     transform: translate(60px, -500px);
   }
-  25% {
-    transform: translate(150px, -450px);
+  20% {
+    transform: translate(150px, -480px);
   }
-  50% {
-    transform: translate(100px, -350px);
+  40% {
+    transform: translate(60px, -410px);
   }
-  75% {
-    transform: translate(60px, -150px);
+  60% {
+    transform: translate(130px, -350px);
+  }
+  70% {
+    transform: translate(100px, -400px);
+  }
+  90% {
+    transform: translate(150px, -250px);
   }
   100% {
     transform: translate(0, 0);
@@ -682,16 +688,22 @@ body {
 }
 @keyframes top-to-bottom-a {
   0% {
-    transform: translate(60px, -600px);
+    transform: translate(60px, -500px);
   }
-  25% {
-    transform: translate(130px, -500px);
+  20% {
+    transform: translate(180px, -480px);
   }
-  50% {
+  40% {
+    transform: translate(160px, -430px);
+  }
+  60% {
+    transform: translate(90px, -330px);
+  }
+  70% {
     transform: translate(100px, -200px);
   }
-  75% {
-    transform: translate(70px, -100px);
+  90% {
+    transform: translate(200px, -380px);
   }
   100% {
     transform: translate(0, 0);
@@ -701,14 +713,20 @@ body {
   0% {
     transform: translate(70px, -550px);
   }
-  25% {
-    transform: translate(90px, -450px);
+  20% {
+    transform: translate(180px, -500px);
   }
-  50% {
-    transform: translate(80px, -500px);
+  40% {
+    transform: translate(140px, -400px);
   }
-  75% {
-    transform: translate(60px, -200px);
+  60% {
+    transform: translate(60px, -500px);
+  }
+  70% {
+    transform: translate(100px, -300px);
+  }
+  90% {
+    transform: translate(200px, -280px);
   }
   100% {
     transform: translate(0, 0);
@@ -718,14 +736,20 @@ body {
   0% {
     transform: translate(180px, -500px);
   }
-  25% {
-    transform: translate(150px, -400px);
+  20% {
+    transform: translate(150px, -480px);
   }
-  50% {
+  40% {
     transform: translate(100px, -450px);
   }
-  75% {
-    transform: translate(60px, -250px);
+  60% {
+    transform: translate(60px, -350px);
+  }
+  70% {
+    transform: translate(100px, -200px);
+  }
+  90% {
+    transform: translate(350px, -350px);
   }
   100% {
     transform: translate(0, 0);
@@ -733,16 +757,22 @@ body {
 }
 @keyframes top-to-bottom-i {
   0% {
-    transform: translate(150px, -550px);
+    transform: translate(150px, -500px);
   }
-  25% {
-    transform: translate(100px, -400px);
+  20% {
+    transform: translate(100px, -420px);
   }
-  50% {
-    transform: translate(120px, -300px);
+  40% {
+    transform: translate(120px, -460px);
   }
-  75% {
-    transform: translate(90px, -150px);
+  60% {
+    transform: translate(150px, -350px);
+  }
+  70% {
+    transform: translate(100px, -200px);
+  }
+  90% {
+    transform: translate(150px, -320px);
   }
   100% {
     transform: translate(0, 0);
