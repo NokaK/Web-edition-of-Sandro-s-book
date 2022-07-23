@@ -8,7 +8,7 @@ const items = [
   {
     id: 1,
     title: 'შეხვედრა ლევიათანთან',
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.65 177.54" fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M70.28 69.78l-4.71-.89c-7.41-1.02-11.45-5.65-13.07-12.56-.76-3.23-1.17-6.62-1.17-9.94-.01-9.14 5.83-14.94 12.7-19.43 8.05-5.26 17-7.23 26.54-4 3.32 1.13 6.97 1.66 9.94 3.38 7.45 4.29 10 11.19 8.58 20.14-1.95 12.24-8.28 20.99-19.74 25.95-3.01 1.3-5.78 3.21-5.63 6.86.33 7.62 1.04 15.23 1.62 23.31l13.36-1.75c1.63 4.9 2.11 9.57 1.18 14.69l-13.78 2c1.13 5.93 1.13 5.93 6.96 5.93 6.52 0 10.5 4.55 9.25 10.56-.59 2.8-1.88 4.72-5.15 4.58-1.77-.08-3.57.03-5.32.29-1.87.27-3.71.81-5.84 1.3.23 2.25.32 3.98.61 5.69 1.34 7.78-2.05 11.58-9.7 10.84-.75-.07-2.62-.58-3.32-1.47-2.75-5.06-2.45-8.9-2.83-14.23-.26-3.6-.3-7.22-.55-10.79a268.95 268.95 0 0 1-.68-17.03c-.04-5.13.29-10.26.45-15.39l.66-22.49c.04-1.76-.22-3.51-.36-5.55zm6.12-4.05c-2.6 18.77-2.37 37.15-1.15 55.94l1.44 18.6.45 5.08c.58 8.54 5.57 6.8 6.3 5.2.81-1.8-1.14-14.38-.72-16.45 4.03 0 7.39.2 10.71-.06 3.23-.25 4.81-1.86 4.11-3.75-.89-2.38-2.72-2.23-4.89-1.78-2.8.57-5.69.67-9.08 1.03l-1.48-7.32a123.68 123.68 0 0 1-.78-4.32c-.68-4.2.22-5.06 4.67-5.42 3.24-.26 6.46-.77 9.99-1.21l-.79-5.9-13.81 1.96c-.23-.85-.95-2-.77-2.98 1.71-9.12-.95-18.07-.91-27.12.02-3.84.58-5.45 3.87-7.01 1.42-.67 2.91-1.22 4.38-1.77 9.45-3.57 15.15-10.34 17.2-20.19.27-1.31.75-2.93.25-3.99C102 37.1 98.32 30.02 89.83 27.7c-6.82-1.86-13.57-1.88-20.12 1.4-7.9 3.95-12.29 10.3-13.1 19.02-.46 4.92 4.19 12.25 8.5 13.79l11.29 3.82zM64.53 48.45c-.79-7.49 2.24-13.54 7.2-15.54 7.57-3.06 13.85-1.75 18.61 3.84 1.27 1.49 2.73 2.83 3.95 4.37 5.38 6.78 3.46 15.66-4.3 19.28-4.84 2.25-9.96 3.98-15.29 1.86-6.57-2.62-11-6.94-10.17-13.81zm16.32 10c2.11-.66 5.24-1.27 8.03-2.58 3.92-1.85 4.98-4.59 4.13-8.78-.88-4.38-6.96-10.8-11.32-11.04-4.27-.24-9.04-.31-11.75 3.94-2.51 3.92-2.33 8.45-.37 12.48 1.96 4.02 5.88 5.53 11.28 5.98z"/><path d="M43.63 108.92c-.45-.78-1.19-3.5-2.97-4.95-10.65-8.7-10.82-17.93-.17-26.99.46-.39.87-.83 2.09-2.02l-9.35-6.73c-7.34-5.37-8.12-13.97-1.51-20.21 2.62-2.47 5.98-4.17 9.58-6.6-1.72-4.9-.28-7.36 5.44-10.11 9.78-4.7 19.39-6.64 30-6 7.88.48 15.8.07 23.7.35 4.36.15 7.77 3.91 13.02 2.55 2.74-.71 5.81-4.59 9.95-.8 2.96 2.7 7.79 3.27 11.65 5.06 3.85 1.79 5.74 5.1 6.9 9.19 3.7 13.05 5.14 26.39 5.42 39.86.22 10.38.02 20.78-.44 31.15-.55 12.52 1.16 17.11-10.78 23.38-2.91 1.53-28.71 8.99-52.31 11.65-24.74 1.56-27.49.67-33.87-2.36-12.74-5.88-20.43-15.32-16.52-24.85 1.66-4.04 6-6.97 10.17-11.57zm2.62-68.05c4.56 1.4 8.08 2.38 11.52 3.58 3.32 1.15 4.68 3.77 4.66 7.15-.03 3.57-1.75 5.59-5.22 6.02-6.28-9.8-6.36-9.88-10.98-10.44l2.16 27.27c4.72.52 8.37.73 11.95 1.36 3.58.64 4.98 3.71 5.14 6.74.09 1.72-1.36 4.56-2.79 5.11-3.26 1.25-4.65-1.54-5.96-4.17-1.87-3.75-4.97-4.95-9.19-3.72-2.08 10.5-1.93 19.62.35 31.16 3.9 0 10.13 0 14.52-5.89 2.73-2.22 5.85 5.89 2.98 6.61-2.11.84-4.16 1.95-6.35 2.48-3.43.83-5.87 1.09-10.22 1.84.92 5.81 1.59 10.26 3.63 14.56 4.93.21 11.28-.96 16.32-1.45 11.84-1.14 23.64-2.72 35.41-4.48 5.27-.79 10.42-2.41 16.31-3.82l-10.67-79.32c-.95-6.87-4.8-11.21-12.1-11.74-13.4-.97-26.97-1.49-40.09 2.12-4.35 1.23-9.24 3.07-11.38 9.03zm8.63 101.18l.59 2.85c17.35 6.32 78.13-7.78 83.85-12.96 2.76-2.5 4.78-10.96 5.08-14.86.71-9.39.44-18.31 1-27.71.85-14.18-1.81-29.69-4.56-43.41-.63-3.14-1.88-5.72-3.23-8.72-.6.24-4.41-1.43-5.01-1.19 5.02 9.39 4.55 24.97 4.1 35.39-.2 4.57.58 20.13.46 24.71-.26 10.09.95 16 .32 22.02-.29 2.78-.58 6.6-1.99 9.85-1.15 2.66-35.27 14.99-80.61 14.03zm-2.3-9.28c-.06-.36.78 3.28.78 3.28 3.13-.23 19.26-.79 38.17-3.61 19.18-2.86 37.76-8.14 37.73-8.57-1.3-15.82-4.79-46.35-6.53-60.97-.54-4.5-1.27-28.94-2.95-33.3-2.71 2.3-8.44 2.23-8.44 2.23 1.14 10.31 3.38 26.39 5.68 42.8l6.23 48.08c.02.22-15.28 3.94-31.61 6.16-18.85 2.57-39.09 3.67-39.06 3.9zM122.81 31.5c.94 9.68 2.07 24.2 3.2 39.19l2.25 29.47 2.31 24.77s-18.94 6.03-40.2 9.17c-12.63 1.87-26.1 2.7-36.62 3.14l.6 3.34c1.74 0 21.87-.05 40.77-3.21 19.74-3.3 38.26-9.72 38.25-10.04 3.12-8.12 1.98-29.65 1.54-44.63l-.96-25.42c-.24-4.28-.81-16.06-3.89-22.1.01-.01-5.28-1.4-7.25-3.68zM41.3 47.38c-4.78 1.91-8.56 4.18-8.89 9.4-.27 4.44 2.56 6.9 10.01 9.26 2.45-6.26 1.02-12.13-1.12-18.66zm1.55 69.54c-4.35 1.77-6.7 5-5.86 9.71 1.16 6.54 6.36 9.33 12.73 12.52l-6.87-22.23zm-.83-34.63c-6.39 7.02-6.35 8.65 0 14.37V82.29z"/></svg>`,
+    svg: `<svg viewBox="0 0 174.6 177.5" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M43.6 108.9c-.5-.8-1.2-3.5-3-4.9-10.6-8.7-10.8-18-.1-27 .5-.4.9-.8 2.1-2-3.2-2.3-6.3-4.5-9.3-6.7-7.3-5.4-8.1-14-1.5-20.2 2.6-2.5 6-4.2 9.6-6.6-1.7-4.9-.3-7.4 5.4-10.1 9.8-4.7 19.4-6.6 30-6 7.9.5 15.8.1 23.7.4 4.4.1 7.8 3.9 13 2.5 2.7-.7 5.8-4.6 9.9-.8 3 2.7 7.8 3.3 11.6 5.1 3.9 1.8 5.7 5.1 6.9 9.2 3.7 13 5.1 26.4 5.4 39.9.2 10.4 0 20.8-.4 31.2-.6 12.5 1.2 17.1-10.8 23.4-2.9 1.5-28.7 9-52.3 11.6-24.7 1.6-27.5.7-33.9-2.4-12.7-5.9-20.4-15.3-16.5-24.8 1.7-4.3 6.1-7.2 10.2-11.8zm2.6-68c4.6 1.4 8.1 2.4 11.5 3.6 3.3 1.2 4.7 3.8 4.7 7.2 0 3.6-1.8 5.6-5.2 6-6.3-9.8-6.4-9.9-11-10.4.7 9.1 1.4 18 2.2 27.3 4.7.5 8.4.7 12 1.4 3.6.6 5 3.7 5.1 6.7.1 1.7-1.4 4.6-2.8 5.1-3.3 1.2-4.7-1.5-6-4.2-1.9-3.8-5-4.9-9.2-3.7-2.1 10.5-1.9 19.6.3 31.2 3.9 0 10.1 0 14.5-5.9 2.7-2.2 5.8 5.9 3 6.6-2.1.8-4.2 1.9-6.3 2.5-3.4.8-5.9 1.1-10.2 1.8.9 5.8 1.6 10.3 3.6 14.6 4.9.2 11.3-1 16.3-1.4 11.8-1.1 23.6-2.7 35.4-4.5 5.3-.8 10.4-2.4 16.3-3.8-3.7-27.3-7.1-53.3-10.7-79.3-.9-6.9-4.8-11.2-12.1-11.7-13.4-1-27-1.5-40.1 2.1-4.2 1-9.1 2.8-11.3 8.8zm8.7 101.2l.6 2.9c17.3 6.3 78.1-7.8 83.9-13 2.8-2.5 4.8-11 5.1-14.9.7-9.4.4-18.3 1-27.7.9-14.2-1.8-29.7-4.6-43.4-.6-3.1-1.9-5.7-3.2-8.7-.6.2-4.4-1.4-5-1.2 5 9.4 4.6 25 4.1 35.4-.2 4.6.6 20.1.5 24.7-.3 10.1.9 16 .3 22-.3 2.8-.6 6.6-2 9.9-1.3 2.6-35.4 14.9-80.7 14zm-2.3-9.3c-.1-.4.8 3.3.8 3.3 3.1-.2 19.3-.8 38.2-3.6 19.2-2.9 37.8-8.1 37.7-8.6-1.3-15.8-4.8-46.3-6.5-61-.5-4.5-1.3-28.9-2.9-33.3-2.7 2.3-8.4 2.2-8.4 2.2 1.1 10.3 3.4 26.4 5.7 42.8 2.3 16.5 4.9 36.4 6.2 48.1 0 .2-15.3 3.9-31.6 6.2-19 2.5-39.3 3.6-39.2 3.9zm70.2-101.3c.9 9.7 2.1 24.2 3.2 39.2.8 10.1 1.5 20.3 2.2 29.5.6 7.1 1.8 19.6 2.3 24.8 0 0-18.9 6-40.2 9.2-12.6 1.9-26.1 2.7-36.6 3.1l.6 3.3c1.7 0 21.9-.1 40.8-3.2 19.7-3.3 38.3-9.7 38.2-10 3.1-8.1 2-29.7 1.5-44.6-.3-10.3-.6-20.1-1-25.4-.2-4.3-.8-16.1-3.9-22.1.2-.1-5.1-1.5-7.1-3.8zM41.3 47.4c-4.8 1.9-8.6 4.2-8.9 9.4-.3 4.4 2.6 6.9 10 9.3 2.5-6.3 1-12.2-1.1-18.7zm1.5 69.5c-4.3 1.8-6.7 5-5.9 9.7 1.2 6.5 6.4 9.3 12.7 12.5-2.3-7.8-4.4-14.5-6.8-22.2zM42 82.3c-6.4 7-6.3 8.7 0 14.4V82.3z"/></svg>`,
     content: '',
     audio: './media/mp3/shexvedra-leviatantan.mp3',
   },
@@ -426,6 +426,20 @@ function soundPlayer() {
   }
 }
 
+const headTitle = document.querySelector('.title');
+const prefaceContent = document.querySelector('.preface-content');
+/**
+ * This function checks the content of the title and
+ * determines whether the preface content should be visible.
+ */
+function checkTitleContent() {
+  if(headTitle.textContent == 'წინასიტყვაობა') {
+    prefaceContent.style.display = 'block';
+  } else {
+    prefaceContent.style.display = 'none';
+  }
+}
+
 function handleLeftArrowClick() {
   sound.pause();
   sound.currentTime = 0;
@@ -434,7 +448,8 @@ function handleLeftArrowClick() {
   background.style.transform = 'translateX(-85%)';
   counter--;
   if (counter > 0) {
-    document.querySelector('.title').innerText = items[counter].title;
+    headTitle.innerText = items[counter].title;
+    checkTitleContent();
     for (let e = 0; e < itemsBackgroundImages.length; e++) {
       itemsBackgroundImages[e].classList.remove('active');
     }
@@ -461,7 +476,8 @@ function handleRightArrowClick() {
   background.style.transform = 'translateX(-85%)';
   counter++;
   if (counter < items.length) {
-    document.querySelector('.title').innerText = items[counter].title;
+    headTitle.innerText = items[counter].title;
+    checkTitleContent();
     for (let e = 0; e < itemsBackgroundImages.length; e++) {
       itemsBackgroundImages[e].classList.remove('active');
     }
@@ -518,7 +534,6 @@ for (let i = 0; i < items.length; i++) {
       case 0: //winasityvaoba
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'none';
-        document.querySelector('.preface-content').style.display = 'block';
         if (secondaryBackground.classList.contains('active')) {
           removeActive();
           menuModal.classList.remove('menu-active');
@@ -565,7 +580,8 @@ for (let i = 0; i < items.length; i++) {
           );
           bigTitle.classList.add('big-title-active');
         }
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -574,8 +590,8 @@ for (let i = 0; i < items.length; i++) {
         // soundPlayer();
         break;
       case 1: //shexvedra leviatantan
-        document.querySelector('.title').innerText = items[counter].title;
-        document.querySelector('.preface-content').style.display = 'none';
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -594,7 +610,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 2: //shushis qila
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -613,7 +630,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 3: //qaosidan kosmosamde
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -632,7 +650,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 4: //ofisebis
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -651,7 +670,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 5: //cifruli samotxe
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -670,7 +690,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 6: //yvelaze seqsualuri profesia
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -689,7 +710,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 7: //xelovnuri inteleqti
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -708,7 +730,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 8: //naxatebit saubari
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -727,7 +750,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 9: //jadoqari
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -746,7 +770,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 10: //cheshmariti maswavlebeli
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -765,7 +790,8 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
       case 11: //ukvdaveba
-        document.querySelector('.title').innerText = items[counter].title;
+        headTitle.innerText = items[counter].title;
+        checkTitleContent();
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');

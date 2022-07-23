@@ -20,6 +20,7 @@ window.addEventListener('load', () => {
     startingButtonTitle.classList.add('starting-button-title-active');
     lettersContainer.classList.add('letters-container-active');
     bigTitle.classList.add('big-title-active');
+    headTitle.classList.add('title-active');
     loaderContainer.style.transform = 'translateX(-50%)';
     loaderContainer.style.transitionDelay = '0.5s';
     sorted_letters_container.classList.add('sorted-letters-container-active');
