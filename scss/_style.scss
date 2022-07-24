@@ -197,10 +197,12 @@ body {
   right: 2%;
   padding-bottom: 40px;
   display: none;
+  mix-blend-mode: difference;
+  z-index: 100;
 
   .preface-texts {
     p {
-      @include text-property(15px, $font-bold, $black, 22px);
+      @include text-property(15px, $font-regular, $white, 22px);
       margin-bottom: 20px;
 
       span {
@@ -210,7 +212,7 @@ body {
   }
 
   h5 {
-    @include text-property(15px, $font-bold, $black, 22px);
+    @include text-property(15px, $font-regular, $white, 22px);
     display: flex;
     justify-content: right;
   }
