@@ -202,11 +202,8 @@ body {
 
   .preface-texts {
     p {
-
       @include text-property(15px, $font-regular, $white, 22px);
-
       margin-bottom: 20px;
-
       span {
         font-family: system-ui, sans-serif;
       }
@@ -214,9 +211,7 @@ body {
   }
 
   h5 {
-
     @include text-property(15px, $font-regular, $white, 22px);
-
     display: flex;
     justify-content: right;
   }
