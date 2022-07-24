@@ -356,8 +356,8 @@ body {
   position: absolute;
   top: 5%;
   left: 20%;
-  font-size: 36px;
-  font-family: "Sandro-Universal-Bold";
+  font-size: 44px;
+  font-family: "sandro-Regular", sans-serif;
   color: #fff;
   line-height: none;
   white-space: nowrap;
@@ -381,7 +381,7 @@ body {
 
 .preface-content .preface-texts p {
   font-size: 15px;
-  font-family: "sandro-Bold", sans-serif;
+  font-family: "sandro-Regular", sans-serif;
   color: #181818;
   line-height: 22px;
   margin-bottom: 20px;
@@ -393,7 +393,7 @@ body {
 
 .preface-content h5 {
   font-size: 15px;
-  font-family: "sandro-Bold", sans-serif;
+  font-family: "sandro-Regular", sans-serif;
   color: #181818;
   line-height: 22px;
   display: flex;
@@ -639,15 +639,14 @@ body {
 
 .table-comps .about-content h3 {
   font-size: 24px;
-  font-family: "sandro-Bold", sans-serif;
+  font-family: "sandro-Regular", sans-serif;
   color: #fff;
   line-height: 30px;
-  font-weight: 600;
 }
 
 .table-comps .about-content .about-text {
   font-size: 15px;
-  font-family: "sandro-Bold", sans-serif;
+  font-family: "sandro-Regular", sans-serif;
   color: #fff;
   line-height: 22px;
   margin: 15px 0;
@@ -655,17 +654,16 @@ body {
 
 .table-comps .about-content .employees-list h4 {
   font-size: 16px;
-  font-family: "sandro-Bold", sans-serif;
+  font-family: "sandro-Regular", sans-serif;
   color: #fff;
   line-height: 18px;
-  font-weight: 600;
 }
 
 .table-comps .about-content .employees-list p,
 .table-comps .about-content .employees-list h5,
 .table-comps .about-content .employees-list .editor-name {
   font-size: 15px;
-  font-family: "sandro-Bold", sans-serif;
+  font-family: "sandro-Regular", sans-serif;
   color: #fff;
   line-height: 22px;
 }
