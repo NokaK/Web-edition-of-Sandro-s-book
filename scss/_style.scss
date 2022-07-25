@@ -204,6 +204,7 @@ body {
     p {
       @include text-property(15px, $font-regular, $white, 22px);
       margin-bottom: 20px;
+
       span {
         font-family: system-ui, sans-serif;
       }
@@ -362,6 +363,15 @@ body {
     font-size: 100px;
     font-family: 'Sandro-Universal-Bold';
   }
+}
+
+.timer {
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  @include text-property(55px, $font-universal-bold, $white, 40px);
+  mix-blend-mode: difference;
+  z-index: 111;
 }
 
 // active menu styles

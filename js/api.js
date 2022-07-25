@@ -432,8 +432,8 @@ const prefaceContent = document.querySelector('.preface-content');
  * This function checks the content of the title and
  * determines whether the preface content should be visible.
  */
-function checkTitleContent() {
-  if(headTitle.textContent == 'წინასიტყვაობა') {
+const checkTitleContent = () => {
+  if (headTitle.textContent == 'წინასიტყვაობა') {
     prefaceContent.style.display = 'block';
   } else {
     prefaceContent.style.display = 'none';
@@ -474,6 +474,7 @@ function handleRightArrowClick() {
   playbutton.classList.remove('active');
   background.style.transition = `transform 0s ease-in 0s`;
   background.style.transform = 'translateX(-85%)';
+  timer.style.display = 'block';
   counter++;
   if (counter < items.length) {
     headTitle.innerText = items[counter].title;
@@ -511,6 +512,18 @@ let itemsBackgroundImages = [
 ];
 
 
+const timer = document.querySelector('.timer');
+/**
+ * This function checks the content of the title and
+ * determines whether the timer should be visible.
+ */
+const appearTimer = () => {
+  if (headTitle.textContent !== 'წინასიტყვაობა') {
+    timer.style.display = 'block';
+  } else {
+    timer.style.display = 'none';
+  }
+}
 
 for (let i = 0; i < items.length; i++) {
   const cont = document.createElement('a');
@@ -582,6 +595,7 @@ for (let i = 0; i < items.length; i++) {
         }
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -592,6 +606,7 @@ for (let i = 0; i < items.length; i++) {
       case 1: //shexvedra leviatantan
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -612,6 +627,7 @@ for (let i = 0; i < items.length; i++) {
       case 2: //shushis qila
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -632,6 +648,7 @@ for (let i = 0; i < items.length; i++) {
       case 3: //qaosidan kosmosamde
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -652,6 +669,7 @@ for (let i = 0; i < items.length; i++) {
       case 4: //ofisebis
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -672,6 +690,7 @@ for (let i = 0; i < items.length; i++) {
       case 5: //cifruli samotxe
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -692,6 +711,7 @@ for (let i = 0; i < items.length; i++) {
       case 6: //yvelaze seqsualuri profesia
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -712,6 +732,7 @@ for (let i = 0; i < items.length; i++) {
       case 7: //xelovnuri inteleqti
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -732,6 +753,7 @@ for (let i = 0; i < items.length; i++) {
       case 8: //naxatebit saubari
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -752,6 +774,7 @@ for (let i = 0; i < items.length; i++) {
       case 9: //jadoqari
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -772,6 +795,7 @@ for (let i = 0; i < items.length; i++) {
       case 10: //cheshmariti maswavlebeli
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -792,6 +816,7 @@ for (let i = 0; i < items.length; i++) {
       case 11: //ukvdaveba
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
