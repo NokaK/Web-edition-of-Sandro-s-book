@@ -202,7 +202,6 @@ body {
 
   .preface-texts {
     p {
-
       @include text-property(15px, $font-regular, $white, 22px);
 
       margin-bottom: 20px;
@@ -214,7 +213,6 @@ body {
   }
 
   h5 {
-
     @include text-property(15px, $font-regular, $white, 22px);
 
     display: flex;
@@ -313,30 +311,25 @@ body {
   }
 
   .letter-q {
-    animation: top-to-bottom-q 4s linear forwards;
-    animation-delay: 1s;
+    animation: top-to-bottom-q 5s linear forwards;
   }
 
   .letter-a-bold {
-    animation: top-to-bottom-a 4s linear forwards;
-    animation-delay: 1s;
+    animation: top-to-bottom-a 5s linear forwards;
   }
 
   .letter-o-bold {
     margin-bottom: -30px;
-    animation: top-to-bottom-o 4s linear forwards;
-    animation-delay: 1s;
+    animation: top-to-bottom-o 5s linear forwards;
   }
 
   .letter-s {
-    animation: top-to-bottom-s 4s linear forwards;
-    animation-delay: 1s;
+    animation: top-to-bottom-s 5s linear forwards;
   }
 
   .letter-i {
     margin-bottom: 20px;
-    animation: top-to-bottom-i 4s linear forwards;
-    animation-delay: 1s;
+    animation: top-to-bottom-i 5s linear forwards;
   }
 
   .letter-d {
