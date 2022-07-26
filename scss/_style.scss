@@ -314,24 +314,29 @@ body {
 
   .letter-q {
     animation: top-to-bottom-q 4s linear forwards;
+    animation-delay: 1s;
   }
 
   .letter-a-bold {
     animation: top-to-bottom-a 4s linear forwards;
+    animation-delay: 1s;
   }
 
   .letter-o-bold {
     margin-bottom: -30px;
     animation: top-to-bottom-o 4s linear forwards;
+    animation-delay: 1s;
   }
 
   .letter-s {
     animation: top-to-bottom-s 4s linear forwards;
+    animation-delay: 1s;
   }
 
   .letter-i {
     margin-bottom: 20px;
     animation: top-to-bottom-i 4s linear forwards;
+    animation-delay: 1s;
   }
 
   .letter-d {
