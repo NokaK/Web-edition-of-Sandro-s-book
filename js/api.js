@@ -412,8 +412,6 @@ function soundPlayer() {
       this.classList.toggle('active');
       if (this.classList.contains('active')) {
         sound.play();
-        console.log(sound.duration)
-        console.log(sound.duration/60,sound.duration%60)
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'block';
       } else {
@@ -525,6 +523,18 @@ const appearTimer = () => {
   }
 }
 
+/**
+ * Using this function I calculated the duration
+ * of the sound and dynamically added it to the html
+ */
+const calcSoundDuration = () => {
+  let soundDuration = sound.duration;
+  let m = Math.floor(soundDuration / 60);
+  let s = Math.floor(soundDuration % 60);
+  let time = '0' + m + '.' + s;
+  timer.textContent = time;
+}
+
 for (let i = 0; i < items.length; i++) {
   const cont = document.createElement('a');
   cont.innerHTML = `<div class="grid-item">
@@ -607,6 +617,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -628,6 +639,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -649,6 +661,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -670,6 +683,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -691,6 +705,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -712,6 +727,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -733,6 +749,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -754,6 +771,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -775,6 +793,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -796,6 +815,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -817,6 +837,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
+        calcSoundDuration();
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
