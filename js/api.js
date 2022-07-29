@@ -409,17 +409,16 @@ function soundPlayer() {
           -85 + (sound.currentTime / sound.duration) * 85
         }%)`;
       });
-      this.classList.toggle('active');
       if (this.classList.contains('active')) {
         sound.play();
-        console.log(sound.duration)
-        console.log(sound.duration/60,sound.duration%60)
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'block';
+        playbutton.classList.remove('active');
       } else {
         sound.pause();
         document.querySelector('.pause-button').style.display = 'none';
         document.querySelector('.play-button').style.display = 'block';
+        playbutton.classList.add('active');
       }
     };
   }, 2000);
