@@ -179,7 +179,7 @@ body {
   position: absolute;
   top: 5%;
   left: 20%;
-  @include text-property(36px, $font-universal-bold, $white, none);
+  @include text-property(44px, $font-regular, $white, none);
   white-space: nowrap;
   mix-blend-mode: difference;
   opacity: 0;
@@ -197,10 +197,12 @@ body {
   right: 2%;
   padding-bottom: 40px;
   display: none;
+  mix-blend-mode: difference;
+  z-index: 100;
 
   .preface-texts {
     p {
-      @include text-property(15px, $font-bold, $black, 22px);
+      @include text-property(15px, $font-regular, $white, 22px);
       margin-bottom: 20px;
 
       span {
@@ -210,7 +212,7 @@ body {
   }
 
   h5 {
-    @include text-property(15px, $font-bold, $black, 22px);
+    @include text-property(15px, $font-regular, $white, 22px);
     display: flex;
     justify-content: right;
   }
@@ -307,25 +309,25 @@ body {
   }
 
   .letter-q {
-    animation: top-to-bottom-q 7s linear forwards;
+    animation: top-to-bottom-q 5s linear forwards;
   }
 
   .letter-a-bold {
-    animation: top-to-bottom-a 7s linear forwards;
+    animation: top-to-bottom-a 5s linear forwards;
   }
 
   .letter-o-bold {
     margin-bottom: -30px;
-    animation: top-to-bottom-o 7s linear forwards;
+    animation: top-to-bottom-o 5s linear forwards;
   }
 
   .letter-s {
-    animation: top-to-bottom-s 7s linear forwards;
+    animation: top-to-bottom-s 5s linear forwards;
   }
 
   .letter-i {
     margin-bottom: 20px;
-    animation: top-to-bottom-i 7s linear forwards;
+    animation: top-to-bottom-i 5s linear forwards;
   }
 
   .letter-d {
@@ -434,25 +436,23 @@ body {
     transition: all 0.5s;
 
     h3 {
-      @include text-property(24px, $font-bold, $white, 30px);
-      font-weight: 600;
+      @include text-property(24px, $font-regular, $white, 30px);
     }
 
     .about-text {
-      @include text-property(15px, $font-bold, $white, 22px);
+      @include text-property(15px, $font-regular, $white, 22px);
       margin: 15px 0;
     }
 
     .employees-list {
       h4 {
-        @include text-property(16px, $font-bold, $white, 18px);
-        font-weight: 600;
+        @include text-property(16px, $font-regular, $white, 18px);
       }
 
       p,
       h5,
       .editor-name {
-        @include text-property(15px, $font-bold, $white, 22px);
+        @include text-property(15px, $font-regular, $white, 22px);
       }
 
       .editor-name {
