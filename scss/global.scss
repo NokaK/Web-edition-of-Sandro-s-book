@@ -1,6 +1,8 @@
-@import './fonts';
-@import './mixins';
-@import './variables';
 @import './reset';
-@import './style';
+@import './fonts';
+@import './variables';
+@import './mixins';
 @import './keyframes';
+@import './breakpoints';
+@import './desktop';
+@import './mobile';

@@ -3,6 +3,12 @@ body {
   background: #fff;
 }
 
+.desktop-version {
+  @include responsive(tablet) {
+    display: none;
+  }
+}
+
 .svg-background-active {
   display: block;
 }
