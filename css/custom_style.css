@@ -14,7 +14,9 @@
 }
 .table-comps .row-1 .svg-holder:hover span,
 .menu-modal-wrapper .header h2.active-menu-button:hover,
-#aboutUsText:hover {
+.menu-modal-wrapper .header h2:hover,
+#aboutUsText:hover,
+.table-comps .row-1 h3:hover {
     color: #666666;
 }
 .menu-modal-wrapper .header .close-menu-button:hover .line-1,

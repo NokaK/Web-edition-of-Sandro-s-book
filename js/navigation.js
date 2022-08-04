@@ -61,12 +61,7 @@ pdfTitle.addEventListener('click', () => {
   // pdf content appear here
   pdfContent.style.display = 'block';
 });
-/*
-setTimeout(() => {
-  navigation.style.opacity = '1';
-  navigation.style.pointerEvents = 'all';
-}, 2700);
-*/
+
 setTimeout(() => {
   navigation.classList.remove('dn');
   navigation.classList.add('db');

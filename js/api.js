@@ -409,15 +409,16 @@ function soundPlayer() {
           -85 + (sound.currentTime / sound.duration) * 85
         }%)`;
       });
-      this.classList.toggle('active');
       if (this.classList.contains('active')) {
         sound.play();
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'block';
+        playbutton.classList.remove('active');
       } else {
         sound.pause();
         document.querySelector('.pause-button').style.display = 'none';
         document.querySelector('.play-button').style.display = 'block';
+        playbutton.classList.add('active');
       }
     };
   }, 2000);
@@ -564,52 +565,6 @@ for (let i = 0; i < items.length; i++) {
       case 0: //winasityvaoba
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'none';
-        if (secondaryBackground.classList.contains('active')) {
-          removeActive();
-          menuModal.classList.remove('menu-active');
-          modalHeader.classList.remove('df');
-          modalHeader.classList.add('dn');
-          tableComps.classList.remove('df');
-          tableComps.classList.add('dn');
-          navigation.classList.add('db');
-          secondaryNavBar.classList.remove('secondary-nav-bar-active');
-          playButtonLoaderWrapper.classList.add(
-            'play-button-loader-wrapper-active'
-          );
-          startingButtonTitle.classList.add('starting-button-title-active');
-          lettersContainer.classList.add('letters-container-active');
-          bigTitle.classList.add('big-title-active');
-          loaderContainer.style.transform = 'translateX(-50%)';
-          loaderContainer.style.transition = 'unset';
-          lettersContainer.classList.add('letters-container-active');
-          sorted_letters_container.classList.add(
-            'sorted-letters-container-active'
-          );
-          bigTitle.classList.add('big-title-active');
-        } else {
-          removeActive();
-          menuModal.classList.remove('menu-active');
-          modalHeader.classList.remove('df');
-          modalHeader.classList.add('dn');
-          tableComps.classList.remove('df');
-          tableComps.classList.add('dn');
-          navigation.classList.add('db');
-          navigation.classList.add('db');
-          secondaryNavBar.classList.remove('secondary-nav-bar-active');
-          playButtonLoaderWrapper.classList.add(
-            'play-button-loader-wrapper-active'
-          );
-          startingButtonTitle.classList.add('starting-button-title-active');
-          lettersContainer.classList.add('letters-container-active');
-          bigTitle.classList.add('big-title-active');
-          loaderContainer.style.transform = 'translateX(-50%)';
-          loaderContainer.style.transition = 'unset';
-          lettersContainer.classList.add('letters-container-active');
-          sorted_letters_container.classList.add(
-            'sorted-letters-container-active'
-          );
-          bigTitle.classList.add('big-title-active');
-        }
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
@@ -869,15 +824,6 @@ for (let i = 0; i < items.length; i++) {
   rowContainer.appendChild(cont);
 
   playButtonLoaderWrapper.addEventListener('click', () => {
-    // triggerListChange();
-    // arrowSwitch();
-    // hideElements();
-    // document.querySelector('.title').innerText = '';
-    // secondaryBackground.classList.add('active');
-    // secondaryNavBar.classList.add('secondary-nav-bar-active');
-    // loaderContainer.style.transform = 'translateX(-0%)';
-    // loaderContainer.style.transition = 'unset';
-    //items[i].id == 6;
     arrowSwitch();
     setTimeout(() => {
       loaderContainer.style.transform = 'translateX(-85%)';

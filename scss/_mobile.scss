@@ -1,0 +1,7 @@
+.mobile-version {
+  display: none;
+
+  @include responsive(tablet) {
+    display: block;
+  }
+}
