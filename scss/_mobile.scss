@@ -4,4 +4,78 @@
   @include responsive(tablet) {
     display: block;
   }
+
+  // First section styles
+  .first-section {
+    background: $black;
+    height: 100vh;
+
+    .flex-block {
+      height: 100%;
+      @include flex-property(flex, center, center);
+
+      .section-content {
+        max-width: 380px;
+        width: 100%;
+
+        .mobile-letters {
+          .mobile-letter-q {
+            width: 47px;
+            height: 85px;
+          }
+
+          .mobile-letter-a-bold {
+            height: 42px;
+          }
+
+          .mobile-letter-o {
+            width: 52px;
+            height: 42px;
+            margin-bottom: -30px;
+          }
+
+          .mobile-letter-s {
+            width: 49px;
+            height: 62px;
+            margin: 0 10px 0 -5px;
+          }
+
+          .mobile-letter-i {
+            width: 35px;
+            height: 45px;
+            margin-bottom: 20px;
+          }
+
+          .mobile-letter-d {
+            width: 72px;
+            height: 65px;
+            margin-bottom: -30px;
+          }
+
+          .mobile-letter-a {
+            width: 35px;
+            height: 45px;
+            margin: 0 5px -10px 5px;
+          }
+
+          .mobile-letter-n {
+            width: 40px;
+            height: 62px;
+          }
+        }
+
+        .mobile-big-title {
+          @include text-property(60px, 'system-ui', $white, 77px);
+          margin-top: 30px;
+        }
+
+        .content-icons {
+          @include flex-property(flex, space-between, center);
+          flex-wrap: wrap;
+          gap: 19px;
+          margin-top: 60px;
+        }
+      }
+    }
+  }
 }

@@ -10,3 +10,9 @@
   color: $color;
   line-height: $l-height;
 }
+
+@mixin flex-property($flex, $horizontal, $vertical) {
+  display: $flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
