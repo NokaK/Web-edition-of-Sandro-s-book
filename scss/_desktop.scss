@@ -4,7 +4,7 @@ body {
 }
 
 .desktop-version {
-  @include responsive(tablet) {
+  @include responsive(tablet-lg) {
     display: none;
   }
 }
