@@ -372,6 +372,7 @@ playBtnMain.onclick = () => {
     sound.src = items[counter].audio;
     document.querySelector('.title').innerText = items[counter].title;
     sound.play();
+    countdownTimer();
     document.querySelector('.play-button').style.display = 'none';
     document.querySelector('.pause-button').style.display = 'block';
   }
