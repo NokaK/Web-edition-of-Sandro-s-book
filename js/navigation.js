@@ -78,7 +78,7 @@ mainMenuButton.addEventListener('click', () => {
   navigation.classList.remove('db');
   navigation.classList.add('dn');
   prefaceContent.style.display = 'none';
-  timer.style.display = 'none';
+  timeLeft.style.display = 'none';
   modalCloseButton.style.pointerEvents = 'all';
   setTimeout(() => {
     modalHeader.classList.remove('dn');
@@ -100,6 +100,6 @@ modalCloseButton.addEventListener('click', () => {
     if(headTitle.textContent == 'წინასიტყვაობა') {
       prefaceContent.style.display = 'block';
     }
-    timer.style.display = 'block';
+    timeLeft.style.display = 'block';
   }
 });

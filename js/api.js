@@ -472,11 +472,11 @@ function handleRightArrowClick() {
   playbutton.classList.remove('active');
   background.style.transition = `transform 0s ease-in 0s`;
   background.style.transform = 'translateX(-85%)';
-  timer.style.display = 'block';
   counter++;
   if (counter < items.length) {
     headTitle.innerText = items[counter].title;
     checkTitleContent();
+    appearTimer();
     for (let e = 0; e < itemsBackgroundImages.length; e++) {
       itemsBackgroundImages[e].classList.remove('active');
     }
@@ -509,17 +509,16 @@ let itemsBackgroundImages = [
   ukvdaveba,
 ];
 
-
-const timer = document.querySelector('.timer');
+const timeLeft = document.getElementById('time-left');
 /**
  * This function checks the content of the title and
  * determines whether the timer should be visible.
  */
 const appearTimer = () => {
   if (headTitle.textContent !== 'წინასიტყვაობა') {
-    timer.style.display = 'block';
+    timeLeft.style.display = 'block';
   } else {
-    timer.style.display = 'none';
+    timeLeft.style.display = 'none';
   }
 }
 
@@ -527,12 +526,20 @@ const appearTimer = () => {
  * Using this function I calculated the duration
  * of the sound and dynamically added it to the html
  */
-const calcSoundDuration = () => {
-  let soundDuration = sound.duration;
-  let m = Math.floor(soundDuration / 60);
-  let s = Math.floor(soundDuration % 60);
-  let time = '0' + m + '.' + s;
-  timer.textContent = time;
+const countdownTimer = () => {
+  sound.addEventListener('timeupdate', () => {
+    let duration = parseInt(sound.duration);
+    let currentTime = parseInt(sound.currentTime);
+    let time = duration - currentTime;
+    
+    let second = time % 60;
+    let minute = Math.floor(time / 60) % 60;
+  
+    second = second < 10 ? '0' + second : second;
+    minute = minute < 10 ? '0' + minute : minute;
+  
+    timeLeft.innerHTML = minute + '.' + second;
+  }, false);
 }
 
 for (let i = 0; i < items.length; i++) {
@@ -617,7 +624,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -639,7 +646,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -661,7 +668,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -683,7 +690,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -705,7 +712,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -727,7 +734,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -749,7 +756,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -771,7 +778,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -793,7 +800,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -815,7 +822,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -837,7 +844,7 @@ for (let i = 0; i < items.length; i++) {
         headTitle.innerText = items[counter].title;
         checkTitleContent();
         appearTimer();
-        calcSoundDuration();
+        countdownTimer();
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
