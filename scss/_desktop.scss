@@ -371,6 +371,15 @@ body {
   }
 }
 
+#time-left {
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  @include text-property(55px, $font-universal-bold, $white, 40px);
+  mix-blend-mode: difference;
+  z-index: 111;
+}
+
 // active menu styles
 .menu-modal-wrapper.menu-active {
   pointer-events: all;

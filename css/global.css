@@ -695,6 +695,18 @@ body {
   font-family: 'Sandro-Universal-Bold';
 }
 
+#time-left {
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  font-size: 55px;
+  font-family: "Sandro-Universal-Bold";
+  color: #fff;
+  line-height: 40px;
+  mix-blend-mode: difference;
+  z-index: 111;
+}
+
 .menu-modal-wrapper.menu-active {
   pointer-events: all;
   width: 100%;
