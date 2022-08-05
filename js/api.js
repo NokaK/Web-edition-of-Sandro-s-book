@@ -439,6 +439,10 @@ const checkTitleContent = () => {
   }
 }
 
+const displayTimer = () => {
+  timeLeft.style.display = 'block';
+}
+
 function handleLeftArrowClick() {
   sound.pause();
   sound.currentTime = 0;
@@ -446,6 +450,8 @@ function handleLeftArrowClick() {
   background.style.transition = `transform 0s ease-in 0s`;
   background.style.transform = 'translateX(-85%)';
   counter--;
+  timeLeft.style.display = 'none';
+  setTimeout(displayTimer, 1000);
   if (counter > 0) {
     headTitle.innerText = items[counter].title;
     checkTitleContent();
@@ -474,10 +480,11 @@ function handleRightArrowClick() {
   background.style.transition = `transform 0s ease-in 0s`;
   background.style.transform = 'translateX(-85%)';
   counter++;
+  timeLeft.style.display = 'none';
+  setTimeout(displayTimer, 1000);
   if (counter < items.length) {
     headTitle.innerText = items[counter].title;
     checkTitleContent();
-    appearTimer();
     for (let e = 0; e < itemsBackgroundImages.length; e++) {
       itemsBackgroundImages[e].classList.remove('active');
     }
@@ -578,7 +585,7 @@ for (let i = 0; i < items.length; i++) {
       case 1: //shexvedra leviatantan
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -600,7 +607,7 @@ for (let i = 0; i < items.length; i++) {
       case 2: //shushis qila
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -622,7 +629,7 @@ for (let i = 0; i < items.length; i++) {
       case 3: //qaosidan kosmosamde
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -644,7 +651,7 @@ for (let i = 0; i < items.length; i++) {
       case 4: //ofisebis
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -666,7 +673,7 @@ for (let i = 0; i < items.length; i++) {
       case 5: //cifruli samotxe
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -688,7 +695,7 @@ for (let i = 0; i < items.length; i++) {
       case 6: //yvelaze seqsualuri profesia
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -710,7 +717,7 @@ for (let i = 0; i < items.length; i++) {
       case 7: //xelovnuri inteleqti
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -732,7 +739,7 @@ for (let i = 0; i < items.length; i++) {
       case 8: //naxatebit saubari
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -754,7 +761,7 @@ for (let i = 0; i < items.length; i++) {
       case 9: //jadoqari
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -776,7 +783,7 @@ for (let i = 0; i < items.length; i++) {
       case 10: //cheshmariti maswavlebeli
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
@@ -798,7 +805,7 @@ for (let i = 0; i < items.length; i++) {
       case 11: //ukvdaveba
         headTitle.innerText = items[counter].title;
         checkTitleContent();
-        appearTimer();
+        setTimeout(appearTimer, 1000);
         countdownTimer();
         hideElements();
         removeActive();
