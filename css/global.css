@@ -725,7 +725,7 @@ body {
 .menu-modal-wrapper .header {
   width: 90%;
   margin: 0 auto;
-  padding: 45px 0 94px 0;
+  padding: 45px 0 70px 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -768,7 +768,7 @@ body {
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;
-  padding-bottom: 80px;
+  padding-bottom: 70px;
 }
 
 .table-comps .about-content {
@@ -851,7 +851,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 60px;
-  grid-row-gap: 45px;
+  grid-row-gap: 40px;
 }
 
 .table-comps .row-1 h2,
@@ -873,7 +873,7 @@ body {
 }
 
 .table-comps .row-1 h3 {
-  margin-top: 80px;
+  margin-top: 70px;
   width: 150px;
 }
 
