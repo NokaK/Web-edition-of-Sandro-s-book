@@ -398,8 +398,7 @@ body {
   .header {
     width: 90%;
     margin: 0 auto;
-    padding: 45px 0 94px 0;
-    // display: none;
+    padding: 45px 0 70px 0;
     justify-content: space-between;
     align-items: center;
 
@@ -443,7 +442,7 @@ body {
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;
-  padding-bottom: 80px;
+  padding-bottom: 70px;
 
   .about-content {
     background-color: $black;
@@ -512,7 +511,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 60px;
-    grid-row-gap: 45px;
+    grid-row-gap: 40px;
 
     h2,
     h3 {
@@ -529,7 +528,7 @@ body {
     }
 
     h3 {
-      margin-top: 80px;
+      margin-top: 70px;
       width: 150px;
 
       span {
