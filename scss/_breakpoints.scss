@@ -1,22 +1,27 @@
 @mixin responsive($breakpoint) {
+
     // Phone Portrait
     @if $breakpoint == phone-port-sm {
         @media only screen and (max-width: 320px) { @content };
     }
+
     @if $breakpoint == phone-port-md {
         @media only screen and (max-width: 380px) { @content };
     }
+
     @if $breakpoint == phone-port-lg {
-        @media only screen and (max-width: 420px) { @content };
+        @media only screen and (max-width: 420px) { @content } ;
     }
 
     // Phone Landscape
     @if $breakpoint == phone-land-sm {
         @media only screen and (max-width: 480px) { @content };
     }
+
     @if $breakpoint == phone-land-md {
         @media only screen and (max-width: 670px) { @content };
     }
+
     @if $breakpoint == phone-land-lg {
         @media only screen and (max-width: 720px) { @content };
     }
@@ -26,8 +31,8 @@
         @media only screen and (max-width: 768px) { @content };
     }
 
-    // Desktop screen and Tablet Landscape
-    @if $breakpoint == desktop {
+    // Tablet Large Size
+    @if $breakpoint == tablet-lg {
         @media only screen and (max-width: 1024px) { @content };
     }
 }
