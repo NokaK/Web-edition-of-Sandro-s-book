@@ -78,4 +78,41 @@
       }
     }
   }
+  .second-section{
+    .contents{
+      padding: 0 20px 20px 20px;
+      .contents-child {
+        display: grid;
+        grid-template-columns: auto max-content;
+        grid-template-areas: "chapter page";
+        align-items: end;
+        justify-self: center;
+        gap: 4px;
+        .span-icon-contents {
+          grid-area: page;
+          transform: translateY(35%);
+          fill: #a4a4a4;
+        }
+        .chapter {
+          grid-area: chapter;
+          position: relative;
+          overflow: hidden;
+          color: #a4a4a4;
+          font-size: 18px;
+          a{
+            color: #a4a4a4;
+            font-size: 18px;
+          }
+        }
+        .chapter::after {
+          position: absolute;
+          padding-left: 4px;
+          content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+          ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+          ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+          text-align: right;
+        }
+      }
+    }
+  }
 }
