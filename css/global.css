@@ -126,12 +126,12 @@ q {
 }
 
 blockquote:before, blockquote:after {
-  content: '';
+  content: "";
   content: none;
 }
 
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -141,42 +141,37 @@ table {
 }
 
 @font-face {
-  font-family: 'Sandro-Universal-Bold';
+  font-family: "Sandro-Universal-Bold";
   src: url("../Sandro_font/Sandro_font/SandroUniversal-Bold.otf");
 }
-
 @font-face {
-  font-family: 'sandro-Regular';
+  font-family: "sandro-Regular";
   src: url("../Sandro_font/Sandro_font/sandro-Regular.eot==");
   /* IE9 Compat Modes */
   src: url("../Sandro_font/Sandro_font/sandro-Regular.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-Regular.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-Regular.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-Regular.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
-
 @font-face {
-  font-family: 'sandro-Bold';
+  font-family: "sandro-Bold";
   src: url("../Sandro_font/Sandro_font/sandro-Bold.eot==");
   /* IE9 Compat Modes */
   src: url("../Sandro_font/Sandro_font/sandro-Bold.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-Bold.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-Bold.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-Bold.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
-
 @font-face {
-  font-family: 'sandro-Italic';
+  font-family: "sandro-Italic";
   src: url("../Sandro_font/Sandro_font/sandro-Italic.eot==");
   /* IE9 Compat Modes */
   src: url("../Sandro_font/Sandro_font/sandro-Italic.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-Italic.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-Italic.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-Italic.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
-
 @font-face {
-  font-family: 'sandro-BoldItalic';
+  font-family: "sandro-BoldItalic";
   src: url("../Sandro_font/Sandro_font/sandro-BoldItalic.eot==");
   /* IE9 Compat Modes */
   src: url("../Sandro_font/Sandro_font/sandro-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
-
 @keyframes top-to-bottom-q {
   0% {
     transform: translate(60px, -500px);
@@ -200,7 +195,6 @@ table {
     transform: translate(0, 0);
   }
 }
-
 @keyframes top-to-bottom-a {
   0% {
     transform: translate(60px, -500px);
@@ -224,7 +218,6 @@ table {
     transform: translate(0, 0);
   }
 }
-
 @keyframes top-to-bottom-o {
   0% {
     transform: translate(70px, -550px);
@@ -248,7 +241,6 @@ table {
     transform: translate(0, 0);
   }
 }
-
 @keyframes top-to-bottom-s {
   0% {
     transform: translate(180px, -500px);
@@ -272,7 +264,6 @@ table {
     transform: translate(0, 0);
   }
 }
-
 @keyframes top-to-bottom-i {
   0% {
     transform: translate(150px, -500px);
@@ -296,9 +287,8 @@ table {
     transform: translate(0, 0);
   }
 }
-
 body {
-  font-family: 'sandro-Regular', sans-serif;
+  font-family: "sandro-Regular", sans-serif;
   background: #fff;
 }
 
@@ -331,7 +321,6 @@ body {
   fill: #fff;
   transition: fill 0.3s ease-in 0.4s;
 }
-
 .loader.loader-active {
   fill: #000;
 }
@@ -358,71 +347,58 @@ body {
   margin-left: 40px;
   margin-top: 41px;
 }
-
 .navigation .publishing-house-header-icon {
   margin-bottom: 16px;
 }
-
 .navigation .navigation-bar .burger-share-container {
   margin-bottom: -2px;
   margin-left: -4px;
   position: relative;
 }
-
 .navigation .navigation-bar .burger-share-container .burger-button {
   margin-bottom: -4px;
   cursor: pointer;
 }
-
 .navigation .navigation-bar .burger-share-container .share-button-background {
   margin-left: -2px;
 }
-
 .navigation .navigation-bar .burger-share-container .share-button {
   position: absolute;
   z-index: 1;
   right: 26px;
   bottom: 22px;
 }
-
 .navigation .navigation-bar .facebook-instagram-container {
   position: relative;
   margin-bottom: 22px;
 }
-
 .navigation .navigation-bar .facebook-instagram-container .facebook-icon {
   position: absolute;
   z-index: 1;
   left: 18px;
   bottom: 22px;
 }
-
 .navigation .navigation-bar .facebook-instagram-container .facebook-icon-background {
   margin-bottom: -2px;
 }
-
 .navigation .navigation-bar .facebook-instagram-container .instagram-icon-background {
   margin-left: -6px;
   margin-top: -1px;
   position: relative;
 }
-
 .navigation .navigation-bar .facebook-instagram-container .instagram-icon {
   position: absolute;
   z-index: 1;
   left: 72px;
   bottom: 23px;
 }
-
 .navigation .navigation-bar .secondary-nav-bar {
   display: none;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .job-title {
   margin-bottom: 20px;
   position: relative;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .job-title .download-book {
   position: absolute;
   left: 50%;
@@ -432,48 +408,38 @@ body {
   width: 80px;
   cursor: pointer;
 }
-
 .navigation .navigation-bar .secondary-nav-bar.secondary-nav-bar-active {
   display: block;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .arrows-container {
   margin-bottom: 20px;
   position: relative;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons {
   position: absolute;
   top: 7px;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .left-arrow-button {
   margin-left: 5px;
   margin-top: 5px;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .left-arrow-button:hover {
   cursor: pointer;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .right-arrow-button {
   position: absolute;
   top: 45px;
   left: 55px;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .arrows-container .arrow-buttons .right-arrow-button:hover {
   cursor: pointer;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .play-button-container {
   margin-bottom: 20px;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .play-button-container .pause-button {
   display: none;
 }
-
 .navigation .navigation-bar .secondary-nav-bar .play-button-container:hover {
   cursor: pointer;
 }
@@ -491,7 +457,6 @@ body {
   opacity: 0;
   z-index: 20;
 }
-
 .title.title-active {
   opacity: 1;
 }
@@ -506,7 +471,6 @@ body {
   mix-blend-mode: difference;
   z-index: 100;
 }
-
 .preface-content .preface-texts p {
   font-size: 15px;
   font-family: "sandro-Regular", sans-serif;
@@ -514,11 +478,9 @@ body {
   line-height: 22px;
   margin-bottom: 20px;
 }
-
 .preface-content .preface-texts p span {
   font-family: system-ui, sans-serif;
 }
-
 .preface-content h5 {
   font-size: 15px;
   font-family: "sandro-Regular", sans-serif;
@@ -531,7 +493,6 @@ body {
 .play-button-loader-wrapper {
   display: none;
 }
-
 .play-button-loader-wrapper.play-button-loader-wrapper-active {
   position: absolute;
   top: 60%;
@@ -551,9 +512,8 @@ body {
   mix-blend-mode: difference;
   opacity: 0;
   z-index: 15;
-  font-family: 'sandro-Bold', sans-serif;
+  font-family: "sandro-Bold", sans-serif;
 }
-
 .starting-button-title.starting-button-title-active {
   opacity: 1;
 }
@@ -563,63 +523,52 @@ body {
   pointer-events: none;
   transition: all 0.2s ease-in;
 }
-
 .letters-container svg {
   position: absolute;
 }
-
 .letters-container .letter-a-bold {
   top: 35%;
   left: 13%;
   transform: translate(-13%, -35%);
 }
-
 .letters-container .letter-a {
   top: 40%;
   left: 30%;
   transform: translate(-30%, -40%);
 }
-
 .letters-container .letter-d {
   top: 60%;
   left: 27%;
   transform: translate(-27%, -60%);
 }
-
 .letters-container .letter-i {
   top: 50%;
   left: 18%;
   transform: translate(-18%, -50%);
 }
-
 .letters-container .letter-n {
   top: 80%;
   left: 38%;
   transform: translate(-38%, -80%);
 }
-
 .letters-container .letter-o-bold {
   top: 70%;
   left: 12%;
   transform: translate(-12%, -70%);
 }
-
 .letters-container .letter-q {
   top: 10%;
   left: 12%;
   transform: translate(-12%, -10%);
 }
-
 .letters-container .letter-s {
   top: 28%;
   left: 22%;
   transform: translate(-22%, -28%);
 }
-
 .letters-container .fill-n {
   fill: #000 !important;
 }
-
 .letters-container.letters-container-active {
   opacity: 1;
   pointer-events: all;
@@ -634,48 +583,39 @@ body {
   left: 10%;
   transform: translate(-10%, -80%);
 }
-
 .sorted-letters-container svg {
   fill: #fff;
 }
-
 .sorted-letters-container .letter-q {
   animation: top-to-bottom-q 5s linear forwards;
 }
-
 .sorted-letters-container .letter-a-bold {
   animation: top-to-bottom-a 5s linear forwards;
 }
-
 .sorted-letters-container .letter-o-bold {
   margin-bottom: -30px;
   animation: top-to-bottom-o 5s linear forwards;
 }
-
 .sorted-letters-container .letter-s {
   animation: top-to-bottom-s 5s linear forwards;
 }
-
 .sorted-letters-container .letter-i {
   margin-bottom: 20px;
   animation: top-to-bottom-i 5s linear forwards;
 }
-
 .sorted-letters-container .letter-d {
   margin-bottom: -30px;
 }
-
 .sorted-letters-container .letter-a {
   margin-bottom: -10px;
 }
-
 .sorted-letters-container.sorted-letters-container-active {
   opacity: 1;
   transition: opacity 0.2s ease-in 0.7s;
 }
 
 .big-title {
-  font-family: 'sandro-Bold', sans-serif;
+  font-family: "sandro-Bold", sans-serif;
   position: absolute;
   bottom: 12%;
   right: 3%;
@@ -687,12 +627,11 @@ body {
   pointer-events: none;
   transition: all 0.2s ease-in;
 }
-
 .big-title.big-title-active {
   opacity: 1;
   pointer-events: all;
   font-size: 100px;
-  font-family: 'Sandro-Universal-Bold';
+  font-family: "Sandro-Universal-Bold";
 }
 
 #time-left {
@@ -721,7 +660,6 @@ body {
   background-color: #1c1c1c;
   transition: 0.2s ease-in-out;
 }
-
 .menu-modal-wrapper .header {
   width: 90%;
   margin: 0 auto;
@@ -729,37 +667,31 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
 .menu-modal-wrapper .header h2 {
-  font-family: 'sandro-Bold', sans-serif;
+  font-family: "sandro-Bold", sans-serif;
   color: #fff;
   font-size: 24px;
   line-height: 29px;
   cursor: pointer;
   transition: all 0.5s;
 }
-
 .menu-modal-wrapper .header h2.active-menu-button {
   font-size: 30px;
 }
-
 .menu-modal-wrapper .header .close-menu-button {
   width: 17px;
   height: 18px;
   cursor: pointer;
 }
-
 .menu-modal-wrapper .header .close-menu-button .line-1,
 .menu-modal-wrapper .header .close-menu-button .line-2 {
   height: 3px;
   width: 18px;
   background-color: #707070;
 }
-
 .menu-modal-wrapper .header .close-menu-button .line-1 {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .menu-modal-wrapper .header .close-menu-button .line-2 {
   transform: rotate(-45deg) translate(-3px, 3px);
 }
@@ -770,20 +702,17 @@ body {
   justify-content: space-between;
   padding-bottom: 70px;
 }
-
 .table-comps .about-content {
   background-color: #181818;
   padding: 10px;
   transition: all 0.5s;
 }
-
 .table-comps .about-content h3 {
   font-size: 24px;
   font-family: "sandro-Regular", sans-serif;
   color: #fff;
   line-height: 30px;
 }
-
 .table-comps .about-content .about-text {
   font-size: 15px;
   font-family: "sandro-Regular", sans-serif;
@@ -791,14 +720,12 @@ body {
   line-height: 22px;
   margin: 15px 0;
 }
-
 .table-comps .about-content .employees-list h4 {
   font-size: 16px;
   font-family: "sandro-Regular", sans-serif;
   color: #fff;
   line-height: 18px;
 }
-
 .table-comps .about-content .employees-list p,
 .table-comps .about-content .employees-list h5,
 .table-comps .about-content .employees-list .editor-name {
@@ -807,11 +734,9 @@ body {
   color: #fff;
   line-height: 22px;
 }
-
 .table-comps .about-content .employees-list .editor-name {
   margin: 15px 0;
 }
-
 .table-comps .pdf-content {
   background-color: #181818;
   width: 100%;
@@ -820,7 +745,6 @@ body {
   transition: all 0.5s;
   position: relative;
 }
-
 .table-comps .pdf-content h3 {
   font-size: 24px;
   font-family: "sandro-Bold", sans-serif;
@@ -828,11 +752,9 @@ body {
   line-height: 30px;
   font-weight: 600;
 }
-
 .table-comps .pdf-content h3 span {
   font-family: monospace, sans-serif;
 }
-
 .table-comps .pdf-content .download-book {
   position: absolute;
   left: 50%;
@@ -841,19 +763,16 @@ body {
   padding-top: 50px;
   cursor: pointer;
 }
-
 .table-comps .content-display {
   width: 100%;
   transition: all 0.5s;
 }
-
 .table-comps .row-1 {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 60px;
   grid-row-gap: 40px;
 }
-
 .table-comps .row-1 h2,
 .table-comps .row-1 h3 {
   font-size: 24px;
@@ -865,34 +784,28 @@ body {
   cursor: pointer;
   transition: all 0.5s;
 }
-
 .table-comps .row-1 h2.active-menu-button,
 .table-comps .row-1 h3.active-menu-button {
   font-size: 30px;
   line-height: 35px;
 }
-
 .table-comps .row-1 h3 {
   margin-top: 70px;
   width: 150px;
 }
-
 .table-comps .row-1 h3 span {
   font-family: monospace, sans-serif;
 }
-
 .table-comps .row-1 .svg-holder {
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-
 .table-comps .row-1 .svg-holder svg {
   width: 72px;
 }
-
 .table-comps .row-1 .svg-holder span {
-  font-family: 'sandro-Bold', sans-serif;
+  font-family: "sandro-Bold", sans-serif;
   color: #fff;
   font-size: 16px;
   line-height: 19px;
@@ -900,7 +813,6 @@ body {
   margin-left: 35px;
   cursor: pointer;
 }
-
 .table-comps .row-1 .flex-comp {
   display: flex;
   justify-content: center;
@@ -927,73 +839,60 @@ body {
 .mobile-version {
   display: none;
 }
-
 @media only screen and (max-width: 1024px) {
   .mobile-version {
     display: block;
   }
 }
-
 .mobile-version .first-section {
   height: 100vh;
 }
-
 .mobile-version .first-section .flex-block {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .mobile-version .first-section .flex-block .section-content {
   max-width: 380px;
   width: 100%;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-q {
   width: 47px;
   height: 85px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-a-bold {
   height: 42px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-o {
   width: 52px;
   height: 42px;
   margin-bottom: -30px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-s {
   width: 49px;
   height: 62px;
   margin: 0 10px 0 -5px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-i {
   width: 35px;
   height: 45px;
   margin-bottom: 20px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-d {
   width: 72px;
   height: 65px;
   margin-bottom: -30px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-a {
   width: 35px;
   height: 45px;
   margin: 0 5px -10px 5px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-letters .mobile-letter-n {
   width: 40px;
   height: 62px;
 }
-
 .mobile-version .first-section .flex-block .section-content .mobile-big-title {
   font-size: 60px;
   font-family: "system-ui";
@@ -1001,7 +900,6 @@ body {
   line-height: 77px;
   margin-top: 30px;
 }
-
 .mobile-version .first-section .flex-block .section-content .content-icons {
   display: flex;
   justify-content: space-between;
@@ -1010,11 +908,9 @@ body {
   gap: 19px;
   margin-top: 60px;
 }
-
 .mobile-version .second-section .contents {
   padding: 0 20px 20px 20px;
 }
-
 .mobile-version .second-section .contents .contents-child {
   display: grid;
   grid-template-columns: auto max-content;
@@ -1023,13 +919,11 @@ body {
   justify-self: center;
   gap: 4px;
 }
-
 .mobile-version .second-section .contents .contents-child .span-icon-contents {
   grid-area: page;
   transform: translateY(35%);
   fill: #a4a4a4;
 }
-
 .mobile-version .second-section .contents .contents-child .chapter {
   grid-area: chapter;
   position: relative;
@@ -1037,19 +931,16 @@ body {
   color: #a4a4a4;
   font-size: 18px;
 }
-
 .mobile-version .second-section .contents .contents-child .chapter a {
   color: #a4a4a4;
   font-size: 18px;
 }
-
 .mobile-version .second-section .contents .contents-child .chapter::after {
   position: absolute;
   padding-left: 4px;
-  content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+  content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
   text-align: right;
 }
-
 .mobile-version .mobile-pdf-content {
   display: flex;
   justify-content: center;
@@ -1057,7 +948,6 @@ body {
   flex-direction: column;
   padding: 30px 0 20px 0;
 }
-
 .mobile-version .mobile-pdf-content h3 {
   font-size: 40px;
   font-family: "Sandro-Universal-Bold";
@@ -1065,4 +955,20 @@ body {
   line-height: 50px;
   margin-bottom: 30px;
 }
-/*# sourceMappingURL=global.css.map */
+.mobile-version .fourth-section {
+  padding: 30px 20px;
+  color: #a4a4a4;
+}
+.mobile-version .fourth-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.mobile-version .fourth-section p {
+  font-size: 15px;
+}
+.mobile-version .fourth-section p span {
+  font-family: system-ui, sans-serif;
+}
+.mobile-version .fourth-section :last-child {
+  text-align: right;
+}/*# sourceMappingURL=global.css.map */
