@@ -1,3 +1,7 @@
+.bg-black {
+  background-color: $black;
+}
+
 .mobile-version {
   display: none;
 
@@ -7,7 +11,6 @@
 
   // First section styles
   .first-section {
-    background: $black;
     height: 100vh;
 
     .flex-block {
@@ -78,9 +81,11 @@
       }
     }
   }
-  .second-section{
-    .contents{
+
+  .second-section {
+    .contents {
       padding: 0 20px 20px 20px;
+
       .contents-child {
         display: grid;
         grid-template-columns: auto max-content;
@@ -88,31 +93,46 @@
         align-items: end;
         justify-self: center;
         gap: 4px;
+
         .span-icon-contents {
           grid-area: page;
           transform: translateY(35%);
           fill: #a4a4a4;
         }
+
         .chapter {
           grid-area: chapter;
           position: relative;
           overflow: hidden;
           color: #a4a4a4;
           font-size: 18px;
-          a{
+
+          a {
             color: #a4a4a4;
             font-size: 18px;
           }
         }
+
         .chapter::after {
           position: absolute;
           padding-left: 4px;
           content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
-          ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
-          ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
           text-align: right;
         }
       }
+    }
+  }
+
+  .mobile-pdf-content {
+    @include flex-property(flex, center, center);
+    flex-direction: column;
+    padding: 30px 0 20px 0;
+
+    h3 {
+      @include text-property(40px, $font-universal-bold, $white, 50px);
+      margin-bottom: 30px;
     }
   }
 }
