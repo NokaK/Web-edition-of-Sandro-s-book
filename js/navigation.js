@@ -61,12 +61,7 @@ pdfTitle.addEventListener('click', () => {
   // pdf content appear here
   pdfContent.style.display = 'block';
 });
-/*
-setTimeout(() => {
-  navigation.style.opacity = '1';
-  navigation.style.pointerEvents = 'all';
-}, 2700);
-*/
+
 setTimeout(() => {
   navigation.classList.remove('dn');
   navigation.classList.add('db');
@@ -78,6 +73,7 @@ mainMenuButton.addEventListener('click', () => {
   navigation.classList.remove('db');
   navigation.classList.add('dn');
   prefaceContent.style.display = 'none';
+  timeLeft.style.display = 'none';
   modalCloseButton.style.pointerEvents = 'all';
   setTimeout(() => {
     modalHeader.classList.remove('dn');
@@ -99,5 +95,6 @@ modalCloseButton.addEventListener('click', () => {
     if(headTitle.textContent == 'წინასიტყვაობა') {
       prefaceContent.style.display = 'block';
     }
+    timeLeft.style.display = 'block';
   }
 });

@@ -372,6 +372,7 @@ playBtnMain.onclick = () => {
     sound.src = items[counter].audio;
     document.querySelector('.title').innerText = items[counter].title;
     sound.play();
+    countdownTimer();
     document.querySelector('.play-button').style.display = 'none';
     document.querySelector('.pause-button').style.display = 'block';
   }
@@ -431,12 +432,16 @@ const prefaceContent = document.querySelector('.preface-content');
  * This function checks the content of the title and
  * determines whether the preface content should be visible.
  */
-function checkTitleContent() {
-  if(headTitle.textContent == 'წინასიტყვაობა') {
+const checkTitleContent = () => {
+  if (headTitle.textContent == 'წინასიტყვაობა') {
     prefaceContent.style.display = 'block';
   } else {
     prefaceContent.style.display = 'none';
   }
+}
+
+const displayTimer = () => {
+  timeLeft.style.display = 'block';
 }
 
 function handleLeftArrowClick() {
@@ -446,6 +451,8 @@ function handleLeftArrowClick() {
   background.style.transition = `transform 0s ease-in 0s`;
   background.style.transform = 'translateX(-85%)';
   counter--;
+  timeLeft.style.display = 'none';
+  setTimeout(displayTimer, 1000);
   if (counter > 0) {
     headTitle.innerText = items[counter].title;
     checkTitleContent();
@@ -474,6 +481,8 @@ function handleRightArrowClick() {
   background.style.transition = `transform 0s ease-in 0s`;
   background.style.transform = 'translateX(-85%)';
   counter++;
+  timeLeft.style.display = 'none';
+  setTimeout(displayTimer, 1000);
   if (counter < items.length) {
     headTitle.innerText = items[counter].title;
     checkTitleContent();
@@ -509,7 +518,38 @@ let itemsBackgroundImages = [
   ukvdaveba,
 ];
 
+const timeLeft = document.getElementById('time-left');
+/**
+ * This function checks the content of the title and
+ * determines whether the timer should be visible.
+ */
+const appearTimer = () => {
+  if (headTitle.textContent !== 'წინასიტყვაობა') {
+    timeLeft.style.display = 'block';
+  } else {
+    timeLeft.style.display = 'none';
+  }
+}
 
+/**
+ * Using this function I calculated the duration
+ * of the sound and dynamically added it to the html
+ */
+const countdownTimer = () => {
+  sound.addEventListener('timeupdate', () => {
+    let duration = parseInt(sound.duration);
+    let currentTime = parseInt(sound.currentTime);
+    let time = duration - currentTime;
+    
+    let second = time % 60;
+    let minute = Math.floor(time / 60) % 60;
+  
+    second = second < 10 ? '0' + second : second;
+    minute = minute < 10 ? '0' + minute : minute;
+  
+    timeLeft.innerHTML = minute + '.' + second;
+  }, false);
+}
 
 for (let i = 0; i < items.length; i++) {
   const cont = document.createElement('a');
@@ -533,54 +573,9 @@ for (let i = 0; i < items.length; i++) {
       case 0: //winasityvaoba
         document.querySelector('.play-button').style.display = 'none';
         document.querySelector('.pause-button').style.display = 'none';
-        if (secondaryBackground.classList.contains('active')) {
-          removeActive();
-          menuModal.classList.remove('menu-active');
-          modalHeader.classList.remove('df');
-          modalHeader.classList.add('dn');
-          tableComps.classList.remove('df');
-          tableComps.classList.add('dn');
-          navigation.classList.add('db');
-          secondaryNavBar.classList.remove('secondary-nav-bar-active');
-          playButtonLoaderWrapper.classList.add(
-            'play-button-loader-wrapper-active'
-          );
-          startingButtonTitle.classList.add('starting-button-title-active');
-          lettersContainer.classList.add('letters-container-active');
-          bigTitle.classList.add('big-title-active');
-          loaderContainer.style.transform = 'translateX(-50%)';
-          loaderContainer.style.transition = 'unset';
-          lettersContainer.classList.add('letters-container-active');
-          sorted_letters_container.classList.add(
-            'sorted-letters-container-active'
-          );
-          bigTitle.classList.add('big-title-active');
-        } else {
-          removeActive();
-          menuModal.classList.remove('menu-active');
-          modalHeader.classList.remove('df');
-          modalHeader.classList.add('dn');
-          tableComps.classList.remove('df');
-          tableComps.classList.add('dn');
-          navigation.classList.add('db');
-          navigation.classList.add('db');
-          secondaryNavBar.classList.remove('secondary-nav-bar-active');
-          playButtonLoaderWrapper.classList.add(
-            'play-button-loader-wrapper-active'
-          );
-          startingButtonTitle.classList.add('starting-button-title-active');
-          lettersContainer.classList.add('letters-container-active');
-          bigTitle.classList.add('big-title-active');
-          loaderContainer.style.transform = 'translateX(-50%)';
-          loaderContainer.style.transition = 'unset';
-          lettersContainer.classList.add('letters-container-active');
-          sorted_letters_container.classList.add(
-            'sorted-letters-container-active'
-          );
-          bigTitle.classList.add('big-title-active');
-        }
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        appearTimer();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -591,6 +586,8 @@ for (let i = 0; i < items.length; i++) {
       case 1: //shexvedra leviatantan
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         arrowSwitch();
@@ -611,6 +608,8 @@ for (let i = 0; i < items.length; i++) {
       case 2: //shushis qila
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         shushisQila.classList.add('active');
@@ -631,6 +630,8 @@ for (let i = 0; i < items.length; i++) {
       case 3: //qaosidan kosmosamde
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         qaosidanKosmosamde.classList.add('active');
@@ -651,6 +652,8 @@ for (let i = 0; i < items.length; i++) {
       case 4: //ofisebis
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         opisisAmaoeba.classList.add('active');
@@ -671,6 +674,8 @@ for (let i = 0; i < items.length; i++) {
       case 5: //cifruli samotxe
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         cifruliSamotxe.classList.add('active');
@@ -691,6 +696,8 @@ for (let i = 0; i < items.length; i++) {
       case 6: //yvelaze seqsualuri profesia
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         seqsualuriProfesia.classList.add('active');
@@ -711,6 +718,8 @@ for (let i = 0; i < items.length; i++) {
       case 7: //xelovnuri inteleqti
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         khelovnuriInteleqti.classList.add('active');
@@ -731,6 +740,8 @@ for (let i = 0; i < items.length; i++) {
       case 8: //naxatebit saubari
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         naxatebitSaubari.classList.add('active');
@@ -751,6 +762,8 @@ for (let i = 0; i < items.length; i++) {
       case 9: //jadoqari
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         jadoqari.classList.add('active');
@@ -771,6 +784,8 @@ for (let i = 0; i < items.length; i++) {
       case 10: //cheshmariti maswavlebeli
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         cheshmaritiMaswavlebeli.classList.add('active');
@@ -791,6 +806,8 @@ for (let i = 0; i < items.length; i++) {
       case 11: //ukvdaveba
         headTitle.innerText = items[counter].title;
         checkTitleContent();
+        setTimeout(appearTimer, 1000);
+        countdownTimer();
         hideElements();
         removeActive();
         secondaryBackground.classList.add('active');
@@ -815,15 +832,6 @@ for (let i = 0; i < items.length; i++) {
   rowContainer.appendChild(cont);
 
   playButtonLoaderWrapper.addEventListener('click', () => {
-    // triggerListChange();
-    // arrowSwitch();
-    // hideElements();
-    // document.querySelector('.title').innerText = '';
-    // secondaryBackground.classList.add('active');
-    // secondaryNavBar.classList.add('secondary-nav-bar-active');
-    // loaderContainer.style.transform = 'translateX(-0%)';
-    // loaderContainer.style.transition = 'unset';
-    //items[i].id == 6;
     arrowSwitch();
     setTimeout(() => {
       loaderContainer.style.transform = 'translateX(-85%)';
