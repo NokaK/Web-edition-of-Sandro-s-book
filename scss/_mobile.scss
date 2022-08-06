@@ -135,4 +135,24 @@
       margin-bottom: 30px;
     }
   }
+  .fourth-section{
+    padding: 30px 20px;
+    color: #a4a4a4;
+    h2{
+      font-size: 28px;
+      font-weight: bold;
+      
+    }
+    p{
+      font-size: 15px;    
+      span{
+        font-family: system-ui, sans-serif;
+      }
+    }
+    :last-child{
+      text-align: right;
+    }
+    
+
+  }
 }
