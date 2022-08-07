@@ -94,20 +94,24 @@
         justify-self: center;
         gap: 4px;
         margin-bottom: 10px;
+
         .span-icon-contents {
           grid-area: page;
           transform: translateY(35%);
-          svg{
+
+          svg {
             width: 40px;
             height: 40px;
           }
         }
+
         .chapter {
           grid-area: chapter;
           position: relative;
           overflow: hidden;
           color: #868686;
           font-size: 20px;
+
           a {
             color: #868686;
             font-size: 20px;
@@ -115,6 +119,7 @@
             font-weight: 100;
           }
         }
+
         .chapter::after {
           position: absolute;
           padding-left: 4px;
@@ -137,27 +142,65 @@
       margin-bottom: 30px;
     }
   }
-  .fourth-section{
+
+  .fourth-section {
     padding: 30px 20px;
     color: #868686;
     font-family: 'HelveticaNeue';
     line-height: 20px;
-    h2{
+
+    h2 {
       font-size: 35px;
-      font-weight: bold;
-      
+      color: #a4a4a4;
     }
-    p{
-      font-size: 16px;   
-      font-weight: 100; 
-      span{
+
+    p {
+      font-size: 16px;
+      font-weight: 100;
+
+      span {
         font-family: system-ui, sans-serif;
-        font-weight: 400; 
+        font-weight: 400;
       }
     }
-    :last-child{
+
+    :last-child {
       text-align: right;
       font-style: italic;
+    }
+  }
+
+  .mobile-sound-content {
+    padding: 30px 0;
+
+    h2 {
+      @include text-property(40px, $font-universal-bold, $white, 45px);
+      padding-left: 20px;
+    }
+
+    .sound-buttons {
+      @include flex-property(flex, center, center);
+
+      svg {
+        width: 230px;
+        height: 230px;
+        margin: 125px 0;
+      }
+    }
+
+    .mobile-loader {
+      height: 125px;
+      background-color: $white;
+    }
+
+    .timer-content {
+      @include flex-property(flex, flex-end, center);
+      margin-top: 70px;
+      padding-right: 20px;
+
+      .mobile-time-left {
+        @include text-property(50px, $font-universal-bold, $white, 30px);
+      }
     }
   }
 }
