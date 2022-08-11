@@ -151,10 +151,7 @@ icons.forEach(icon => {
 contentIcons.innerHTML = iconContent;
 
 
-
-
-
-////////////responsive section 2 - table of contents: 
+// responsive section 2 - table of contents: 
 tableOfContents = [
   {
     id:0,
@@ -225,3 +222,76 @@ function addSVGsToContents() {
   }
 }
 addSVGsToContents();
+
+
+const audioItems = [
+  {
+    id: 0,
+    title: 'შეხვედრა ლევიათანთან',
+    audio: './media/mp3/shexvedra-leviatantan.mp3',
+  },
+]
+
+const audio = new Audio();
+const mobilePlayBtnLight = document.querySelectorAll('.mobile-play-button-light');
+const mobilePauseBtn = document.querySelectorAll('.mobile-pause-button');
+const mobileTitle = document.querySelectorAll('.mobile-title');
+const mobileTimeLeft = document.querySelector('.mobile-time-left');
+const mobileLoader = document.querySelector('.mobile-loader');
+
+mobileTitle.forEach((title, index) => {
+  title.innerText = audioItems[index].title;
+})
+
+mobilePlayBtnLight.forEach((playbutton, index) => {
+  playbutton.addEventListener('click', () => {
+    audio.src = audioItems[index].audio;
+    audio.play();
+    mobileCountdownTimer();
+    playbutton.style.display = 'none';
+    mobilePauseBtn.forEach(pauseButton => {
+      pauseButton.style.display = 'block';
+    })
+    audio.addEventListener('timeupdate', () => {
+      mobileLoader.style.transition = '.5s';
+      audio.playbackRate = 1;
+      mobileLoader.style.transform = `translateX(${
+        - 100.4 + (audio.currentTime / audio.duration) * 100.4
+      }%)`;
+    });
+  })
+})
+
+mobilePauseBtn.forEach(pauseButton => {
+  pauseButton.addEventListener('click', () => {
+    if (!audio.paused) {
+      audio.pause();
+      pauseButton.style.display = 'none';
+      mobilePlayBtnLight.forEach(playbutton => {
+        playbutton.style.display = 'block';
+      })
+    } else {
+      audio.play();
+      pauseButton.style.display = 'block';
+      mobilePlayBtnLight.forEach(playbutton => {
+        playbutton.style.display = 'none';
+      })
+    }
+  })
+})
+
+const mobileCountdownTimer = () => {
+  audio.addEventListener('timeupdate', () => {
+    let dur = parseInt(audio.duration);
+    let currTime = parseInt(audio.currentTime);
+    let audioTime = dur - currTime;
+
+    let sec = audioTime % 60;
+    let min = Math.floor(audioTime / 60) % 60;
+
+    sec = sec < 10 ? '0' + sec : sec;
+    min = min < 10 ? '0' + min : min;
+
+    mobileTimeLeft.innerHTML = min + '.' + sec;
+  }, false);
+}
