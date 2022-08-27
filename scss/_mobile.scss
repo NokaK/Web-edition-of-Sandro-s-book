@@ -84,7 +84,7 @@
 
   .second-section {
     .contents {
-      padding: 0 20px 20px 20px;
+      padding: 0 30px 30px 30px;
 
       .contents-child {
         display: grid;
@@ -93,26 +93,28 @@
         align-items: end;
         justify-self: center;
         gap: 4px;
-
+        margin-bottom: 10px;
         .span-icon-contents {
           grid-area: page;
           transform: translateY(35%);
-          fill: #a4a4a4;
+          svg{
+            width: 40px;
+            height: 40px;
+          }
         }
-
         .chapter {
           grid-area: chapter;
           position: relative;
           overflow: hidden;
-          color: #a4a4a4;
-          font-size: 18px;
-
+          color: #868686;
+          font-size: 20px;
           a {
-            color: #a4a4a4;
-            font-size: 18px;
+            color: #868686;
+            font-size: 20px;
+            font-family: 'HelveticaNeue';
+            font-weight: 100;
           }
         }
-
         .chapter::after {
           position: absolute;
           padding-left: 4px;
@@ -137,22 +139,24 @@
   }
   .fourth-section{
     padding: 30px 20px;
-    color: #a4a4a4;
+    color: #868686;
+    font-family: 'HelveticaNeue';
     h2{
-      font-size: 28px;
+      font-size: 35px;
       font-weight: bold;
       
     }
     p{
-      font-size: 15px;    
+      font-size: 16px;   
+      font-weight: 100; 
       span{
         font-family: system-ui, sans-serif;
+        font-weight: 400; 
       }
     }
     :last-child{
       text-align: right;
+      font-style: italic;
     }
-    
-
   }
 }

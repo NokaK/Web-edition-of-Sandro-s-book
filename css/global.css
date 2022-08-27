@@ -172,6 +172,38 @@ table {
   src: url("../Sandro_font/Sandro_font/sandro-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.woff2") format("woff2"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.woff") format("woff"), url("../Sandro_font/Sandro_font/sandro-BoldItalic.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("../Sandro_font/Helvetica/HelveticaNeueBold.eot");
+  src: url("../Sandro_font/Helvetica/HelveticaNeueBold.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Helvetica/HelveticaNeueBold.woff2") format("woff2"), url("../Sandro_font/Helvetica/HelveticaNeueBold.woff") format("woff"), url("../Sandro_font/Helvetica/HelveticaNeueBold.svg#HelveticaNeueBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("../Sandro_font/Helvetica/HelveticaNeueBold.eot");
+  src: url("../Sandro_font/Helvetica/HelveticaNeueBold.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Helvetica/HelveticaNeueBold.woff2") format("woff2"), url("../Sandro_font/Helvetica/HelveticaNeueBold.woff") format("woff"), url("../Sandro_font/Helvetica/HelveticaNeueBold.svg#HelveticaNeueBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("../Sandro_font/Helvetica/HelveticaNeueRegular.eot");
+  src: url("../Sandro_font/Helvetica/HelveticaNeueRegular.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Helvetica/HelveticaNeueRegular.woff2") format("woff2"), url("../Sandro_font/Helvetica/HelveticaNeueRegular.woff") format("woff"), url("../Sandro_font/Helvetica/HelveticaNeueRegular.svg#HelveticaNeueRegular") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("../Sandro_font/Helvetica/HelveticaNeueItalic.eot");
+  src: url("../Sandro_font/Helvetica/HelveticaNeueItalic.eot?#iefix") format("embedded-opentype"), url("../Sandro_font/Helvetica/HelveticaNeueItalic.woff2") format("woff2"), url("../Sandro_font/Helvetica/HelveticaNeueItalic.woff") format("woff"), url("../Sandro_font/Helvetica/HelveticaNeueItalic.ttf") format("truetype"), url("../Sandro_font/Helvetica/HelveticaNeueItalic.svg#HelveticaNeueItalic") format("svg");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
 @keyframes top-to-bottom-q {
   0% {
     transform: translate(60px, -500px);
@@ -909,7 +941,7 @@ body {
   margin-top: 60px;
 }
 .mobile-version .second-section .contents {
-  padding: 0 20px 20px 20px;
+  padding: 0 30px 30px 30px;
 }
 .mobile-version .second-section .contents .contents-child {
   display: grid;
@@ -918,22 +950,28 @@ body {
   align-items: end;
   justify-self: center;
   gap: 4px;
+  margin-bottom: 10px;
 }
 .mobile-version .second-section .contents .contents-child .span-icon-contents {
   grid-area: page;
   transform: translateY(35%);
-  fill: #a4a4a4;
+}
+.mobile-version .second-section .contents .contents-child .span-icon-contents svg {
+  width: 40px;
+  height: 40px;
 }
 .mobile-version .second-section .contents .contents-child .chapter {
   grid-area: chapter;
   position: relative;
   overflow: hidden;
-  color: #a4a4a4;
-  font-size: 18px;
+  color: #868686;
+  font-size: 20px;
 }
 .mobile-version .second-section .contents .contents-child .chapter a {
-  color: #a4a4a4;
-  font-size: 18px;
+  color: #868686;
+  font-size: 20px;
+  font-family: "HelveticaNeue";
+  font-weight: 100;
 }
 .mobile-version .second-section .contents .contents-child .chapter::after {
   position: absolute;
@@ -957,18 +995,22 @@ body {
 }
 .mobile-version .fourth-section {
   padding: 30px 20px;
-  color: #a4a4a4;
+  color: #868686;
+  font-family: "HelveticaNeue";
 }
 .mobile-version .fourth-section h2 {
-  font-size: 28px;
+  font-size: 35px;
   font-weight: bold;
 }
 .mobile-version .fourth-section p {
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 100;
 }
 .mobile-version .fourth-section p span {
   font-family: system-ui, sans-serif;
+  font-weight: 400;
 }
 .mobile-version .fourth-section :last-child {
   text-align: right;
+  font-style: italic;
 }/*# sourceMappingURL=global.css.map */
