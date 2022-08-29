@@ -1014,4 +1014,19 @@ body {
 .mobile-version .fourth-section :last-child {
   text-align: right;
   font-style: italic;
+}
+.mobile-version .last-section {
+  padding: 30px 20px;
+  color: #868686;
+  font-family: "HelveticaNeue";
+  line-height: 20px;
+}
+.mobile-version .last-section h2 {
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 45px;
+}
+.mobile-version .last-section p {
+  font-size: 16px;
+  font-weight: 100;
 }/*# sourceMappingURL=global.css.map */
