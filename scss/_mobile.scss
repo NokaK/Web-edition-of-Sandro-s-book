@@ -201,6 +201,7 @@
 
       .mobile-time-left {
         @include text-property(50px, $font-universal-bold, $white, 30px);
+        height: 30px;
       }
     }
   }
