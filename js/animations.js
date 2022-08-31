@@ -37,7 +37,6 @@ const hideElements = () => {
 
 playButtonLoaderWrapper.addEventListener('click', () => {
   hideElements();
-  secondaryBackground.classList.add('active');
   secondaryNavBar.classList.add('secondary-nav-bar-active');
   loaderContainer.style.transform = 'translateX(-0%)';
   loaderContainer.style.transition = 'unset';
