@@ -359,25 +359,176 @@ addSVGsToContents();
 const audioItems = [
   {
     id: 0,
+    title: 'ქაოსიდან კოსმოსამდე',
+    audio: './media/mp3/qaosidan-kosmosamde.mp3',
+  },
+  {
+    id: 1,
+    title: 'ყველაზე სექსუალური პროფესია',
+    audio: './media/mp3/sandros_books_02.mp3',
+  },
+  {
+    id: 2,
+    title: 'ჯადოქარი',
+    audio: './media/mp3/jadoqari.mp3',
+  },
+  {
+    id: 3,
     title: 'შეხვედრა ლევიათანთან',
     audio: './media/mp3/shexvedra-leviatantan.mp3',
   },
+  {
+    id: 4,
+    title: 'ოფისების ამაოება',
+    audio: './media/mp3/ofisebis-amaoeba.mp3',
+  },
+  {
+    id: 5,
+    title: 'ხელოვნური ინტელექტი',
+    audio: './media/mp3/xelovnuri-inteleqti.mp3',
+  },
+  {
+    id: 6,
+    title: 'ჭეშმარიტი მასწავლებელი',
+    audio: './media/mp3/cheshmariti-maswavlebeli.mp3',
+  },
+  {
+    id: 7,
+    title: 'შუშის ქილა',
+    audio: './media/mp3/shushis-qila.mp3',
+  },
+  {
+    id: 8,
+    title: 'ციფრული სამოთხე',
+    audio: './media/mp3/cifruli-samotxe.mp3',
+  },
+  {
+    id: 9,
+    title: 'ნახატებით საუბარი',
+    audio: './media/mp3/naxatebit-saubari.mp3',
+  },
+  {
+    id: 10,
+    title: 'უკვდავება',
+    audio: './media/mp3/ukvdaveba.mp3',
+  }
 ]
 
 const audio = new Audio();
 const mobilePlayBtnLight = document.querySelectorAll('.mobile-play-button-light');
 const mobilePauseBtn = document.querySelectorAll('.mobile-pause-button');
-const mobileTitle = document.querySelectorAll('.mobile-title');
+// const mobileTitle = document.querySelectorAll('.mobile-title');
+const mobileTitle = document.getElementById('mobile-title');
 const mobileTimeLeft = document.querySelector('.mobile-time-left');
 const mobileLoader = document.querySelector('.mobile-loader');
+const section5 = document.getElementById('section5');
 
-mobileTitle.forEach((title, index) => {
-  title.innerText = audioItems[index].title;
-})
+// on anchor click audio and title change:
+
+// mobileTitle.textContent = 'ქაოსიდან კოსმოსამდე';
+const anchor1 = document.getElementById('anchor1');
+anchor1.addEventListener('click', change1);
+function change1(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[0].title);
+  audio.src = audioItems[0].audio
+  // section5.style.display = 'block';
+}
+const anchor2 = document.getElementById('anchor2');
+anchor2.addEventListener('click', change2);
+function change2(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[1].title);
+  audio.src = audioItems[1].audio
+  // section5.style.display = 'block';
+}
+
+const anchor3 = document.getElementById('anchor3');
+anchor3.addEventListener('click', change3);
+function change3(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[2].title);
+  audio.src = audioItems[2].audio
+  // section5.style.display = 'block';
+}
+const anchor4 = document.getElementById('anchor4');
+anchor4.addEventListener('click', change4);
+function change4(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[3].title);
+  audio.src = audioItems[3].audio
+  // section5.style.display = 'block';
+}
+const anchor5 = document.getElementById('anchor5');
+anchor5.addEventListener('click', change5);
+function change5(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[4].title);
+  audio.src = audioItems[4].audio
+  // section5.style.display = 'block';
+}
+const anchor6 = document.getElementById('anchor6');
+anchor6.addEventListener('click', change6);
+function change6(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[5].title);
+  audio.src = audioItems[5].audio
+  // section5.style.display = 'block';
+}
+const anchor7 = document.getElementById('anchor7');
+anchor7.addEventListener('click', change7);
+function change7(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[6].title);
+  audio.src = audioItems[6].audio
+  // section5.style.display = 'block';
+}
+const anchor8 = document.getElementById('anchor8');
+anchor8.addEventListener('click', change8);
+function change8(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[7].title);
+  audio.src = audioItems[7].audio
+  // section5.style.display = 'block';
+}
+const anchor9 = document.getElementById('anchor9');
+anchor9.addEventListener('click', change9);
+function change9(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[8].title);
+  audio.src = audioItems[8].audio
+  // section5.style.display = 'block';
+}
+const anchor10 = document.getElementById('anchor10');
+anchor10.addEventListener('click', change10);
+function change10(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[9].title);
+  audio.src = audioItems[9].audio
+  // section5.style.display = 'block';
+}
+const anchor11 = document.getElementById('anchor11');
+anchor11.addEventListener('click', change11);
+function change11(){
+  mobileTitle.textContent = '';
+  mobileTitle.append(audioItems[10].title);
+  audio.src = audioItems[10].audio
+  // section5.style.display = 'block';
+}
+
+
+
+
+
+// 
+
+// mobileTitle.forEach((title, index) => {
+//   title.innerText = audioItems[index].title;
+// })
 
 mobilePlayBtnLight.forEach((playbutton, index) => {
   playbutton.addEventListener('click', () => {
-    audio.src = audioItems[index].audio;
+    // audio.src = audioItems[index].audio;
     audio.play();
     mobileCountdownTimer();
     playbutton.style.display = 'none';
