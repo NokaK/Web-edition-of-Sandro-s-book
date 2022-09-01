@@ -356,60 +356,104 @@ function addSVGsToContents() {
 addSVGsToContents();
 
 
+////////////////////////////////////////////////
+
 const audioItems = [
   {
     id: 0,
+    title: 'ქაოსიდან კოსმოსამდე',
+    audio: './media/mp3/qaosidan-kosmosamde.mp3',
+  },
+  {
+    id: 1,
+    title: 'ყველაზე სექსუალური პროფესია',
+    audio: './media/mp3/sandros_books_02.mp3',
+  },
+  {
+    id: 2,
+    title: 'ჯადოქარი',
+    audio: './media/mp3/jadoqari.mp3',
+  },
+  {
+    id: 3,
     title: 'შეხვედრა ლევიათანთან',
     audio: './media/mp3/shexvedra-leviatantan.mp3',
   },
+  {
+    id: 4,
+    title: 'ოფისების ამაოება',
+    audio: './media/mp3/ofisebis-amaoeba.mp3',
+  },
+  {
+    id: 5,
+    title: 'ხელოვნური ინტელექტი',
+    audio: './media/mp3/xelovnuri-inteleqti.mp3',
+  },
+  {
+    id: 6,
+    title: 'ჭეშმარიტი მასწავლებელი',
+    audio: './media/mp3/cheshmariti-maswavlebeli.mp3',
+  },
+  {
+    id: 7,
+    title: 'შუშის ქილა',
+    audio: './media/mp3/shushis-qila.mp3',
+  },
+  {
+    id: 8,
+    title: 'ციფრული სამოთხე',
+    audio: './media/mp3/cifruli-samotxe.mp3',
+  },
+  {
+    id: 9,
+    title: 'ნახატებით საუბარი',
+    audio: './media/mp3/naxatebit-saubari.mp3',
+  },
+  {
+    id: 10,
+    title: 'უკვდავება',
+    audio: './media/mp3/ukvdaveba.mp3',
+  }
 ]
 
 const audio = new Audio();
-const mobilePlayBtnLight = document.querySelectorAll('.mobile-play-button-light');
 const mobilePauseBtn = document.querySelectorAll('.mobile-pause-button');
-const mobileTitle = document.querySelectorAll('.mobile-title');
+const mobileTitle = document.getElementById('mobile-title');
 const mobileTimeLeft = document.querySelector('.mobile-time-left');
 const mobileLoader = document.querySelector('.mobile-loader');
+const section5 = document.getElementById('section5');
+const mobilePlayBtnLight = document.getElementById('mobile-play-button-light');
+const pauseBTN = document.getElementById('mobile-pause-button');
+const anchors = document.querySelectorAll('.anchor')
 
-mobileTitle.forEach((title, index) => {
-  title.innerText = audioItems[index].title;
+
+
+audio.src = audioItems[0].audio;
+
+mobilePlayBtnLight.addEventListener('click', function(){
+  audio.play();
+  mobileCountdownTimer();
+  mobilePlayBtnLight.style.display = 'none';
+  pauseBTN.style.display = 'block';
+  audio.addEventListener('timeupdate', () => {
+    mobileLoader.style.transition = '.5s';
+    audio.playbackRate = 1;
+    mobileLoader.style.transform = `translateX(${
+      - 100.4 + (audio.currentTime / audio.duration) * 100.4
+    }%)`;
+  });
 })
 
-mobilePlayBtnLight.forEach((playbutton, index) => {
-  playbutton.addEventListener('click', () => {
-    audio.src = audioItems[index].audio;
+pauseBTN.addEventListener('click', function(){
+  if (!audio.paused) {
+    audio.pause();
+    pauseBTN.style.display = 'none';
+    mobilePlayBtnLight.style.display = 'block';
+  } else {
     audio.play();
-    mobileCountdownTimer();
-    playbutton.style.display = 'none';
-    mobilePauseBtn.forEach(pauseButton => {
-      pauseButton.style.display = 'block';
-    })
-    audio.addEventListener('timeupdate', () => {
-      mobileLoader.style.transition = '.5s';
-      audio.playbackRate = 1;
-      mobileLoader.style.transform = `translateX(${
-        - 100.4 + (audio.currentTime / audio.duration) * 100.4
-      }%)`;
-    });
-  })
-})
-
-mobilePauseBtn.forEach(pauseButton => {
-  pauseButton.addEventListener('click', () => {
-    if (!audio.paused) {
-      audio.pause();
-      pauseButton.style.display = 'none';
-      mobilePlayBtnLight.forEach(playbutton => {
-        playbutton.style.display = 'block';
-      })
-    } else {
-      audio.play();
-      pauseButton.style.display = 'block';
-      mobilePlayBtnLight.forEach(playbutton => {
-        playbutton.style.display = 'none';
-      })
-    }
-  })
+    pauseBTN.style.display = 'block';
+    mobilePlayBtnLight.style.display = 'none';
+  }
 })
 
 const mobileCountdownTimer = () => {
@@ -427,3 +471,15 @@ const mobileCountdownTimer = () => {
     mobileTimeLeft.innerHTML = min + '.' + sec;
   }, false);
 }
+
+anchors.forEach(function(x,i){
+  x.addEventListener('click', function(){
+    mobilePlayBtnLight.style.display = 'block';
+    pauseBTN.style.display = 'none';
+    console.log('hello');
+    mobileTitle.textContent = '';
+    mobileTitle.append(anchors[i].innerHTML);
+    audio.src = '';
+    audio.src = audioItems[i].audio;
+  })
+})
