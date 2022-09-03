@@ -185,7 +185,7 @@ body {
   position: absolute;
   top: 5%;
   left: 20%;
-  @include text-property(44px, $font-regular, $white, none);
+  @include text-property(44px, $font-universal-bold, $white, none);
   white-space: nowrap;
   mix-blend-mode: difference;
   opacity: 0;
