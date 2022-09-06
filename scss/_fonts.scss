@@ -58,51 +58,51 @@
     url('../Sandro_font/Sandro_font/sandro-BoldItalic.ttf') format('truetype');
   /* Safari, Android, iOS */
 }
+
 @font-face {
-  font-family: 'HelveticaNeue';
-  src: url('../Sandro_font/Helvetica/HelveticaNeueBold.eot');
-  src: url('../Sandro_font/Helvetica/HelveticaNeueBold.eot?#iefix') format('embedded-opentype'),
-      url('../Sandro_font/Helvetica/HelveticaNeueBold.woff2') format('woff2'),
-      url('../Sandro_font/Helvetica/HelveticaNeueBold.woff') format('woff'),
-      url('../Sandro_font/Helvetica/HelveticaNeueBold.svg#HelveticaNeueBold') format('svg');
+  font-family: 'Helvetica Neue';
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue-Bold.eot');
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Bold.woff2') format('woff2'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Bold.woff') format('woff'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Bold.svg#HelveticaNeue-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'HelveticaNeue';
-  src: url('../Sandro_font/Helvetica/HelveticaNeueBold.eot');
-  src: url('../Sandro_font/Helvetica/HelveticaNeueBold.eot?#iefix') format('embedded-opentype'),
-      url('../Sandro_font/Helvetica/HelveticaNeueBold.woff2') format('woff2'),
-      url('../Sandro_font/Helvetica/HelveticaNeueBold.woff') format('woff'),
-      url('../Sandro_font/Helvetica/HelveticaNeueBold.svg#HelveticaNeueBold') format('svg');
-  font-weight: bold;
+  font-family: 'Helvetica Neue';
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue-Medium.eot');
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Medium.woff2') format('woff2'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Medium.woff') format('woff'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Medium.svg#HelveticaNeue-Medium') format('svg');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'HelveticaNeue';
-  src: url('../Sandro_font/Helvetica/HelveticaNeueRegular.eot');
-  src: url('../Sandro_font/Helvetica/HelveticaNeueRegular.eot?#iefix') format('embedded-opentype'),
-      url('../Sandro_font/Helvetica/HelveticaNeueRegular.woff2') format('woff2'),
-      url('../Sandro_font/Helvetica/HelveticaNeueRegular.woff') format('woff'),
-      url('../Sandro_font/Helvetica/HelveticaNeueRegular.svg#HelveticaNeueRegular') format('svg');
-  font-weight: 100;
+  font-family: 'Helvetica Neue';
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue-Light.eot');
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Light.woff2') format('woff2'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Light.woff') format('woff'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue-Light.svg#HelveticaNeue-Light') format('svg');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'HelveticaNeue';
-  src: url('../Sandro_font/Helvetica/HelveticaNeueItalic.eot');
-  src: url('../Sandro_font/Helvetica/HelveticaNeueItalic.eot?#iefix') format('embedded-opentype'),
-      url('../Sandro_font/Helvetica/HelveticaNeueItalic.woff2') format('woff2'),
-      url('../Sandro_font/Helvetica/HelveticaNeueItalic.woff') format('woff'),
-      url('../Sandro_font/Helvetica/HelveticaNeueItalic.ttf') format('truetype'),
-      url('../Sandro_font/Helvetica/HelveticaNeueItalic.svg#HelveticaNeueItalic') format('svg');
-  font-weight: 100;
-  font-style: italic;
+  font-family: 'Helvetica Neue';
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue.eot');
+  src: url('../Sandro_font/font-helvetica/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue.woff2') format('woff2'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue.woff') format('woff'),
+      url('../Sandro_font/font-helvetica/HelveticaNeue.svg#HelveticaNeue') format('svg');
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
-
