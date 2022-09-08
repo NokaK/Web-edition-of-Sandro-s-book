@@ -468,7 +468,11 @@ const mobileCountdownTimer = () => {
     sec = sec < 10 ? '0' + sec : sec;
     min = min < 10 ? '0' + min : min;
 
-    mobileTimeLeft.innerHTML = min + '.' + sec;
+    if (audio.paused) {
+      mobileTimeLeft.innerHTML = '';
+    } else {
+      mobileTimeLeft.innerHTML = min + '.' + sec;
+    }
   }, false);
 }
 
