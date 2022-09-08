@@ -169,7 +169,7 @@
 
   .mobile-sound-content {
     padding: 30px 0;
-
+    min-height: 101vh;
     h2 {
       @include text-property(40px, $font-universal-bold, $white, 45px);
       padding-left: 20px;
