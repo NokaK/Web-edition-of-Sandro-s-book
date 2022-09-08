@@ -1015,6 +1015,7 @@ body {
 }
 .mobile-version .mobile-sound-content {
   padding: 30px 0;
+  min-height: 101vh;
 }
 .mobile-version .mobile-sound-content h2 {
   font-size: 40px;
@@ -1071,4 +1072,8 @@ body {
 }
 .mobile-version .last-section p {
   font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
 }/*# sourceMappingURL=global.css.map */
