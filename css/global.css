@@ -1029,7 +1029,12 @@ body {
   padding: 30px 0;
   min-height: 101vh;
 }
-.mobile-version .mobile-sound-content h2 {
+.mobile-version .mobile-sound-content .title-burger-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-version .mobile-sound-content .title-burger-wrapper h2 {
   font-size: 40px;
   font-family: "Sandro-Universal-Bold";
   color: #fff;
