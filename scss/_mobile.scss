@@ -2,8 +2,14 @@
   background-color: $black;
 }
 
-@media screen and (orientation: landscape) {
-  .mobile-version {
+
+.mobile-version {
+  display: none;
+
+  @include responsive(tablet-lg) {
+    display: block;
+  }
+  @include responsive(phone-port-lg-rotate-lock){
     transform: rotate(-90deg);
     transform-origin: left top;
     width: 100vh;
@@ -12,14 +18,6 @@
     position: absolute;
     top: 100%;
     left: 0;
-  }
-}
-
-.mobile-version {
-  display: none;
-
-  @include responsive(tablet-lg) {
-    display: block;
   }
 
   // First section styles
