@@ -868,7 +868,15 @@ body {
   background-color: #181818;
 }
 
-@media screen and (orientation: landscape) {
+.mobile-version {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .mobile-version {
+    display: block;
+  }
+}
+@media only screen and (max-height: 420px) and (orientation: landscape) {
   .mobile-version {
     transform: rotate(-90deg);
     transform-origin: left top;
@@ -878,14 +886,6 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-  }
-}
-.mobile-version {
-  display: none;
-}
-@media only screen and (max-width: 1024px) {
-  .mobile-version {
-    display: block;
   }
 }
 .mobile-version .first-section {
