@@ -1,5 +1,9 @@
 @mixin responsive($breakpoint) {
 
+    @if $breakpoint == phone-port-lg-rotate-lock {
+        @media only screen and (max-height: 420px) and (orientation: landscape) { @content } ;
+    }
+
     // Phone Portrait
     @if $breakpoint == phone-port-sm {
         @media only screen and (max-width: 320px) { @content };
