@@ -480,10 +480,24 @@ anchors.forEach(function(x,i){
   x.addEventListener('click', function(){
     mobilePlayBtnLight.style.display = 'block';
     pauseBTN.style.display = 'none';
-    console.log('hello');
     mobileTitle.textContent = '';
     mobileTitle.append(anchors[i].innerHTML);
     audio.src = '';
     audio.src = audioItems[i].audio;
-  })
+    audio.autoplay = false;
+
+    let c = i;
+    audio.addEventListener('ended', function(){
+      c++;
+      if(c>=audioItems.length){
+        c=0;
+      }
+      mobileTitle.textContent = '';
+      mobileTitle.append(audioItems[c].title);
+      audio.src = '';
+      audio.src = audioItems[c].audio;
+      audio.load();
+      audio.autoplay = true;
+    })
+  });
 })
