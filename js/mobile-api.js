@@ -468,11 +468,21 @@ const mobileCountdownTimer = () => {
     sec = sec < 10 ? '0' + sec : sec;
     min = min < 10 ? '0' + min : min;
 
-    if (audio.paused) {
-      mobileTimeLeft.innerHTML = '';
-    } else {
-      mobileTimeLeft.innerHTML = min + '.' + sec;
-    }
+    mobileTimeLeft.innerHTML = min + '.' + sec;
+  }, false);
+
+  audio.addEventListener('loadedmetadata', () => {
+    let dur = parseInt(audio.duration);
+    let currTime = parseInt(audio.currentTime);
+    let audioTime = dur - currTime;
+
+    let sec = audioTime % 60;
+    let min = Math.floor(audioTime / 60) % 60;
+
+    sec = sec < 10 ? '0' + sec : sec;
+    min = min < 10 ? '0' + min : min;
+
+    mobileTimeLeft.innerHTML = min + '.' + sec;
   }, false);
 }
 
