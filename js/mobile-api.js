@@ -468,11 +468,21 @@ const mobileCountdownTimer = () => {
     sec = sec < 10 ? '0' + sec : sec;
     min = min < 10 ? '0' + min : min;
 
-    if (audio.paused) {
-      mobileTimeLeft.innerHTML = '';
-    } else {
-      mobileTimeLeft.innerHTML = min + '.' + sec;
-    }
+    mobileTimeLeft.innerHTML = min + '.' + sec;
+  }, false);
+
+  audio.addEventListener('loadedmetadata', () => {
+    let dur = parseInt(audio.duration);
+    let currTime = parseInt(audio.currentTime);
+    let audioTime = dur - currTime;
+
+    let sec = audioTime % 60;
+    let min = Math.floor(audioTime / 60) % 60;
+
+    sec = sec < 10 ? '0' + sec : sec;
+    min = min < 10 ? '0' + min : min;
+
+    mobileTimeLeft.innerHTML = min + '.' + sec;
   }, false);
 }
 
@@ -480,10 +490,24 @@ anchors.forEach(function(x,i){
   x.addEventListener('click', function(){
     mobilePlayBtnLight.style.display = 'block';
     pauseBTN.style.display = 'none';
-    console.log('hello');
     mobileTitle.textContent = '';
     mobileTitle.append(anchors[i].innerHTML);
     audio.src = '';
     audio.src = audioItems[i].audio;
-  })
+    audio.autoplay = false;
+
+    let c = i;
+    audio.addEventListener('ended', function(){
+      c++;
+      if(c>=audioItems.length){
+        c=0;
+      }
+      mobileTitle.textContent = '';
+      mobileTitle.append(audioItems[c].title);
+      audio.src = '';
+      audio.src = audioItems[c].audio;
+      audio.load();
+      audio.autoplay = true;
+    })
+  });
 })

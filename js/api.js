@@ -550,6 +550,20 @@ const countdownTimer = () => {
   
     timeLeft.innerHTML = minute + '.' + second;
   }, false);
+
+  sound.addEventListener('loadedmetadata', () => {
+    let duration = parseInt(sound.duration);
+    let currentTime = parseInt(sound.currentTime);
+    let time = duration - currentTime;
+    
+    let second = time % 60;
+    let minute = Math.floor(time / 60) % 60;
+  
+    second = second < 10 ? '0' + second : second;
+    minute = minute < 10 ? '0' + minute : minute;
+  
+    timeLeft.innerHTML = minute + '.' + second;
+  }, false);
 }
 
 for (let i = 0; i < items.length; i++) {
