@@ -31,56 +31,84 @@
       .section-content {
         max-width: 380px;
         width: 100%;
+        text-align: center;
 
         .mobile-letters {
           .mobile-letter-q {
             width: 47px;
             height: 85px;
+            @media (max-width: 400px){
+              width: 35px;
+            }
           }
 
           .mobile-letter-a-bold {
             height: 42px;
+            @media (max-width: 400px){
+              width: 32px;
+            }
           }
 
           .mobile-letter-o {
             width: 52px;
             height: 42px;
             margin-bottom: -30px;
+            @media (max-width: 400px){
+              width: 40px;
+            }
           }
 
           .mobile-letter-s {
             width: 49px;
             height: 62px;
             margin: 0 10px 0 -5px;
+            @media (max-width: 400px){
+              width: 32px;
+            }
           }
 
           .mobile-letter-i {
             width: 35px;
             height: 45px;
             margin-bottom: 20px;
+            @media (max-width: 400px){
+              width: 32px;
+            }
           }
 
           .mobile-letter-d {
             width: 72px;
             height: 65px;
             margin-bottom: -30px;
+            @media (max-width: 400px){
+              width: 42px;
+            }
           }
 
           .mobile-letter-a {
             width: 35px;
             height: 45px;
             margin: 0 5px -10px 5px;
+            @media (max-width: 400px){
+              width: 32px;
+            }
           }
 
           .mobile-letter-n {
             width: 40px;
             height: 62px;
+            @media (max-width: 400px){
+              width: 32px;
+            }
           }
         }
 
         .mobile-big-title {
           @include text-property(60px, 'system-ui', $white, 77px);
           margin-top: 30px;
+          @media (max-width: 400px){
+            font-size: 48px;
+          }
         }
 
         .content-icons {
@@ -88,6 +116,11 @@
           flex-wrap: wrap;
           gap: 19px;
           margin-top: 60px;
+          @media (max-width: 400px){
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 60px;
+          }
         }
       }
     }
@@ -96,6 +129,9 @@
   .second-section {
     .contents {
       padding: 0 30px 30px 30px;
+      @media (max-width: 400px){
+        padding: 0 10px 10px 15px;
+      }
 
       .contents-child {
         display: grid;
@@ -127,6 +163,9 @@
             color: #868686;
             font-size: 20px;
             font-family: 'Helvetica Neue';
+            @media (max-width: 400px){
+              font-size: 18px;
+            }
           }
         }
 
@@ -243,4 +282,11 @@
 }
 html{
   scroll-behavior: smooth;
+}
+
+@media (max-width: 320px) {
+  .mobile-letter-q{
+    width: 30px;
+  }
+  
 }
