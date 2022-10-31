@@ -369,11 +369,19 @@ const playBtnMain = document.querySelector('#play-button-light')
 const pauseyBtn = document.querySelector('.pause-button')
 const playBtn = document.querySelector('.play-button')
 playBtnMain.onclick = () => {
-    sound.src = items[counter].audio;
+    // sound.src = items[counter].audio;
     document.querySelector('.title').innerText = items[counter].title;
+    soundPlayer()
     sound.play();
     shexvedraLeviatantan.classList.add('active');
     countdownTimer();
+    sound.addEventListener('timeupdate', function () {
+      background.style.transition = '.5s';
+      sound.playbackRate = 1;
+      background.style.transform = `translateX(${
+        -85 + (sound.currentTime / sound.duration) * 85
+      }%)`;
+    });
     document.querySelector('.play-button').style.display = 'none';
     document.querySelector('.pause-button').style.display = 'block';
   }
@@ -841,11 +849,17 @@ for (let i = 0; i < items.length; i++) {
         }
         break;
     }
+    sound.addEventListener('timeupdate', function () {
+      background.style.transition = '.5s';
+      sound.playbackRate = 1;
+      background.style.transform = `translateX(${
+        -85 + (sound.currentTime / sound.duration) * 85
+      }%)`;
+    });
   }
 
   cont.addEventListener('click', triggerListChange);
   rowContainer.appendChild(cont);
-
   playButtonLoaderWrapper.addEventListener('click', () => {
     arrowSwitch();
     setTimeout(() => {
